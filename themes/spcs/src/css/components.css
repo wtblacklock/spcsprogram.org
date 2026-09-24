@@ -1,0 +1,901 @@
+/* ── 4. The colour-block device ──────────────────────────────────────── */
+
+/*
+ * The program's print materials already have a signature: a hard-edged solid
+ * colour block overlapping a full-bleed photograph, with type set inside the
+ * block. Reusing it — rather than inventing a new visual language — is what
+ * ties the site to the manual, the brochure and the banner.
+ */
+.spcs-panel {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	align-items: center;
+}
+
+.spcs-panel__media {
+	grid-row: 1;
+	grid-column: 4 / -1;
+	position: relative;
+	min-block-size: 22rem;
+}
+
+.spcs-panel__media img {
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.spcs-panel__block {
+	grid-row: 1;
+	grid-column: 1 / span 6;
+	z-index: 1;
+	background: var(--purple);
+	color: #fff;
+	padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+/*
+ * Mirrored variant so consecutive panels don't march in the same direction.
+ * Here the photograph runs the full width and the block sits entirely on top of
+ * it, flush to the right edge — the arrangement used throughout the printed
+ * manual. In the default variant the block instead straddles the photo's left
+ * edge, half on paper.
+ */
+.spcs-panel--right .spcs-panel__media {
+	grid-column: 1 / -1;
+}
+
+.spcs-panel--right .spcs-panel__block {
+	grid-column: 7 / -1;
+}
+
+.spcs-panel--plum .spcs-panel__block {
+	background: var(--plum);
+}
+
+@media (max-width: 63.99em) {
+	.spcs-panel {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.spcs-panel__media,
+	.spcs-panel--right .spcs-panel__media {
+		grid-row: 1;
+		grid-column: 1;
+		min-block-size: 15rem;
+		inline-size: 100vw;
+		margin-inline: calc(50% - 50vw);
+	}
+
+	.spcs-panel__block,
+	.spcs-panel--right .spcs-panel__block {
+		grid-row: 2;
+		grid-column: 1;
+		/* Keep a trace of the overlap rather than dropping the idea entirely. */
+		margin: -2.5rem 0 0;
+	}
+}
+
+/* ── 5. Components ───────────────────────────────────────────────────── */
+
+/* Hero ---------------------------------------------------------------- */
+
+/*
+ * The hero opens tighter than a standard section. The white space that matters
+ * is around the headline and under it, not between the header and the first
+ * word — a big empty band at the top reads as an unfinished page, not as calm.
+ */
+.spcs-hero {
+	padding-block-start: clamp(2rem, 4vw, 3.25rem);
+}
+
+.spcs-hero__headline {
+	font-size: var(--wp--preset--font-size--headline);
+	max-inline-size: 18ch;
+	margin: 0 0 1.75rem;
+}
+
+/*
+ * A moderate, editorial-sized portrait next to the hero text — present but not
+ * a full-bleed banner. The accent block behind it echoes the colour-block
+ * device used everywhere else on the site instead of introducing a new shape.
+ */
+.spcs-hero__portrait {
+	position: relative;
+	margin-block-start: 0.25rem;
+}
+
+.spcs-hero__portrait::before {
+	content: "";
+	position: absolute;
+	inset-block-start: 1.25rem;
+	inset-inline-end: -1.25rem;
+	inline-size: 70%;
+	block-size: 100%;
+	background: var(--purple-wash);
+	z-index: 0;
+}
+
+.spcs-hero__portrait img {
+	position: relative;
+	z-index: 1;
+	inline-size: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	display: block;
+}
+
+@media (max-width: 63.99em) {
+	/*
+	 * The asymmetric accent-block composition is a desktop device. Capped at a
+	 * narrow max-width with the section's own side padding, it read as a small
+	 * inset photo with a stray rectangle peeking out from behind it — instead,
+	 * let the photo run full-bleed edge-to-edge and drop the accent block.
+	 */
+	.spcs-hero__portrait {
+		margin-block-start: 0;
+		max-inline-size: none;
+		inline-size: 100vw;
+		margin-inline: calc(50% - 50vw);
+	}
+
+	.spcs-hero__portrait::before {
+		content: none;
+	}
+
+	.spcs-hero__portrait img {
+		aspect-ratio: 16 / 9;
+	}
+
+	/*
+	 * Text-then-photo left the hero portrait sitting directly above the next
+	 * section's own full-bleed photo — two photos back to back read as
+	 * disconnected filler. Leading with the portrait breaks that up, without
+	 * touching the side-by-side desktop layout. It also sits flush under the
+	 * header (the section's own top padding removed) and is cropped shorter
+	 * than its desktop 4:3 so the headline lands above the fold.
+	 */
+	.spcs-hero {
+		padding-block-start: 0;
+	}
+
+	.spcs-hero .spcs-grid > .col-8-5 {
+		order: -1;
+		/* WP's block-gap margin targets DOM order, not the visual order above. */
+		margin-block-start: 0;
+	}
+
+	.spcs-hero .spcs-grid > .col-1-7 {
+		margin-block-start: 1.25rem;
+	}
+}
+
+/*
+ * Same device as the hero portrait, tuned for the purple closing band: the
+ * hero's purple-wash accent block would vanish against a purple background,
+ * so this one uses a translucent white block instead.
+ */
+.spcs-cta__photo {
+	position: relative;
+	margin-block-start: 0.25rem;
+}
+
+.spcs-cta__photo::before {
+	content: "";
+	position: absolute;
+	inset-block-start: 1.25rem;
+	inset-inline-end: -1.25rem;
+	inline-size: 70%;
+	block-size: 100%;
+	background: rgb(255 255 255 / 0.14);
+	z-index: 0;
+}
+
+.spcs-cta__photo img {
+	position: relative;
+	z-index: 1;
+	inline-size: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	display: block;
+}
+
+@media (max-width: 63.99em) {
+	/* Same reasoning as the hero portrait: full-bleed beats a small inset photo with a stray accent block behind it. */
+	.spcs-cta__photo {
+		margin-block-start: 1.5rem;
+		max-inline-size: none;
+		inline-size: 100vw;
+		margin-inline: calc(50% - 50vw);
+	}
+
+	.spcs-cta__photo::before {
+		content: none;
+	}
+
+	.spcs-cta__photo img {
+		aspect-ratio: 4 / 3;
+	}
+}
+
+.spcs-hero__standfirst {
+	max-inline-size: 44ch;
+	color: var(--plum);
+	opacity: 0.86;
+}
+
+.spcs-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.5rem 2rem;
+	margin-block-start: 2.5rem;
+}
+
+/* Text link that reads as an action without competing with the primary button. */
+/*
+ * `inline-block` plus the vertical padding takes the hit area to 24px, meeting
+ * WCAG 2.2 target size. Without it the link measured 23px — close enough to look
+ * fine and still fail an audit.
+ */
+.spcs-textlink {
+	display: inline-block;
+	font-weight: 600;
+	font-size: 0.9375rem;
+	line-height: 1.4;
+	color: var(--purple);
+	text-decoration: none;
+	border-block-end: 1px solid var(--stone);
+	padding-block: 2px 4px;
+	transition: border-color 0.2s var(--ease-out);
+}
+
+.spcs-textlink:hover {
+	border-block-end-color: var(--purple);
+}
+
+.spcs-textlink::after {
+	content: " →";
+	white-space: nowrap;
+}
+
+/* Credibility strip ---------------------------------------------------- */
+
+.spcs-credibility {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	gap: clamp(1.5rem, 4vw, 3rem);
+	align-items: center;
+	padding-block: var(--wp--preset--spacing--40);
+	border-block: var(--rule);
+}
+
+.spcs-credibility__badge {
+	inline-size: clamp(6rem, 11vw, 8.5rem);
+	flex: none;
+}
+
+.spcs-store__intro {
+	display: flex;
+	align-items: center;
+	gap: var(--wp--preset--spacing--40);
+	margin-block-end: var(--wp--preset--spacing--30);
+}
+
+.spcs-store__intro .wp-block-heading {
+	margin: 0;
+}
+
+.spcs-store__mark {
+	flex: none;
+	inline-size: 9rem;
+}
+
+.spcs-store__mark img {
+	display: block;
+	inline-size: 100%;
+	block-size: auto;
+}
+
+@media (max-width: 46.25em) {
+	.spcs-store__intro {
+		align-items: flex-start;
+		gap: var(--wp--preset--spacing--20);
+	}
+
+	.spcs-store__mark {
+		inline-size: 4.75rem;
+	}
+}
+
+.spcs-credibility__claim {
+	font-family: var(--wp--preset--font-family--display);
+	font-size: var(--wp--preset--font-size--title-sm);
+	font-variation-settings: "SOFT" 28;
+	line-height: 1.3;
+	max-inline-size: 40ch;
+	margin: 0;
+}
+
+@media (max-width: 47.99em) {
+	.spcs-credibility {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* A heavier variant for the badge the copy asks to be shown "prominently". */
+.spcs-credibility--prominent {
+	border-block: none;
+	padding-block: var(--wp--preset--spacing--30);
+}
+
+.spcs-credibility--prominent .spcs-credibility__badge {
+	inline-size: clamp(7.5rem, 14vw, 11rem);
+}
+
+.spcs-credibility--prominent .spcs-credibility__claim {
+	font-size: var(--wp--preset--font-size--title);
+	color: var(--purple-deep);
+}
+
+/* The Glad You're Here swag teaser, sitting under the credibility strip. */
+.spcs-glad-strip {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-top: var(--wp--preset--spacing--30);
+	padding-top: var(--wp--preset--spacing--30);
+	border-block-start: var(--rule);
+}
+
+.spcs-glad-strip img {
+	inline-size: 3rem;
+	block-size: 3rem;
+	flex: none;
+}
+
+.spcs-glad-strip p {
+	margin: 0;
+	font-size: 0.9375rem;
+}
+
+/* Partner / funder logos ----------------------------------------------- */
+
+.spcs-logos {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: clamp(1.75rem, 4vw, 3.5rem);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.spcs-logos img {
+	block-size: clamp(1.75rem, 3vw, 2.5rem);
+	inline-size: auto;
+	/* Desaturated so partner marks read as evidence, not as decoration. */
+	filter: grayscale(1);
+	opacity: 0.62;
+	transition: opacity 0.25s var(--ease-out), filter 0.25s var(--ease-out);
+}
+
+.spcs-logos a:hover img,
+.spcs-logos a:focus-visible img {
+	filter: grayscale(0);
+	opacity: 1;
+}
+
+/* Statistics ----------------------------------------------------------- */
+
+.spcs-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.spcs-stat__value {
+	display: block;
+	font-family: var(--wp--preset--font-family--display);
+	font-size: var(--wp--preset--font-size--statistic);
+	font-weight: 500;
+	font-variation-settings: "SOFT" 28;
+	line-height: 0.92;
+	letter-spacing: -0.03em;
+	color: var(--purple);
+	font-variant-numeric: lining-nums tabular-nums;
+}
+
+.is-dark .spcs-stat__value {
+	color: #fff;
+}
+
+.spcs-stat__label {
+	display: block;
+	margin-block: 1rem 0.75rem;
+	max-inline-size: 24ch;
+	font-size: var(--wp--preset--font-size--base);
+	line-height: 1.45;
+}
+
+.spcs-stat__rule {
+	inline-size: 2.5rem;
+	block-size: 2px;
+	background: var(--coral);
+	margin-block-end: 1.25rem;
+}
+
+/* Three-phase model ---------------------------------------------------- */
+
+.spcs-phases {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: clamp(1.5rem, 3vw, 3rem);
+	counter-reset: phase;
+}
+
+.spcs-phase {
+	border-block-start: 2px solid var(--plum);
+	padding-block-start: 1.5rem;
+}
+
+.spcs-phase__number {
+	font-family: var(--wp--preset--font-family--display);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--coral-ink);
+	display: block;
+	margin-block-end: 0.75rem;
+}
+
+.spcs-phase__title {
+	font-size: var(--wp--preset--font-size--title-sm);
+	margin: 0 0 0.85rem;
+}
+
+.spcs-phase ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.spcs-phase li {
+	position: relative;
+	padding-inline-start: 1.1rem;
+	margin-block-start: 0.6rem;
+	font-size: 0.9375rem;
+	line-height: 1.55;
+	color: var(--plum);
+}
+
+.spcs-phase li::before {
+	content: "";
+	position: absolute;
+	inset-block-start: 0.62em;
+	inset-inline-start: 0;
+	inline-size: 5px;
+	block-size: 5px;
+	background: var(--sky-deep);
+}
+
+@media (max-width: 63.99em) {
+	.spcs-phases {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 2.5rem;
+	}
+}
+
+/* On a purple/plum band, plum borders and coral-ink numbers lose their contrast. */
+.is-dark .spcs-phase {
+	border-block-start-color: rgb(255 255 255 / 0.35);
+}
+
+.is-dark .spcs-phase__number {
+	color: rgb(255 255 255 / 0.72);
+}
+
+.is-dark .spcs-phase li,
+.is-dark .spcs-phase p {
+	color: rgb(255 255 255 / 0.92);
+}
+
+.is-dark .spcs-phase li::before {
+	background: #fff;
+}
+
+/* Pull quote ----------------------------------------------------------- */
+
+.spcs-quote {
+	margin: 0;
+	max-inline-size: 42ch;
+}
+
+/*
+ * Sized between the lead and a heading rather than at heading scale. At full
+ * title size a four-line student quote becomes a ten-line wall — the point of a
+ * pull quote is that the eye takes it in at once.
+ */
+.spcs-quote__text {
+	font-family: var(--wp--preset--font-family--display);
+	font-size: clamp(1.4375rem, 1.7vw, 1.9375rem);
+	font-weight: 450;
+	font-variation-settings: "SOFT" 34;
+	line-height: 1.24;
+	letter-spacing: -0.015em;
+	margin: 0;
+	/* Hanging punctuation keeps the opening quote mark off the measure. */
+	hanging-punctuation: first;
+}
+
+/*
+ * Real typographic quotation marks around the words themselves, rather than a
+ * giant icon floating over the card — sized up and set in the accent colour so
+ * they still read as a deliberate mark, not default punctuation.
+ */
+.spcs-quote__text p:first-of-type::before {
+	content: "\201C";
+	color: var(--coral);
+	font-size: 1.2em;
+}
+
+.spcs-quote__text p:last-of-type::after {
+	content: "\201D";
+	color: var(--coral);
+	font-size: 1.2em;
+}
+
+.spcs-quote__attribution {
+	display: block;
+	margin-block-start: 1.75rem;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--quiet);
+}
+
+.is-dark .spcs-quote__attribution {
+	color: rgb(255 255 255 / 0.72);
+}
+
+/*
+ * The marquee variant used for the home page's student quotes: a continuous
+ * leftward scroll rather than discrete steps. The track holds the quote set
+ * twice back to back and one CSS animation slides it exactly one set-width
+ * (-50%) on a loop, so the seam is invisible. Pure CSS: `:hover`/`:focus-within`
+ * pause it, and reduced motion turns it off completely — nothing here depends
+ * on JS running.
+ */
+.spcs-quote-marquee {
+	margin-block-start: var(--wp--preset--spacing--40);
+	overflow: hidden;
+	/* A soft edge instead of a hard clip where cards scroll in and out. */
+	mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
+}
+
+.spcs-quote-marquee__track {
+	display: flex;
+	align-items: stretch;
+	gap: clamp(2.5rem, 5vw, 4rem);
+	inline-size: max-content;
+	animation: spcs-marquee 26s linear infinite;
+}
+
+.spcs-quote-marquee:hover .spcs-quote-marquee__track,
+.spcs-quote-marquee:focus-within .spcs-quote-marquee__track {
+	animation-play-state: paused;
+}
+
+.spcs-quote-marquee .spcs-quote {
+	flex: 0 0 min(26rem, 78vw);
+	max-inline-size: none;
+}
+
+@keyframes spcs-marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		/* Exactly one copy of the track's width, so the loop point is seamless. */
+		transform: translateX(-50%);
+	}
+}
+
+/*
+ * Freezing the animation mid-scroll would clip most quotes behind the fade
+ * mask with no way to reach them. Under reduced motion the track instead
+ * wraps as a plain static list — the repeated second copy (only ever there to
+ * make the loop seamless) is dropped so nothing reads twice.
+ */
+@media (prefers-reduced-motion: reduce) {
+	.spcs-quote-marquee {
+		overflow: visible;
+		mask-image: none;
+	}
+
+	.spcs-quote-marquee__track {
+		animation: none;
+		flex-wrap: wrap;
+		inline-size: auto;
+	}
+
+	.spcs-quote-marquee__track [aria-hidden="true"] {
+		display: none;
+	}
+}
+
+
+/* Implementation timeline ---------------------------------------------- */
+
+.spcs-timeline {
+	list-style: none;
+	/* The first item's own top rule otherwise sits flush against the heading above it. */
+	margin: 1.75rem 0 0;
+	padding: 0;
+	counter-reset: step;
+}
+
+.spcs-timeline__item {
+	position: relative;
+	padding-inline-start: clamp(3rem, 6vw, 5rem);
+	padding-block: clamp(1.75rem, 3vw, 2.5rem);
+	border-block-start: var(--rule);
+	counter-increment: step;
+}
+
+.spcs-timeline__item:last-child {
+	border-block-end: var(--rule);
+}
+
+.spcs-timeline__item::before {
+	content: counter(step, decimal-leading-zero);
+	position: absolute;
+	inset-inline-start: 0;
+	inset-block-start: clamp(1.75rem, 3vw, 2.5rem);
+	font-family: var(--wp--preset--font-family--display);
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: var(--purple);
+	font-variant-numeric: lining-nums tabular-nums;
+}
+
+.spcs-timeline__when {
+	display: block;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--coral-ink);
+	margin-block-end: 0.5rem;
+}
+
+.spcs-timeline__title {
+	font-size: var(--wp--preset--font-size--title-sm);
+	margin: 0 0 0.6rem;
+}
+
+.spcs-timeline__body {
+	max-inline-size: 58ch;
+	margin: 0;
+	color: var(--plum);
+	opacity: 0.86;
+}
+
+/* Citations ------------------------------------------------------------ */
+
+.spcs-citations {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.spcs-citation {
+	border-block-start: var(--rule);
+	padding-block: 1.75rem;
+}
+
+.spcs-citation:last-child {
+	border-block-end: var(--rule);
+}
+
+.spcs-citation__ref {
+	margin: 0;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	max-inline-size: 68ch;
+	/* APA-style hanging indent — signals that these are real citations. */
+	padding-inline-start: 1.75rem;
+	text-indent: -1.75rem;
+}
+
+.spcs-citation__journal {
+	font-style: italic;
+}
+
+.spcs-citation__finding {
+	margin: 0.85rem 0 0;
+	padding-inline-start: 1.75rem;
+	font-family: var(--wp--preset--font-family--display);
+	font-size: 1.0625rem;
+	line-height: 1.5;
+	color: var(--purple);
+	max-inline-size: 54ch;
+}
+
+.spcs-citation__link {
+	display: inline-block;
+	margin-block-start: 0.75rem;
+	margin-inline-start: 1.75rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+}
+
+/* FAQ ------------------------------------------------------------------ */
+
+.spcs-faq {
+	border-block-start: var(--rule);
+}
+
+.spcs-faq__item {
+	border-block-end: var(--rule);
+}
+
+.spcs-faq__question {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 2rem;
+	inline-size: 100%;
+	padding-block: 1.5rem;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	text-align: start;
+	font-family: var(--wp--preset--font-family--display);
+	font-size: var(--wp--preset--font-size--title-sm);
+	font-variation-settings: "SOFT" 28;
+	line-height: 1.3;
+	color: var(--plum);
+}
+
+.spcs-faq__marker {
+	flex: none;
+	inline-size: 1rem;
+	block-size: 1rem;
+	position: relative;
+	margin-block-start: 0.4em;
+}
+
+.spcs-faq__marker::before,
+.spcs-faq__marker::after {
+	content: "";
+	position: absolute;
+	background: var(--purple);
+	inset-block-start: 50%;
+	inset-inline-start: 0;
+	inline-size: 100%;
+	block-size: 2px;
+	translate: 0 -50%;
+}
+
+.spcs-faq__marker::after {
+	rotate: 90deg;
+	transition: rotate 0.25s var(--ease-out), opacity 0.25s var(--ease-out);
+}
+
+.spcs-faq__question[aria-expanded="true"] .spcs-faq__marker::after {
+	rotate: 0deg;
+	opacity: 0;
+}
+
+.spcs-faq__answer {
+	padding-block-end: 1.75rem;
+	max-inline-size: 62ch;
+}
+
+.spcs-faq__answer[hidden] {
+	display: none;
+}
+
+/* Resource / download list --------------------------------------------- */
+
+.spcs-downloads {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.spcs-download {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.5rem 2rem;
+	padding-block: 1.35rem;
+	border-block-start: var(--rule);
+	text-decoration: none;
+	color: var(--plum);
+}
+
+.spcs-downloads li:last-child .spcs-download {
+	border-block-end: var(--rule);
+}
+
+.spcs-download__title {
+	font-family: var(--wp--preset--font-family--display);
+	font-size: 1.1875rem;
+	font-variation-settings: "SOFT" 28;
+}
+
+.spcs-download:hover .spcs-download__title {
+	color: var(--purple);
+}
+
+.spcs-download__meta {
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--quiet);
+}
+
+/* Facts list (at-a-glance) ---------------------------------------------- */
+
+.spcs-facts {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: 0 clamp(1.5rem, 3vw, 3rem);
+	margin: 0;
+}
+
+.spcs-facts > div {
+	border-block-start: var(--rule);
+	padding-block: 1.5rem;
+}
+
+.spcs-facts dt {
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--quiet);
+	margin-block-end: 0.6rem;
+}
+
+.spcs-facts dd {
+	margin: 0;
+	font-size: 0.9375rem;
+	line-height: 1.55;
+	max-inline-size: 34ch;
+}
+
+/* People (About page) --------------------------------------------------- */
+
+.spcs-people {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.spcs-person__portrait {
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	inline-size: 100%;
+	margin-block-end: 1.25rem;
+	filter: grayscale(1);
+}
+
+.spcs-person__name {
+	font-size: 1.1875rem;
+	margin: 0 0 0.25rem;
+}
+
+.spcs-person__role {
+	font-size: 0.875rem;
+	color: var(--quiet);
+	margin: 0;
+}

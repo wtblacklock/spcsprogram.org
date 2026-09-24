@@ -1,0 +1,43 @@
+/* ── 8. Motion ───────────────────────────────────────────────────────── */
+
+/*
+ * Elements opt in to animation by carrying data-reveal. The CSS below sets the
+ * "before" state only when JavaScript is running AND the visitor has not asked
+ * for reduced motion — so a JS failure or a reduced-motion preference leaves
+ * content fully visible rather than permanently transparent.
+ */
+@media (prefers-reduced-motion: no-preference) {
+	/*
+	 * Only opacity is set here — never a transform.
+	 *
+	 * GSAP animates the `transform` property, and it reads an element's starting
+	 * point out of the computed matrix in pixels. A transform declared in CSS
+	 * therefore becomes part of GSAP's baseline rather than something it clears,
+	 * and the element animates from the offset to the offset. Leaving the
+	 * transform entirely to JS keeps one owner for it.
+	 */
+	.js [data-reveal],
+	.js .spcs-hero__headline,
+	.js .spcs-hero__standfirst,
+	.js .spcs-hero__actions {
+		opacity: 0;
+	}
+}
+
+/*
+ * Reduced motion: no transforms at all. GSAP is told the same thing in JS, so
+ * there is no chance of a transform being applied and left mid-flight.
+ */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+}

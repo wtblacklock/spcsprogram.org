@@ -1,0 +1,186 @@
+/* ── 7. Forms ────────────────────────────────────────────────────────── */
+
+/*
+ * Styles target both our own markup and Fluent Forms' output, so the demo
+ * request form matches the site whichever renders it.
+ */
+/*
+ * No card, no fill colour — a boxed panel here read as a generic template
+ * bolted onto an otherwise unboxed, editorial page. A single top rule marks
+ * it as its own block, the same device the rest of the site uses (see
+ * .spcs-phase), rather than a border on all four sides.
+ */
+.spcs-form {
+	max-inline-size: 30rem;
+	padding-block-start: 2rem;
+	border-block-start: 2px solid var(--plum);
+}
+
+.spcs-form__row {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	align-items: start;
+	gap: 2rem;
+	margin-block-end: 1.5rem;
+}
+
+@media (max-width: 39.99em) {
+	.spcs-form__row {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.spcs-field {
+	display: block;
+	margin-block-end: 1.5rem;
+}
+
+.spcs-form__row .spcs-field {
+	margin-block-end: 0;
+}
+
+.spcs-field__label,
+.spcs-form .ff-el-input--label label {
+	display: block;
+	margin-block-end: 0.45rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--plum);
+}
+
+.spcs-field__hint {
+	display: block;
+	margin-block-start: 0.35rem;
+	font-size: 0.75rem;
+	color: var(--quiet);
+}
+
+.spcs-field__required {
+	color: var(--coral-ink);
+	margin-inline-start: 0.15rem;
+}
+
+.spcs-input,
+.spcs-form :where(input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea) {
+	/*
+	 * Browsers default <input>/<textarea> to content-box but <select> often
+	 * renders as border-box — at 100% width that mismatch left the dropdown
+	 * visibly narrower than every text field next to it.
+	 */
+	box-sizing: border-box;
+	inline-size: 100%;
+	padding: 0.85rem 1rem;
+	font-family: inherit;
+	font-size: 1rem;
+	color: var(--plum);
+	background: #fff;
+	border: 1px solid var(--field-border);
+	border-radius: 2px;
+	transition: border-color 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out);
+}
+
+.spcs-input:focus,
+.spcs-form :where(input, select, textarea):focus {
+	border-color: var(--purple);
+	box-shadow: 0 0 0 3px rgb(103 51 145 / 0.14);
+	outline: none;
+}
+
+.spcs-form textarea {
+	min-block-size: 8rem;
+	resize: vertical;
+}
+
+/* Inline validation message — text, not colour alone. */
+.spcs-field__error,
+.spcs-form .error {
+	display: block;
+	margin-block-start: 0.4rem;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	color: #B3103A;
+}
+
+.spcs-field__error::before,
+.spcs-form .error::before {
+	content: "⚠ ";
+}
+
+:where(.spcs-input, .spcs-form input, .spcs-form select, .spcs-form textarea)[aria-invalid="true"] {
+	border-color: #B3103A;
+}
+
+/* Honeypot — visually and programmatically hidden from real users. */
+.spcs-hp {
+	position: absolute !important;
+	left: -9999px;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.spcs-form button[type="submit"],
+.spcs-form .ff-btn-submit {
+	appearance: none;
+	border: 0;
+	border-radius: 2px;
+	padding: 0.95rem 1.75rem;
+	font-family: inherit;
+	font-size: 0.875rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: #fff;
+	background: var(--purple);
+	cursor: pointer;
+	transition: background-color 0.18s var(--ease-out);
+}
+
+.spcs-form button[type="submit"]:hover,
+.spcs-form .ff-btn-submit:hover {
+	background: var(--purple-deep);
+}
+
+.spcs-form__privacy {
+	margin-block-start: 1.25rem;
+	font-size: 0.8125rem;
+	line-height: 1.55;
+	color: var(--quiet);
+	max-inline-size: 46ch;
+}
+
+/* Error summary shown above the form after a failed submission. */
+.spcs-form__errors {
+	border-inline-start: 3px solid #B3103A;
+	background: #FDF2F4;
+	padding: 1.25rem 1.5rem;
+	margin-block-end: 2rem;
+}
+
+.spcs-form__errors p {
+	margin: 0 0 0.5rem;
+	font-size: 0.9375rem;
+}
+
+.spcs-form__errors ul {
+	margin: 0;
+	padding-inline-start: 1.15rem;
+	font-size: 0.9375rem;
+}
+
+/* Success state after submission. */
+.spcs-form__success {
+	border-inline-start: 3px solid var(--purple);
+	padding: 1.5rem 1.75rem;
+	background: var(--purple-wash);
+}
+
+.spcs-form__success h2 {
+	font-size: var(--wp--preset--font-size--title-sm);
+	margin: 0 0 0.5rem;
+}
+
+.spcs-form__success p {
+	margin: 0;
+	max-inline-size: 48ch;
+}

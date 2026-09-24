@@ -1,0 +1,24 @@
+{
+  "name": "spcsprogram-org",
+  "version": "1.0.0",
+  "private": true,
+  "description": "spcsprogram.org — custom WordPress block theme for the Suicide Prevention for College Student (SPCS) Gatekeepers Program",
+  "license": "UNLICENSED",
+  "scripts": {
+    "fonts": "node tools/copy-fonts.mjs",
+    "build:css": "esbuild themes/spcs/src/css/main.css --bundle --minify --external:*.woff2 --outfile=themes/spcs/build/main.css",
+    "build:editor": "esbuild themes/spcs/src/css/editor.css --bundle --minify --outfile=themes/spcs/build/editor.css",
+    "build:js": "esbuild themes/spcs/src/js/motion.js --bundle --minify --format=iife --target=es2019 --outfile=themes/spcs/build/motion.js",
+    "build": "npm run fonts && npm run build:css && npm run build:editor && npm run build:js",
+    "watch": "node tools/watch.mjs",
+    "wp:start": "node tools/wp-dev.mjs start",
+    "wp:stop": "node tools/wp-dev.mjs stop",
+    "wp:reset": "node tools/wp-dev.mjs reset"
+  },
+  "devDependencies": {
+    "@fontsource-variable/fraunces": "^5.2.5",
+    "@fontsource-variable/instrument-sans": "^5.3.0",
+    "axe-core": "^4.12.1",
+    "esbuild": "^0.25.0"
+  }
+}

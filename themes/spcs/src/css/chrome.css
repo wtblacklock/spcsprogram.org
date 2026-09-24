@@ -1,0 +1,382 @@
+/* ── 6. Header, nav, crisis bar, footer ──────────────────────────────── */
+
+/*
+ * Crisis bar.
+ *
+ * Present on every page, above everything. Deliberately quiet: plum on a wash,
+ * no red, no siren styling. Safe messaging guidance is that help resources
+ * should be steady and easy to find, not alarming — an emergency-red banner
+ * across the top of a marketing site reads as panic and undercuts the tone the
+ * whole program teaches.
+ */
+.spcs-crisis {
+	background: var(--purple-wash);
+	color: var(--plum);
+	font-size: 0.8125rem;
+	line-height: 1.45;
+}
+
+.spcs-crisis__inner {
+	max-inline-size: 78rem;
+	margin-inline: auto;
+	padding: 0.6rem var(--gutter);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.35rem 1.5rem;
+}
+
+.spcs-crisis strong {
+	font-weight: 600;
+}
+
+/*
+ * These links are inline in a sentence, so WCAG's inline exception technically
+ * exempts them from the 24px target size. They are also the most important
+ * thing on the page for someone in crisis on a phone, which is a better reason
+ * to make them comfortably tappable than the rule is.
+ */
+.spcs-crisis a {
+	display: inline-block;
+	padding-block: 4px;
+	color: var(--purple-deep);
+	font-weight: 600;
+	text-underline-offset: 2px;
+}
+
+.spcs-crisis__sep {
+	color: var(--stone);
+	user-select: none;
+}
+
+@media (max-width: 47.99em) {
+	.spcs-crisis__sep {
+		display: none;
+	}
+
+	.spcs-crisis__inner {
+		gap: 0.2rem 1rem;
+	}
+}
+
+/* Header --------------------------------------------------------------- */
+
+.spcs-header {
+	position: sticky;
+	top: 0;
+	z-index: 40;
+	background: var(--paper);
+	border-block-end: var(--rule);
+}
+
+.spcs-header__inner {
+	max-inline-size: 78rem;
+	margin-inline: auto;
+	padding: 1.1rem var(--gutter);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+}
+
+/*
+ * The lockup shrinks rather than holding its intrinsic width. Left as `flex:
+ * none` it pushed the menu button off the right edge of a 390px screen and gave
+ * the whole document a horizontal scrollbar.
+ */
+.spcs-logo {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.7rem;
+	text-decoration: none;
+	color: var(--plum);
+	min-inline-size: 0;
+}
+
+.spcs-logo img,
+.spcs-logo svg {
+	block-size: 2.4rem;
+	inline-size: auto;
+}
+
+.spcs-logo__word {
+	font-family: var(--wp--preset--font-family--display);
+	font-size: 1.0625rem;
+	font-weight: 600;
+	font-variation-settings: "SOFT" 28;
+	letter-spacing: -0.01em;
+	line-height: 1.1;
+}
+
+.spcs-logo__word span {
+	display: block;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: 0.6875rem;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--quiet);
+}
+
+.spcs-nav {
+	display: flex;
+	align-items: center;
+	gap: clamp(1rem, 2.2vw, 2rem);
+}
+
+/*
+ * Without this, a long CTA label ("Become an Instructor") shrinks past its
+ * content width right around the 64em breakpoint — where there is exactly
+ * enough room for the desktop nav but not quite enough for it plus the
+ * button — and wraps to one character per line instead of just staying put.
+ */
+.spcs-nav .wp-block-button {
+	flex: none;
+}
+
+.spcs-nav .wp-block-button__link {
+	white-space: nowrap;
+}
+
+.spcs-nav__list {
+	display: flex;
+	align-items: center;
+	gap: clamp(1rem, 2.2vw, 2rem);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.spcs-nav__link {
+	font-size: 0.9375rem;
+	font-weight: 500;
+	color: var(--plum);
+	text-decoration: none;
+	padding-block: 0.35rem;
+	border-block-end: 2px solid transparent;
+	white-space: nowrap;
+}
+
+.spcs-nav__link:hover,
+.spcs-nav__link[aria-current="page"] {
+	border-block-end-color: var(--coral);
+}
+
+/*
+ * The desktop bar leans on the logo for a way back home, so this item only
+ * needs to exist in the slide-out mobile nav — see the matching override
+ * in the mobile navigation block below.
+ */
+.spcs-nav__home-item {
+	display: none;
+}
+
+/* Mobile navigation ----------------------------------------------------- */
+
+.spcs-nav__toggle {
+	display: none;
+	align-items: center;
+	gap: 0.55rem;
+	background: none;
+	border: 0;
+	padding: 0.4rem 0;
+	font-family: inherit;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--plum);
+	cursor: pointer;
+}
+
+.spcs-nav__bars {
+	inline-size: 1.25rem;
+	block-size: 0.75rem;
+	position: relative;
+}
+
+.spcs-nav__bars::before,
+.spcs-nav__bars::after {
+	content: "";
+	position: absolute;
+	inset-inline: 0;
+	block-size: 2px;
+	background: currentColor;
+	transition: translate 0.2s var(--ease-out), rotate 0.2s var(--ease-out);
+}
+
+.spcs-nav__bars::before { inset-block-start: 0; }
+.spcs-nav__bars::after { inset-block-end: 0; }
+
+.spcs-nav__toggle[aria-expanded="true"] .spcs-nav__bars::before {
+	translate: 0 0.36rem;
+	rotate: 45deg;
+}
+
+.spcs-nav__toggle[aria-expanded="true"] .spcs-nav__bars::after {
+	translate: 0 -0.37rem;
+	rotate: -45deg;
+}
+
+@media (max-width: 63.99em) {
+	.spcs-nav__toggle {
+		display: inline-flex;
+		flex: none;
+	}
+
+	/* The strapline is the first thing to go when space runs out. */
+	.spcs-logo__word span {
+		display: none;
+	}
+
+	.spcs-logo__word {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.spcs-header__inner {
+		gap: 1rem;
+	}
+
+	/*
+	 * The closed off-canvas panel is hidden with `visibility`, not only pushed
+	 * out of frame. A fixed element translated past the right edge still extends
+	 * the scrollable area, which put a horizontal scrollbar on every mobile page;
+	 * `visibility: hidden` also correctly takes the links out of the tab order.
+	 */
+	.spcs-nav {
+		position: fixed;
+		inset: 0 0 0 auto;
+		inline-size: min(22rem, 88vw);
+		background: var(--paper);
+		border-inline-start: var(--rule);
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: flex-start;
+		gap: 0;
+		padding: 5.5rem var(--gutter) 2rem;
+		translate: 100% 0;
+		visibility: hidden;
+		transition: translate 0.3s var(--ease-out), visibility 0s linear 0.3s;
+		overflow-y: auto;
+	}
+
+	.spcs-nav[data-open="true"] {
+		translate: 0 0;
+		visibility: visible;
+		transition: translate 0.3s var(--ease-out);
+	}
+
+	.spcs-nav__list {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+	}
+
+	.spcs-nav__home-item {
+		display: block;
+	}
+
+	.spcs-nav__link {
+		display: block;
+		padding-block: 1rem;
+		border-block-end: var(--rule);
+		font-size: 1.0625rem;
+	}
+
+	.spcs-nav__link:hover,
+	.spcs-nav__link[aria-current="page"] {
+		border-block-end-color: var(--stone);
+		color: var(--purple);
+	}
+
+	.spcs-nav .wp-block-button {
+		margin-block-start: 1.75rem;
+	}
+}
+
+/* Footer ---------------------------------------------------------------- */
+
+.spcs-footer {
+	background: var(--plum);
+	color: #fff;
+	padding-block: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
+	padding-inline: var(--gutter);
+}
+
+.spcs-footer__inner {
+	max-inline-size: 78rem;
+	margin-inline: auto;
+}
+
+.spcs-footer__top {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+	gap: clamp(2.5rem, 5vw, 5rem);
+	padding-block-end: var(--wp--preset--spacing--50);
+	border-block-end: var(--rule-dark);
+}
+
+.spcs-footer__cols {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+	gap: 2rem;
+}
+
+.spcs-footer h2 {
+	font-size: var(--wp--preset--font-size--title);
+	max-inline-size: 16ch;
+	margin: 0 0 1.5rem;
+}
+
+.spcs-footer h3 {
+	font-family: var(--wp--preset--font-family--body);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: rgb(255 255 255 / 0.6);
+	margin: 0 0 1rem;
+}
+
+.spcs-footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.spcs-footer li + li {
+	margin-block-start: 0.6rem;
+}
+
+.spcs-footer a {
+	color: #fff;
+	font-size: 0.9375rem;
+	text-decoration: none;
+	border-block-end: 1px solid transparent;
+}
+
+.spcs-footer a:hover {
+	border-block-end-color: rgb(255 255 255 / 0.5);
+}
+
+.spcs-footer__bottom {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 1rem 2rem;
+	padding-block-start: var(--wp--preset--spacing--30);
+	font-size: 0.75rem;
+	color: rgb(255 255 255 / 0.66);
+}
+
+.spcs-footer__bottom a {
+	font-size: inherit;
+}
+
+@media (max-width: 63.99em) {
+	.spcs-footer__top {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}

@@ -1,0 +1,185 @@
+/* ── 2. Typographic details ──────────────────────────────────────────── */
+
+/*
+ * Fraunces carries an optional SOFT axis. Dialling it up rounds the terminals
+ * just enough to take the institutional hardness off a serif — the "strong but
+ * soft" requirement, expressed in the typeface itself rather than in rounded
+ * corners and pastel gradients.
+ */
+:where(h1, h2, h3, .spcs-display, .wp-block-quote, .wp-block-pullquote) {
+	font-variation-settings: "SOFT" 28;
+	text-wrap: balance;
+}
+
+h1 {
+	font-weight: 560;
+}
+
+/* List items and definition text wrap the same way body copy does — a stray
+   last word alone on its own line reads as sloppy wherever it happens. */
+p, li, dd {
+	text-wrap: pretty;
+}
+
+/* Constrain measure on prose regardless of the container it sits in. */
+.spcs-prose > :where(p, ul, ol, blockquote) {
+	max-width: 62ch;
+}
+
+.spcs-prose > :where(h2, h3) {
+	max-width: 22ch;
+}
+
+.spcs-prose > * + * {
+	margin-block-start: 1.15em;
+}
+
+.spcs-prose > :where(h2, h3) {
+	margin-block-start: 2.25em;
+}
+
+.spcs-lead {
+	font-size: var(--wp--preset--font-size--lead);
+	line-height: 1.5;
+	letter-spacing: -0.012em;
+	max-width: 34ch;
+}
+
+.spcs-prose .spcs-lead {
+	max-width: 46ch;
+}
+
+/*
+ * Eyebrow: the small tracked label that opens a section. Paired with a hairline
+ * rule it does the work that an icon-in-a-circle does on a template site, with
+ * none of the sameness.
+ */
+.spcs-eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin: 0 0 1.75rem;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--quiet);
+}
+
+.spcs-eyebrow::before {
+	content: "";
+	inline-size: 1.75rem;
+	block-size: 2px;
+	flex: none;
+	background: var(--coral);
+}
+
+/*
+ * Page openers pair an eyebrow + heading column with a plain intro-paragraph
+ * column. Without this, the paragraph sits level with the eyebrow (the first
+ * thing in the other column) rather than with the heading below it — this
+ * offsets it by the eyebrow's own height plus its margin so the two lines of
+ * text actually start together.
+ */
+.spcs-opener-intro {
+	margin-block-start: 2.75rem;
+}
+
+@media (max-width: 63.99em) {
+	.spcs-opener-intro {
+		margin-block-start: 1.75rem;
+	}
+}
+
+.is-dark .spcs-eyebrow {
+	color: rgb(255 255 255 / 0.72);
+}
+
+.is-dark .spcs-eyebrow::before {
+	background: var(--blush);
+}
+
+/* Footnote / source line under a statistic or claim. */
+.spcs-source {
+	font-size: 0.75rem;
+	line-height: 1.5;
+	color: var(--quiet);
+	letter-spacing: 0.005em;
+}
+
+.is-dark .spcs-source {
+	color: rgb(255 255 255 / 0.66);
+}
+
+/*
+ * Crisis-line callout — needs to read as help, not fine print. Default styling
+ * suits a light section; the `.is-dark` override below flips it for a purple
+ * panel, where white-on-white would otherwise vanish.
+ */
+.spcs-crisis-callout {
+	background: transparent;
+	color: var(--plum);
+	max-inline-size: 40rem;
+	padding: 1.25rem 1.5rem;
+	border: 1px solid var(--field-border);
+	border-radius: 2px;
+}
+
+.spcs-crisis-callout p {
+	margin: 0;
+	color: inherit;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+}
+
+.spcs-crisis-callout a {
+	color: var(--purple);
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.spcs-crisis-callout a:hover,
+.spcs-crisis-callout a:focus-visible {
+	color: var(--purple-deep);
+}
+
+.is-dark .spcs-crisis-callout {
+	color: #fff;
+	border-color: rgb(255 255 255 / 0.55);
+}
+
+.is-dark .spcs-crisis-callout a {
+	color: #fff;
+}
+
+.is-dark .spcs-crisis-callout a:hover,
+.is-dark .spcs-crisis-callout a:focus-visible {
+	color: #fff;
+	text-decoration-color: transparent;
+}
+
+/*
+ * `dd` and `dt` were missing here originally, which left the definition list on
+ * the Resources page rendering plum-on-plum and its labels at 2.5:1 — on the
+ * block listing the crisis lines. Any element that can carry text inside a dark
+ * band belongs in this selector.
+ */
+.is-dark,
+.is-dark :where(h1, h2, h3, h4, p, li, dd, strong, em) {
+	color: #fff;
+}
+
+.is-dark .spcs-facts dt {
+	color: rgb(255 255 255 / 0.78);
+}
+
+.is-dark .spcs-facts > div {
+	border-block-start: var(--rule-dark);
+}
+
+.is-dark a:where(:not(.wp-element-button)) {
+	color: #fff;
+	text-decoration-color: rgb(255 255 255 / 0.45);
+}

@@ -1,0 +1,35 @@
+/*
+ * Editor-only styles.
+ *
+ * The goal is that a pattern looks in the Site Editor roughly the way it looks
+ * on the front end, so an editor can trust what they see. theme.json already
+ * carries colour and type into the editor; this file adds the component classes
+ * the editor canvas can't infer, plus a few authoring affordances.
+ */
+
+@import "./components.css";
+@import "./layout.css";
+@import "./typography.css";
+
+/* The editor canvas supplies its own padding — neutralise our full-bleed hack. */
+.editor-styles-wrapper .spcs-bleed {
+	inline-size: auto;
+	margin-inline: 0;
+}
+
+/* Sticky positioning fights the editor canvas; disable it while authoring. */
+.editor-styles-wrapper .spcs-sticky {
+	position: static;
+}
+
+/*
+ * Label locked structural areas so an editor understands why a block will not
+ * move, instead of assuming the editor is broken.
+ */
+.editor-styles-wrapper .spcs-locked-note {
+	font-family: var(--wp--preset--font-family--body);
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--wp--preset--color--quiet);
+}

@@ -1,0 +1,30 @@
+/*
+ * spcsprogram.org — front-end styles
+ *
+ * Design tokens (color, type scale, spacing) are declared in theme.json so the
+ * WordPress Site Editor exposes them natively. This file adds the editorial
+ * layout devices that blocks alone can't express.
+ *
+ * Deliberately NOT a utility framework: block markup is stored in the database,
+ * so utility class names saved into post content would silently lose their
+ * styles whenever the build re-scans only the theme files. Semantic component
+ * classes survive any amount of client editing.
+ *
+ * Sections
+ *   1. Base & accessibility
+ *   2. Typographic details
+ *   3. Layout primitives
+ *   4. The colour-block device
+ *   5. Components
+ *   6. Header, nav, crisis bar, footer
+ *   7. Forms
+ *   8. Motion
+ */
+
+@import "./base.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./components.css";
+@import "./chrome.css";
+@import "./forms.css";
+@import "./motion.css";

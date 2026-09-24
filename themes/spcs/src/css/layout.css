@@ -1,0 +1,97 @@
+/* ── 3. Layout primitives ────────────────────────────────────────────── */
+
+/*
+ * One 12-column grid underlies every section. Sections claim different spans
+ * (7/5, 5/7, 4/8, full) so the page has an irregular rhythm instead of the
+ * identical-band cadence that makes a site read as generated.
+ */
+.spcs-grid {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: 0 clamp(1.25rem, 3vw, 2.75rem);
+}
+
+@media (max-width: 63.99em) {
+	.spcs-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.spcs-grid > * {
+		grid-column: 1 / -1 !important;
+	}
+}
+
+/* Column spans, desktop only (the media query above collapses them). */
+.col-1-5 { grid-column: 1 / span 5; }
+.col-1-6 { grid-column: 1 / span 6; }
+.col-1-7 { grid-column: 1 / span 7; }
+.col-1-8 { grid-column: 1 / span 8; }
+.col-2-6 { grid-column: 2 / span 6; }
+.col-2-7 { grid-column: 2 / span 7; }
+.col-4-8 { grid-column: 4 / span 8; }
+.col-6-7 { grid-column: 6 / span 7; }
+.col-7-5 { grid-column: 7 / span 5; }
+.col-7-6 { grid-column: 7 / span 6; }
+.col-8-5 { grid-column: 8 / span 5; }
+.col-9-4 { grid-column: 9 / span 4; }
+
+/*
+ * Section shell: consistent horizontal gutter, varied vertical rhythm.
+ * Sized a step past the raw spacing tokens (rather than reusing --60/--50/--70
+ * directly) so section rhythm can be tuned without moving the same tokens used
+ * for margins elsewhere on the page.
+ */
+.spcs-section {
+	padding-inline: var(--gutter);
+	padding-block: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.spcs-section--tight {
+	padding-block: clamp(2.375rem, 4vw, 3.25rem);
+}
+
+.spcs-section--chapter {
+	padding-block: clamp(3.5rem, 7vw, 6.25rem);
+}
+
+.spcs-section--flush-top {
+	padding-block-start: 0;
+}
+
+.spcs-shell {
+	max-inline-size: 78rem;
+	margin-inline: auto;
+}
+
+.spcs-shell--narrow {
+	max-inline-size: 54rem;
+}
+
+/* Full-bleed escape hatch for photography inside a padded section. */
+.spcs-bleed {
+	inline-size: 100vw;
+	margin-inline: calc(50% - 50vw);
+}
+
+/* Hairline divider used instead of boxes and shadows. */
+.spcs-rule {
+	border: 0;
+	border-block-start: var(--rule);
+	margin: 0;
+}
+
+.is-dark .spcs-rule {
+	border-block-start: var(--rule-dark);
+}
+
+/*
+ * Sticky sidebar for long reference pages (Evidence, Implementation) so the
+ * section heading stays with the reader while the list scrolls.
+ */
+@media (min-width: 64em) {
+	.spcs-sticky {
+		position: sticky;
+		top: 7rem;
+		align-self: start;
+	}
+}

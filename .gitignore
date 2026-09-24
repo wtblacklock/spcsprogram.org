@@ -1,0 +1,7 @@
+node_modules/
+.wp/
+.DS_Store
+*.log
+
+# Compiled assets are committed so the theme folder can be zipped and uploaded
+# to a managed host without running a build there. Do not ignore build/.

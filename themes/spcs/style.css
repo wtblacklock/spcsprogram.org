@@ -1,0 +1,20 @@
+/*
+Theme Name: SPCS
+Theme URI: https://spcsprogram.org
+Author: Clover Educational Consulting Group
+Author URI: https://clovered.org
+Description: Custom block theme for spcsprogram.org — the Suicide Prevention for College Student (SPCS) Gatekeepers Program. Editorial layout system built on the program's own print identity, with crisis resources and safe-messaging guardrails built in.
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 6.8
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: spcs
+Tags: full-site-editing, block-patterns, education, accessibility-ready
+*/
+
+/*
+ * Front-end styles are compiled to build/main.css — see src/css/.
+ * This file exists for the theme header and is intentionally otherwise empty.
+ */
