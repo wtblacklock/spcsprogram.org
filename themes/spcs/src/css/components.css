@@ -582,7 +582,7 @@
 	align-items: stretch;
 	gap: clamp(2.5rem, 5vw, 4rem);
 	inline-size: max-content;
-	animation: spcs-marquee 26s linear infinite;
+	animation: spcs-marquee 48s linear infinite;
 }
 
 .spcs-quote-marquee:hover .spcs-quote-marquee__track,
@@ -722,7 +722,7 @@
 	font-family: var(--wp--preset--font-family--display);
 	font-size: 1.0625rem;
 	line-height: 1.5;
-	color: var(--purple);
+	color: var(--plum);
 	max-inline-size: 54ch;
 }
 
@@ -733,6 +733,11 @@
 	font-size: 0.8125rem;
 	font-weight: 600;
 	letter-spacing: 0.04em;
+	color: var(--plum);
+}
+
+.spcs-citation__link:hover {
+	border-block-end-color: var(--plum);
 }
 
 /* FAQ ------------------------------------------------------------------ */

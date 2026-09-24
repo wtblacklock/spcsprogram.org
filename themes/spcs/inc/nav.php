@@ -205,7 +205,7 @@ function spcs_render_footer(): void {
 						</ul>
 					</div>
 					<div>
-						<h3><?php esc_html_e( 'Organisation', 'spcs' ); ?></h3>
+						<h3><?php esc_html_e( 'Organization', 'spcs' ); ?></h3>
 						<ul>
 							<li><a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>"><?php esc_html_e( 'FAQ', 'spcs' ); ?></a></li>
 							<li><a href="<?php echo esc_url( home_url( '/become-an-instructor/#connect' ) ); ?>"><?php esc_html_e( 'Contact', 'spcs' ); ?></a></li>

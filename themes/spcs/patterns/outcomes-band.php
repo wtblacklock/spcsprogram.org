@@ -38,7 +38,7 @@
 		<!-- /wp:group -->
 
 		<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-		<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: these three stats (45%, 900+, 3 grants) aren\'t drawn from the site spec. Please confirm they\'re accurate, correct them, or tell us to pull them before launch.', 'spcs' ); ?></p>
+		<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: these three stats aren\'t in the site spec, so we need your sign-off before launch. Specifically: is 45% the right figure for the 12-week peer-support follow-up (and is "Ross et al., 2023" the right citation for it — it isn\'t one of the four studies listed below)? Is 900+ students trained across six institutions still accurate today? And can you confirm the three SAMHSA grants funded work specifically in North Carolina, Texas and Minnesota? If any of this is wrong or you\'d rather we pull a stat entirely, just say so.', 'spcs' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->

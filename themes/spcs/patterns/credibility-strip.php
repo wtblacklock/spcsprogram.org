@@ -60,15 +60,11 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<?php
 				printf(
 					/* translators: %s: link to Clover Educational Consulting Group. */
-					esc_html__( 'Developed by licensed psychologists at %s. Dissemination supported by three SAMHSA Mental Health Awareness Training grants.', 'spcs' ),
+					esc_html__( 'Developed by experts at %s.', 'spcs' ),
 					'<a href="https://clovered.org" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Clover Educational Consulting Group', 'spcs' ) . '</a>'
 				);
 				?>
 			</p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:paragraph {"className":"col-1-5 spcs-review-note"} -->
-			<p class="col-1-5 spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: "three SAMHSA grants" isn\'t in the site spec. Please confirm the count and funder name.', 'spcs' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:group {"className":"col-7-6","layout":{"type":"default"}} -->

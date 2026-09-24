@@ -64,6 +64,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+				<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: this closing "Next step" band isn\'t in the site spec either. We added it because a page that only explains the problem and never asks for anything tends to lose the reader — this is the one clear, unmissable point where someone ready to act can actually do something, right before they\'d otherwise leave. Flag if you\'d rather it end on something softer.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 

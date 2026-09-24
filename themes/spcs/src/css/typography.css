@@ -50,6 +50,45 @@ p, li, dd {
 }
 
 /*
+ * Legal/statement pages (Privacy, Accessibility) are otherwise a flat wall of
+ * h2-then-paragraph — a hairline rule ahead of each section gives them the
+ * same scannable rhythm as the citations and FAQ lists elsewhere on the site.
+ */
+.spcs-prose--legal > h2 {
+	border-block-start: var(--rule);
+	padding-block-start: 1.75rem;
+}
+
+.spcs-prose--legal > h2:first-child {
+	border-block-start: none;
+	padding-block-start: 0;
+}
+
+/* A checkmark reads better than a bullet for a list of things already done. */
+.spcs-checklist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.spcs-checklist li {
+	position: relative;
+	padding-inline-start: 1.75rem;
+}
+
+.spcs-checklist li + li {
+	margin-block-start: 0.85rem;
+}
+
+.spcs-checklist li::before {
+	content: "✓";
+	position: absolute;
+	inset-inline-start: 0;
+	color: var(--purple);
+	font-weight: 700;
+}
+
+/*
  * Eyebrow: the small tracked label that opens a section. Paired with a hairline
  * rule it does the work that an icon-in-a-circle does on a template site, with
  * none of the sameness.
@@ -121,12 +160,25 @@ p, li, dd {
 	display: inline-block;
 	max-inline-size: 46ch;
 	padding: 0.75rem 1rem;
-	border: 2px dashed #ff3b3b;
-	background: rgb(255 59 59 / 0.08);
-	color: #ff3b3b;
+	border: 2px dashed #b3103a;
+	background: rgb(179 16 58 / 0.07);
+	color: #b3103a;
 	font-size: 0.8125rem;
 	font-weight: 700;
 	line-height: 1.5;
+}
+
+/*
+ * #b3103a (the site's existing error red) reads at 2:1 against the dark
+ * plum/purple panels this also has to sit on — nowhere near AA, and even
+ * --blush only clears the darkest panel (plum), not the lighter purple one —
+ * so the text goes white for is-dark, which clears both comfortably. Blush
+ * stays on the border/background wash since those only need 3:1 (non-text).
+ */
+.is-dark .spcs-review-note {
+	border-color: var(--blush);
+	background: rgb(245 147 149 / 0.14);
+	color: #fff;
 }
 
 /*

@@ -105,7 +105,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- /wp:paragraph -->
 
 				<!-- wp:paragraph {"className":"spcs-review-note"} -->
-				<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: this isn\'t actually true yet — the homepage stats (45%, 900+, 3 grants) don\'t cite any of these four studies. Once those stats are confirmed, either source them here too or soften this line.', 'spcs' ); ?></p>
+				<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: the headline "Peer-reviewed, and still being reviewed." isn\'t in the site spec — we wrote it to introduce the citations below in one line, signalling that the evidence base is real but still growing (the GTOP study is still under review). Flag if you\'d rather this say something else.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

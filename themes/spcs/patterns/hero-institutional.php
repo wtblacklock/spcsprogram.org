@@ -109,15 +109,11 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 		<!-- wp:group {"className":"spcs-panel__block is-dark","layout":{"type":"default"}} -->
 		<div class="wp-block-group spcs-panel__block is-dark">
 			<!-- wp:paragraph {"className":"spcs-eyebrow"} -->
-			<p class="spcs-eyebrow"><?php esc_html_e( 'Nationally recognised', 'spcs' ); ?></p>
+			<p class="spcs-eyebrow"><?php esc_html_e( 'Nationally recognized', 'spcs' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"fontSize":"lead"} -->
-			<p class="has-lead-font-size"><?php esc_html_e( 'Accepted into the Suicide Prevention Resource Center’s Best Practices Registry in 2023 — the only listed program developed specifically for college students.', 'spcs' ); ?></p>
-			<!-- /wp:paragraph -->
-
-			<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
-			<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--20)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: the site spec says SPCS is the ONLY Best Practice program for college campuses, but not the year it was accepted to the registry. Please confirm "2023" is correct.', 'spcs' ); ?></p>
+			<p class="has-lead-font-size"><?php esc_html_e( 'Approved by the Suicide Prevention Resource Center as a Best Practice in Suicide Prevention', 'spcs' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->

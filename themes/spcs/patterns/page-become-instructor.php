@@ -29,6 +29,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<h1 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Bring SPCS Gatekeepers to your campus yourself.', 'spcs' ); ?></h1>
 				<!-- /wp:heading -->
 
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: this headline isn\'t in the site spec, which starts this page straight from "Suicide Prevention for College Students (SPCS) is delivered on college campuses by Certified Instructors." We wrote a headline because the page needed one, and framed it around self-service — "yourself" — since that\'s the whole pitch of becoming an instructor rather than requesting a demo. Flag if you\'d rather it say something else.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
+
 				<!-- wp:buttons {"className":"spcs-hero__actions"} -->
 				<div class="wp-block-buttons spcs-hero__actions">
 					<!-- wp:button -->
@@ -105,6 +109,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- wp:heading -->
 				<h2 class="wp-block-heading"><?php esc_html_e( 'Everything you need to run it.', 'spcs' ); ?></h2>
 				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: the spec just labels this list "What\'s included" — the sentence heading is ours, added to give the list a point (that this is a complete kit, not a partial one) rather than just a label. Every item below it is straight from the spec.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 
@@ -275,6 +283,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					</li>
 				</ol>
 				<!-- /wp:html -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+				<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: this "What happens next" timeline isn\'t in the site spec. We added it because a team-training inquiry form is a bigger ask than a newsletter signup — someone filling it out wants to know what happens to their information and when they\'ll hear back, and a page that leaves that unanswered reads as riskier to fill out. Please confirm the two-working-days, twenty-to-thirty-minute-call and quote steps are actually accurate to how this works today.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>

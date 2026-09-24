@@ -97,7 +97,7 @@ function spcs_core_program_schema(): array {
 			'audienceType'          => 'College and university students',
 		),
 		'teaches'             => array(
-			__( 'Recognising warning signs of suicide risk in peers', 'spcs-core' ),
+			__( 'Recognizing warning signs of suicide risk in peers', 'spcs-core' ),
 			__( 'Conducting a basic suicide risk assessment', 'spcs-core' ),
 			__( 'Referring peers to campus, local and national resources', 'spcs-core' ),
 			__( 'Safe messaging about suicide', 'spcs-core' ),

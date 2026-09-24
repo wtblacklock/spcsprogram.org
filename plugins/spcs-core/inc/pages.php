@@ -30,15 +30,7 @@ function spcs_core_pages(): array {
 		'home'                 => array(
 			'title'    => __( 'Home', 'spcs-core' ),
 			'front'    => true,
-			'patterns' => array(
-				'spcs/hero-institutional',
-				'spcs/credibility-strip',
-				'spcs/what-is-a-gatekeeper',
-				'spcs/three-phase-model',
-				'spcs/outcomes-band',
-				'spcs/voices',
-				'spcs/cta-closing',
-			),
+			'patterns' => array( 'spcs/page-home' ),
 		),
 		'about'                => array(
 			'title'    => __( 'About SPCS', 'spcs-core' ),

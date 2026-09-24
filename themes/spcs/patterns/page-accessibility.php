@@ -12,8 +12,20 @@
  */
 
 ?>
-<!-- wp:group {"metadata":{"name":"Opener"},"className":"spcs-section spcs-hero","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section spcs-hero">
+<!-- wp:group {"metadata":{"name":"Editorial note"},"className":"spcs-section spcs-section--tight","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section spcs-section--tight">
+	<!-- wp:group {"className":"spcs-shell spcs-shell--narrow","layout":{"type":"default"}} -->
+	<div class="wp-block-group spcs-shell spcs-shell--narrow">
+		<!-- wp:paragraph {"className":"spcs-review-note"} -->
+		<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: we added this page because a public accessibility statement is standard best practice, and campus IT/procurement teams reviewing SPCS will typically ask for one before adopting the program. It matters even more here specifically: this site carries crisis resources (988, the Crisis Text Line), and a student in crisis has to actually be able to reach and read them with a screen reader, keyboard-only navigation, or at high zoom. This page currently describes what we\'ve built toward, not an audited or certified result — flag if you\'d rather it say something more conservative until a real audit happens.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"name":"Opener"},"className":"spcs-section spcs-hero spcs-section--flush-top","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section spcs-hero spcs-section--flush-top">
 	<!-- wp:group {"className":"spcs-shell spcs-shell--narrow","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell spcs-shell--narrow">
 		<!-- wp:paragraph {"className":"spcs-eyebrow"} -->
@@ -28,10 +40,10 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Statement"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section">
-	<!-- wp:group {"className":"spcs-shell spcs-shell--narrow spcs-prose","layout":{"type":"default"}} -->
-	<div class="wp-block-group spcs-shell spcs-shell--narrow spcs-prose">
+<!-- wp:group {"metadata":{"name":"Statement"},"className":"spcs-section spcs-section--flush-top","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section spcs-section--flush-top">
+	<!-- wp:group {"className":"spcs-shell spcs-shell--narrow spcs-prose spcs-prose--legal","layout":{"type":"default"}} -->
+	<div class="wp-block-group spcs-shell spcs-shell--narrow spcs-prose spcs-prose--legal">
 		<!-- wp:heading {"level":2} -->
 		<h2 class="wp-block-heading"><?php esc_html_e( 'Standard we work to', 'spcs' ); ?></h2>
 		<!-- /wp:heading -->
@@ -44,17 +56,17 @@
 		<h2 class="wp-block-heading"><?php esc_html_e( 'What that means in practice', 'spcs' ); ?></h2>
 		<!-- /wp:heading -->
 
-		<!-- wp:list -->
-		<ul class="wp-block-list">
+		<!-- wp:html -->
+		<ul class="spcs-checklist">
 			<li><?php esc_html_e( 'Every interactive element can be reached and operated with a keyboard alone, and always shows a visible focus indicator.', 'spcs' ); ?></li>
-			<li><?php esc_html_e( 'Text meets AA contrast against its background. Colour is never the only way information is conveyed.', 'spcs' ); ?></li>
+			<li><?php esc_html_e( 'Text meets AA contrast against its background. Color is never the only way information is conveyed.', 'spcs' ); ?></li>
 			<li><?php esc_html_e( 'Animation is removed entirely for anyone whose system asks for reduced motion.', 'spcs' ); ?></li>
 			<li><?php esc_html_e( 'Headings, landmarks and lists are marked up semantically so screen readers can navigate by structure.', 'spcs' ); ?></li>
-			<li><?php esc_html_e( 'Form fields have real labels, and errors are described in words rather than signalled only by colour.', 'spcs' ); ?></li>
+			<li><?php esc_html_e( 'Form fields have real labels, and errors are described in words rather than signaled only by color.', 'spcs' ); ?></li>
 			<li><?php esc_html_e( 'Photographs carry alternative text; decorative graphics are hidden from assistive technology.', 'spcs' ); ?></li>
 			<li><?php esc_html_e( 'The layout works at 400% zoom without horizontal scrolling.', 'spcs' ); ?></li>
 		</ul>
-		<!-- /wp:list -->
+		<!-- /wp:html -->
 
 		<!-- wp:heading {"level":2} -->
 		<h2 class="wp-block-heading"><?php esc_html_e( 'Known limitations', 'spcs' ); ?></h2>

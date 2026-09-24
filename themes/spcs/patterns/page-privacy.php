@@ -12,8 +12,24 @@
  */
 
 ?>
-<!-- wp:group {"metadata":{"name":"Opener"},"className":"spcs-section spcs-hero","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section spcs-hero">
+<!-- wp:group {"metadata":{"name":"Editorial notes"},"className":"spcs-section spcs-section--tight","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section spcs-section--tight">
+	<!-- wp:group {"className":"spcs-shell spcs-shell--narrow","layout":{"type":"default"}} -->
+	<div class="wp-block-group spcs-shell spcs-shell--narrow">
+		<!-- wp:paragraph {"className":"spcs-review-note"} -->
+		<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — this page is a starting draft. Have counsel review the language below before the site goes live; nothing here should be treated as final legal wording yet.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+		<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--20)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: we added this page because a written privacy notice is standard best practice for any site that collects personal information through a form, which this one does. It gives campus partners something concrete for their own IT/procurement security review, and it builds trust with a visitor being asked to hand over their name and email on a mental-health-adjacent site. Once counsel signs off on the wording, this note can come out.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"name":"Opener"},"className":"spcs-section spcs-hero spcs-section--flush-top","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section spcs-hero spcs-section--flush-top">
 	<!-- wp:group {"className":"spcs-shell spcs-shell--narrow","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell spcs-shell--narrow">
 		<!-- wp:paragraph {"className":"spcs-eyebrow"} -->
@@ -28,20 +44,16 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Notice"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section">
-	<!-- wp:group {"className":"spcs-shell spcs-shell--narrow spcs-prose","layout":{"type":"default"}} -->
-	<div class="wp-block-group spcs-shell spcs-shell--narrow spcs-prose">
-		<!-- wp:paragraph -->
-		<p><strong><?php esc_html_e( 'This page is a starting draft. Have it reviewed by counsel before the site goes live.', 'spcs' ); ?></strong></p>
-		<!-- /wp:paragraph -->
-
+<!-- wp:group {"metadata":{"name":"Notice"},"className":"spcs-section spcs-section--flush-top","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section spcs-section--flush-top">
+	<!-- wp:group {"className":"spcs-shell spcs-shell--narrow spcs-prose spcs-prose--legal","layout":{"type":"default"}} -->
+	<div class="wp-block-group spcs-shell spcs-shell--narrow spcs-prose spcs-prose--legal">
 		<!-- wp:heading {"level":2} -->
 		<h2 class="wp-block-heading"><?php esc_html_e( 'Information you give us', 'spcs' ); ?></h2>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph -->
-		<p><?php esc_html_e( 'If you complete the team training inquiry form we collect your name, email address, organisation, role, indicated timeline and anything you write in the message field. We use it to reply to you about the program. We do not sell it, rent it, or use it for advertising.', 'spcs' ); ?></p>
+		<p><?php esc_html_e( 'If you complete the team training inquiry form we collect your name, email address, organization, role, indicated timeline and anything you write in the message field. We use it to reply to you about the program. We do not sell it, rent it, or use it for advertising.', 'spcs' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:heading {"level":2} -->
@@ -65,7 +77,7 @@
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph -->
-		<p><?php esc_html_e( 'Training inquiries are kept while the enquiry is active and for a reasonable period afterwards. Write to us and we will delete yours.', 'spcs' ); ?></p>
+		<p><?php esc_html_e( 'Training inquiries are kept while the inquiry is active and for a reasonable period afterwards. Write to us and we will delete yours.', 'spcs' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:heading {"level":2} -->

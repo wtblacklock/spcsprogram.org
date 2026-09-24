@@ -34,7 +34,7 @@ function spcs_register_pattern_categories(): void {
 		),
 		'spcs-editorial'  => array(
 			'label'       => __( 'SPCS — editorial blocks', 'spcs' ),
-			'description' => __( 'Text and image arrangements, pull quotes and colour-block panels.', 'spcs' ),
+			'description' => __( 'Text and image arrangements, pull quotes and color-block panels.', 'spcs' ),
 		),
 		'spcs-conversion' => array(
 			'label'       => __( 'SPCS — calls to action', 'spcs' ),

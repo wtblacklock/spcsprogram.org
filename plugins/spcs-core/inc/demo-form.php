@@ -100,7 +100,6 @@ function spcs_core_demo_fields(): array {
 			'label'    => __( 'Anything you want us to know', 'spcs-core' ),
 			'type'     => 'textarea',
 			'required' => false,
-			'hint'     => __( 'Your group size, whether you would prefer virtual or in person, questions you already have.', 'spcs-core' ),
 		),
 	);
 }

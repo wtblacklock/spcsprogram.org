@@ -56,7 +56,7 @@ function spcs_core_seed_data(): array {
 					'spcs_year'    => '2024',
 					'spcs_journal' => 'Crisis: The Journal of Crisis Intervention and Suicide Prevention',
 					'spcs_locator' => '45(1), 41–47.',
-					'spcs_finding' => 'Three years of data across multiple institutions show sustained gains in suicide prevention knowledge and self-efficacy, and reduced stigmatising beliefs.',
+					'spcs_finding' => 'Three years of data across multiple institutions show sustained gains in suicide prevention knowledge and self-efficacy, and reduced stigmatizing beliefs.',
 				),
 			),
 			array(
@@ -66,7 +66,7 @@ function spcs_core_seed_data(): array {
 					'spcs_year'    => '2021',
 					'spcs_journal' => 'Crisis: The Journal of Crisis Intervention and Suicide Prevention',
 					'spcs_locator' => '42(1), 48–55.',
-					'spcs_finding' => 'The original pilot (n = 65) found higher self-reported prevention competence, fewer stigmatising beliefs, and increased knowledge about suicide.',
+					'spcs_finding' => 'The original pilot (n = 65) found higher self-reported prevention competence, fewer stigmatizing beliefs, and increased knowledge about suicide.',
 				),
 			),
 		),
@@ -185,7 +185,7 @@ function spcs_core_seed_data(): array {
 			),
 			array(
 				'title'   => 'What evidence is there that it works?',
-				'content' => 'Four peer-reviewed publications, including a pilot study and a three-year review of the evidence, both in <em>Crisis</em>, and a comparison of in-person and online delivery in the <em>Journal of American College Health</em>. Participants show gains in knowledge and self-efficacy and reductions in stigmatising beliefs, sustained at twelve-week follow-up.',
+				'content' => 'Four peer-reviewed publications, including a pilot study and a three-year review of the evidence, both in <em>Crisis</em>, and a comparison of in-person and online delivery in the <em>Journal of American College Health</em>. Participants show gains in knowledge and self-efficacy and reductions in stigmatizing beliefs, sustained at twelve-week follow-up.',
 				'meta'    => array( 'spcs_faq_group' => 'Evidence' ),
 			),
 			array(

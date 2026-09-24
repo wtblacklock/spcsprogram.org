@@ -62,16 +62,13 @@
 				<span class="spcs-phase__number"><?php esc_html_e( 'Phase three', 'spcs' ); ?></span>
 				<h3 class="spcs-phase__title"><?php esc_html_e( 'Practice Phase', 'spcs' ); ?></h3>
 				<ul>
-					<li><?php esc_html_e( 'Practicing skills through role play', 'spcs' ); ?></li>
-					<li><?php esc_html_e( 'Building confidence to use new skills to support their peers', 'spcs' ); ?></li>
+					<li><?php esc_html_e( 'Practicing their skills through role play', 'spcs' ); ?></li>
+					<li><?php esc_html_e( 'Building confidence to use their new skills to support their peers', 'spcs' ); ?></li>
 				</ul>
 			</div>
 		</div>
 		<!-- /wp:html -->
 
-		<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-		<p style="margin-top:var(--wp--preset--spacing--40)"><a class="spcs-textlink" href="/about/"><?php esc_html_e( 'See the full program overview', 'spcs' ); ?></a></p>
-		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
 </div>
