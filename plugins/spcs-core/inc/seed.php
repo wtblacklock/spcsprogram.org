@@ -36,7 +36,7 @@ function spcs_core_seed_data(): array {
 					'spcs_year'    => '2025',
 					'spcs_journal' => '[Manuscript under review]. <a href="https://clovered.org" target="_blank" rel="noopener noreferrer">Clover Educational Consulting Group</a>',
 					'spcs_locator' => '',
-					'spcs_finding' => 'Ongoing work validating the measurement package used to evaluate gatekeeper training outcomes.',
+					'spcs_finding' => '',
 				),
 			),
 			array(
