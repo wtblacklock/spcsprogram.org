@@ -45,6 +45,17 @@ function spcs_enqueue_assets(): void {
 			'in_footer' => true,
 		)
 	);
+
+	/*
+	 * WordPress only prints a core block's stylesheet on pages whose *post
+	 * content* actually contains that block. The header's "Become an
+	 * Instructor" button is rendered in PHP, not in post content, so on the
+	 * one page with no button block anywhere in its content (Newsroom) core
+	 * never enqueues the button block's base styles — the header button
+	 * silently loses its padding and collapses, shrinking the whole header.
+	 * Force it to always load.
+	 */
+	wp_enqueue_style( 'wp-block-button' );
 }
 add_action( 'wp_enqueue_scripts', 'spcs_enqueue_assets' );
 
