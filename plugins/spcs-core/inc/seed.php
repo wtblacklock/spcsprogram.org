@@ -30,13 +30,13 @@ function spcs_core_seed_data(): array {
 	return array(
 		'spcs_study'       => array(
 			array(
-				'title' => 'The Suicide Prevention for College Student (SPCS) gatekeepers program: A 3-year review of the evidence',
+				'title' => 'Evaluating the Gatekeeper Training Outcome Package (GTOP)',
 				'meta'  => array(
-					'spcs_authors' => 'Ross, S. G., Pazienza, R., & Rosa, J. D.',
-					'spcs_year'    => '2024',
-					'spcs_journal' => 'Crisis: The Journal of Crisis Intervention and Suicide Prevention',
-					'spcs_locator' => '45(1), 41–47.',
-					'spcs_finding' => 'Three years of data across multiple institutions show sustained gains in suicide prevention knowledge and self-efficacy, and reduced stigmatising beliefs.',
+					'spcs_authors' => 'Ross, S.G., Pazienza, R., Rosa, J. D., & Lipowski',
+					'spcs_year'    => '2025',
+					'spcs_journal' => '[Manuscript under review]. <a href="https://clovered.org" target="_blank" rel="noopener noreferrer">Clover Educational Consulting Group</a>',
+					'spcs_locator' => '',
+					'spcs_finding' => 'Ongoing work validating the measurement package used to evaluate gatekeeper training outcomes.',
 				),
 			),
 			array(
@@ -50,6 +50,16 @@ function spcs_core_seed_data(): array {
 				),
 			),
 			array(
+				'title' => 'The Suicide Prevention for College Student (SPCS) gatekeepers program: A 3-year review of the evidence',
+				'meta'  => array(
+					'spcs_authors' => 'Ross, S. G., Pazienza, R., & Rosa, J. D.',
+					'spcs_year'    => '2024',
+					'spcs_journal' => 'Crisis: The Journal of Crisis Intervention and Suicide Prevention',
+					'spcs_locator' => '45(1), 41–47.',
+					'spcs_finding' => 'Three years of data across multiple institutions show sustained gains in suicide prevention knowledge and self-efficacy, and reduced stigmatising beliefs.',
+				),
+			),
+			array(
 				'title' => 'The suicide prevention for college student gatekeepers program: A pilot study',
 				'meta'  => array(
 					'spcs_authors' => 'Ross, S. G., DeHay, T., & Deiling, M.',
@@ -57,16 +67,6 @@ function spcs_core_seed_data(): array {
 					'spcs_journal' => 'Crisis: The Journal of Crisis Intervention and Suicide Prevention',
 					'spcs_locator' => '42(1), 48–55.',
 					'spcs_finding' => 'The original pilot (n = 65) found higher self-reported prevention competence, fewer stigmatising beliefs, and increased knowledge about suicide.',
-				),
-			),
-			array(
-				'title' => 'Evaluating the Gatekeeper Training Outcome Package (GTOP)',
-				'meta'  => array(
-					'spcs_authors' => 'Ross, S. G., Pazienza, R., Rosa, J. D., & Lipowski',
-					'spcs_year'    => '2025',
-					'spcs_journal' => 'Manuscript under review, <a href="https://clovered.org" target="_blank" rel="noopener noreferrer">Clover Educational Consulting Group</a>',
-					'spcs_locator' => '',
-					'spcs_finding' => 'Ongoing work validating the measurement package used to evaluate gatekeeper training outcomes.',
 				),
 			),
 		),
@@ -165,7 +165,7 @@ function spcs_core_seed_data(): array {
 		'spcs_faq'         => array(
 			array(
 				'title'   => 'How long does the training take?',
-				'content' => 'Ninety minutes of instruction, plus five to ten minutes before for consent and the pre-training questionnaire and five to ten minutes after for the post-training questionnaire. Facilitators stay available for a further fifteen to twenty minutes for questions. Most campuses schedule a two-hour block.',
+				'content' => 'Ninety minutes of instruction, plus time before for consent and the pre-training questionnaire and time after for the post-training questionnaire. Facilitators stay available afterward for questions. Most campuses schedule roughly a two-hour block to be safe.',
 				'meta'    => array( 'spcs_faq_group' => 'Delivery' ),
 			),
 			array(
@@ -180,7 +180,7 @@ function spcs_core_seed_data(): array {
 			),
 			array(
 				'title'   => 'What makes this different from other gatekeeper trainings?',
-				'content' => 'It was built for college students specifically. When the Suicide Prevention Resource Center compared 28 established gatekeeper programs, only eight were appropriate for college students and only two were designed for them. Of those, one was a brief asynchronous online module and the other an intensive six-week course. SPCS is the only program in the SPRC Best Practices Registry that was developed for — and has evidence in — this population. Every scenario, discussion prompt and role play is set in campus life.',
+				'content' => 'It was built for college students specifically. SPCS is the only Best Practice gatekeeper training in the SPRC Best Practices Registry that was designed for — and has evidence in — this population. Every scenario, discussion prompt and role play is set in campus life.',
 				'meta'    => array( 'spcs_faq_group' => 'Evidence' ),
 			),
 			array(
@@ -205,7 +205,7 @@ function spcs_core_seed_data(): array {
 			),
 			array(
 				'title'   => 'How many students should be in one session?',
-				'content' => 'No more than thirty. Smaller groups have better engagement and discussion, and research on training outcomes shows that larger group sizes are associated with reduced participation and poorer results.',
+				'content' => 'No more than thirty. Smaller groups have better engagement and discussion, which matters for material this sensitive.',
 				'meta'    => array( 'spcs_faq_group' => 'Implementation' ),
 			),
 			array(

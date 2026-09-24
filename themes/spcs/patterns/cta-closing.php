@@ -25,7 +25,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- /wp:paragraph -->
 
 				<!-- wp:heading {"fontSize":"headline"} -->
-				<h2 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Become a Certified Instructor.', 'spcs' ); ?></h2>
+				<h2 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Become a Certified Instructor for $549', 'spcs' ); ?></h2>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"className":"spcs-lead"} -->
@@ -54,10 +54,9 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					<p>
 						<?php
 						printf(
-							/* translators: 1: "call 988" link, 2: "text 988" link, 3: 988lifeline.org link. */
-							esc_html__( 'If you or someone you know needs support now, %1$s or %2$s, or go to %3$s. 988 is free and available 24/7. You will be connected with a skilled counselor who can help.', 'spcs' ),
-							'<a href="tel:988">' . esc_html__( 'call 988', 'spcs' ) . '</a>',
-							'<a href="sms:988">' . esc_html__( 'text 988', 'spcs' ) . '</a>',
+							/* translators: 1: "call or text 988" link, 2: 988lifeline.org link. */
+							esc_html__( 'If you or someone you know needs support now, %1$s or go to %2$s. 988 is free and available 24/7. You will be connected with a skilled counselor who can help.', 'spcs' ),
+							'<a href="tel:988">' . esc_html__( 'call or text 988', 'spcs' ) . '</a>',
 							'<a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer">988Lifeline.org<span class="screen-reader-text"> ' . esc_html__( '(opens in a new tab)', 'spcs' ) . '</span></a>'
 						);
 						?>

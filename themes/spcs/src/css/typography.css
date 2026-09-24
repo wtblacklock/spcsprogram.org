@@ -113,6 +113,23 @@ p, li, dd {
 }
 
 /*
+ * Internal pre-launch review flag — deliberately loud and unstyled-looking so
+ * it reads as "not finished content" and gets pulled once it's resolved,
+ * never mistaken for real copy.
+ */
+.spcs-review-note {
+	display: inline-block;
+	max-inline-size: 46ch;
+	padding: 0.75rem 1rem;
+	border: 2px dashed #ff3b3b;
+	background: rgb(255 59 59 / 0.08);
+	color: #ff3b3b;
+	font-size: 0.8125rem;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+/*
  * Crisis-line callout — needs to read as help, not fine print. Default styling
  * suits a light section; the `.is-dark` override below flips it for a purple
  * panel, where white-on-white would otherwise vanish.

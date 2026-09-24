@@ -21,15 +21,15 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			<!-- wp:group {"className":"col-1-7","layout":{"type":"default"}} -->
 			<div class="wp-block-group col-1-7">
 				<!-- wp:paragraph {"className":"spcs-eyebrow"} -->
-				<p class="spcs-eyebrow"><?php esc_html_e( 'Suicide prevention for college students', 'spcs' ); ?></p>
+				<p class="spcs-eyebrow"><?php esc_html_e( 'Suicide Prevention for College Students (SPCS)', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:heading {"level":1,"className":"spcs-hero__headline"} -->
-				<h1 class="wp-block-heading spcs-hero__headline"><?php esc_html_e( 'More than 1 in 10 college students experience thoughts of suicide each year.', 'spcs' ); ?></h1>
+				<h1 class="wp-block-heading spcs-hero__headline"><?php esc_html_e( 'More than 1 in 10 college students experience thoughts of suicide each year', 'spcs' ); ?></h1>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"className":"spcs-lead spcs-hero__standfirst"} -->
-				<p class="spcs-lead spcs-hero__standfirst"><?php esc_html_e( 'Empower and support students by providing suicide prevention programming designed for them.', 'spcs' ); ?></p>
+				<p class="spcs-lead spcs-hero__standfirst"><?php esc_html_e( 'Empower and support students by providing suicide prevention programming', 'spcs' ); ?> <em><?php esc_html_e( 'designed for them', 'spcs' ); ?></em>.</p>
 				<!-- /wp:paragraph -->
 
 				<!-- wp:group {"className":"spcs-hero__actions","layout":{"type":"flex","flexWrap":"wrap"}} -->
@@ -43,7 +43,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					<!-- /wp:buttons -->
 
 					<!-- wp:paragraph -->
-					<p><a class="spcs-textlink" href="#gatekeeper"><?php esc_html_e( 'What is a gatekeeper?', 'spcs' ); ?></a></p>
+					<p><a class="spcs-textlink" href="#gatekeeper"><?php esc_html_e( 'What is a “Gatekeeper”?', 'spcs' ); ?></a></p>
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
@@ -114,6 +114,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 
 			<!-- wp:paragraph {"fontSize":"lead"} -->
 			<p class="has-lead-font-size"><?php esc_html_e( 'Accepted into the Suicide Prevention Resource Center’s Best Practices Registry in 2023 — the only listed program developed specifically for college students.', 'spcs' ); ?></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|20"}}}} -->
+			<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--20)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: the site spec says SPCS is the ONLY Best Practice program for college campuses, but not the year it was accepted to the registry. Please confirm "2023" is correct.', 'spcs' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->

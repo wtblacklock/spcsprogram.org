@@ -39,7 +39,7 @@
 		<div class="spcs-phases" style="margin-top:var(--wp--preset--spacing--50)">
 			<div class="spcs-phase" data-reveal>
 				<span class="spcs-phase__number"><?php esc_html_e( 'Phase one', 'spcs' ); ?></span>
-				<h3 class="spcs-phase__title"><?php esc_html_e( 'Information', 'spcs' ); ?></h3>
+				<h3 class="spcs-phase__title"><?php esc_html_e( 'Information Phase', 'spcs' ); ?></h3>
 				<ul>
 					<li><?php esc_html_e( 'Using safe and respectful language', 'spcs' ); ?></li>
 					<li><?php esc_html_e( 'College suicide statistics', 'spcs' ); ?></li>
@@ -50,7 +50,7 @@
 
 			<div class="spcs-phase" data-reveal>
 				<span class="spcs-phase__number"><?php esc_html_e( 'Phase two', 'spcs' ); ?></span>
-				<h3 class="spcs-phase__title"><?php esc_html_e( 'Skill building', 'spcs' ); ?></h3>
+				<h3 class="spcs-phase__title"><?php esc_html_e( 'Skill Building Phase', 'spcs' ); ?></h3>
 				<ul>
 					<li><?php esc_html_e( 'Conducting a basic suicide risk assessment with peers', 'spcs' ); ?></li>
 					<li><?php esc_html_e( 'Using a decision tree to determine the best course of action', 'spcs' ); ?></li>
@@ -60,7 +60,7 @@
 
 			<div class="spcs-phase" data-reveal>
 				<span class="spcs-phase__number"><?php esc_html_e( 'Phase three', 'spcs' ); ?></span>
-				<h3 class="spcs-phase__title"><?php esc_html_e( 'Practice', 'spcs' ); ?></h3>
+				<h3 class="spcs-phase__title"><?php esc_html_e( 'Practice Phase', 'spcs' ); ?></h3>
 				<ul>
 					<li><?php esc_html_e( 'Practicing skills through role play', 'spcs' ); ?></li>
 					<li><?php esc_html_e( 'Building confidence to use new skills to support their peers', 'spcs' ); ?></li>

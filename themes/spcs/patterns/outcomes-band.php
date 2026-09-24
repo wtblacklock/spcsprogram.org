@@ -37,6 +37,10 @@
 		</div>
 		<!-- /wp:group -->
 
+		<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+		<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: these three stats (45%, 900+, 3 grants) aren\'t drawn from the site spec. Please confirm they\'re accurate, correct them, or tell us to pull them before launch.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
+
 		<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
 		<p style="margin-top:var(--wp--preset--spacing--50)"><a class="spcs-textlink" href="/about/#research"><?php esc_html_e( 'Read the evidence', 'spcs' ); ?></a></p>
 		<!-- /wp:paragraph -->

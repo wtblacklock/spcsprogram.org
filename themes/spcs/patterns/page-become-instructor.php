@@ -42,7 +42,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			<!-- wp:group {"className":"col-9-4","layout":{"type":"default"}} -->
 			<div class="wp-block-group col-9-4 spcs-opener-intro">
 				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'Suicide Prevention for College Students (SPCS) is delivered on college campuses by Certified Instructors. Get certified and you can start training students yourself.', 'spcs' ); ?></p>
+				<p><?php esc_html_e( 'Suicide Prevention for College Students (SPCS) is delivered on college campuses by Certified Instructors', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -139,30 +139,6 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"What a session looks like"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section">
-	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
-	<div class="wp-block-group spcs-shell">
-		<!-- wp:html -->
-		<div class="spcs-panel spcs-panel--right" data-reveal>
-			<div class="spcs-panel__media">
-				<picture>
-					<source type="image/webp" srcset="<?php echo $img; ?>/about-training-1200.webp 1200w, <?php echo $img; ?>/about-training-2000.webp 2000w" sizes="(min-width: 64em) 62vw, 100vw">
-					<img src="<?php echo $img; ?>/about-training-1200.jpg" srcset="<?php echo $img; ?>/about-training-1200.jpg 1200w, <?php echo $img; ?>/about-training-2000.jpg 2000w" sizes="(min-width: 64em) 62vw, 100vw" width="1200" height="900" loading="lazy" decoding="async" alt="<?php esc_attr_e( 'A student on their way to deliver a session, course materials in hand.', 'spcs' ); ?>">
-				</picture>
-			</div>
-			<div class="spcs-panel__block is-dark">
-				<p class="spcs-eyebrow"><?php esc_html_e( 'Continuing education', 'spcs' ); ?></p>
-				<h2><?php esc_html_e( 'Eligible for 3 CE credits.', 'spcs' ); ?></h2>
-				<p><?php esc_html_e( 'The SPCS Certified Instructor Course is eligible for Continuing Education (3 CE credits). APA-approved CE credits are available to licensed mental health professionals for an additional, optional fee of $90.', 'spcs' ); ?></p>
-			</div>
-		</div>
-		<!-- /wp:html -->
-	</div>
-	<!-- /wp:group -->
-</div>
-<!-- /wp:group -->
-
 <!-- wp:group {"metadata":{"name":"Certification paths"},"className":"spcs-section spcs-section--chapter is-dark","backgroundColor":"purple","layout":{"type":"default"}} -->
 <div class="wp-block-group spcs-section spcs-section--chapter is-dark has-purple-background-color has-background">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
@@ -176,7 +152,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- /wp:paragraph -->
 
 				<!-- wp:heading {"fontSize":"title"} -->
-				<h2 class="wp-block-heading has-title-font-size"><?php esc_html_e( 'Become a Certified Instructor for $549.', 'spcs' ); ?></h2>
+				<h2 class="wp-block-heading has-title-font-size"><?php esc_html_e( 'Become a Certified Instructor for $549', 'spcs' ); ?></h2>
 				<!-- /wp:heading -->
 			</div>
 			<!-- /wp:group -->
@@ -202,7 +178,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			<div class="spcs-phase" data-reveal>
 				<span class="spcs-phase__number"><?php esc_html_e( 'Option two', 'spcs' ); ?></span>
 				<h3 class="spcs-phase__title"><?php esc_html_e( 'Become certified at home', 'spcs' ); ?></h3>
-				<p><?php esc_html_e( 'Gain immediate access to our self-paced, online training, and become a Certified Instructor within 2–3 hours.', 'spcs' ); ?></p>
+				<p><?php esc_html_e( 'Gain immediate access to our self-paced, online training, and become a Certified Instructor within 2-3 hours.', 'spcs' ); ?></p>
 				<p style="margin-top:var(--wp--preset--spacing--30)">
 					<a class="spcs-textlink" href="https://clovered.org/product/instructor-training-suicide-prevention-for-college-student-gatekeepers/" target="_blank" rel="noopener noreferrer">
 						<?php esc_html_e( 'Register Now', 'spcs' ); ?>
@@ -214,8 +190,32 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			<div class="spcs-phase" data-reveal>
 				<span class="spcs-phase__number"><?php esc_html_e( 'Option three', 'spcs' ); ?></span>
 				<h3 class="spcs-phase__title"><?php esc_html_e( 'Schedule a training for your team', 'spcs' ); ?></h3>
-				<p><?php esc_html_e( 'Our expert trainers will provide live training for your team of 5–30 individuals. We can host the training virtually or can come to your campus. Reach out to us to discuss the best option for your group and to receive a quote.', 'spcs' ); ?></p>
+				<p><?php esc_html_e( 'Our expert trainers will provide live training for your team of 5-30 individuals. We can host the training virtually or can come to your campus. Reach out to us to discuss the best option for your group and to receive a quote.', 'spcs' ); ?></p>
 				<p style="margin-top:var(--wp--preset--spacing--30)"><a class="spcs-textlink" href="#connect"><?php esc_html_e( 'Connect With Us', 'spcs' ); ?></a></p>
+			</div>
+		</div>
+		<!-- /wp:html -->
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"metadata":{"name":"What a session looks like"},"className":"spcs-section","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section">
+	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
+	<div class="wp-block-group spcs-shell">
+		<!-- wp:html -->
+		<div class="spcs-panel spcs-panel--right" data-reveal>
+			<div class="spcs-panel__media">
+				<picture>
+					<source type="image/webp" srcset="<?php echo $img; ?>/about-training-1200.webp 1200w, <?php echo $img; ?>/about-training-2000.webp 2000w" sizes="(min-width: 64em) 62vw, 100vw">
+					<img src="<?php echo $img; ?>/about-training-1200.jpg" srcset="<?php echo $img; ?>/about-training-1200.jpg 1200w, <?php echo $img; ?>/about-training-2000.jpg 2000w" sizes="(min-width: 64em) 62vw, 100vw" width="1200" height="900" loading="lazy" decoding="async" alt="<?php esc_attr_e( 'A student on their way to deliver a session, course materials in hand.', 'spcs' ); ?>">
+				</picture>
+			</div>
+			<div class="spcs-panel__block is-dark">
+				<p class="spcs-eyebrow"><?php esc_html_e( 'Continuing education', 'spcs' ); ?></p>
+				<h2><?php esc_html_e( 'Eligible for 3 CE credits.', 'spcs' ); ?></h2>
+				<p><?php esc_html_e( 'The SPCS Certified Instructor Course is eligible for Continuing Education (3 CE credits). APA-approved CE credits are available to licensed mental health professionals for an additional, optional fee of $90.', 'spcs' ); ?></p>
 			</div>
 		</div>
 		<!-- /wp:html -->

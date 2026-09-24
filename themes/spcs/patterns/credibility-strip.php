@@ -67,6 +67,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			</p>
 			<!-- /wp:paragraph -->
 
+			<!-- wp:paragraph {"className":"col-1-5 spcs-review-note"} -->
+			<p class="col-1-5 spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: "three SAMHSA grants" isn\'t in the site spec. Please confirm the count and funder name.', 'spcs' ); ?></p>
+			<!-- /wp:paragraph -->
+
 			<!-- wp:group {"className":"col-7-6","layout":{"type":"default"}} -->
 			<div class="wp-block-group col-7-6">
 				<!-- wp:spcs/partners /-->

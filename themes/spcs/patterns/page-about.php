@@ -26,7 +26,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- /wp:paragraph -->
 
 				<!-- wp:heading {"level":1,"fontSize":"headline"} -->
-				<h1 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Approved by the Suicide Prevention Resource Center as a Best Practice in Suicide Prevention.', 'spcs' ); ?></h1>
+				<h1 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Approved by the Suicide Prevention Resource Center as a Best Practice in Suicide Prevention', 'spcs' ); ?></h1>
 				<!-- /wp:heading -->
 			</div>
 			<!-- /wp:group -->
@@ -40,12 +40,12 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- wp:list -->
 				<ul class="wp-block-list">
 					<li><?php esc_html_e( 'Live training delivered to groups of students by Certified Instructors, virtually or in-person', 'spcs' ); ?></li>
-					<li><?php esc_html_e( 'Only 90 minutes — easy to incorporate into a class period or campus activity', 'spcs' ); ?></li>
+					<li><?php esc_html_e( 'Only 90 minutes- easy to incorporate into a class period or campus activity', 'spcs' ); ?></li>
 					<li>
 						<?php
 						printf(
 							/* translators: %s: link to Clover Educational Consulting Group. */
-							esc_html__( 'Evidence-based and research-based — developed for use on college campuses by experts at %s', 'spcs' ),
+							esc_html__( 'Evidence-based and research-based- developed for use on college campuses by experts at %s', 'spcs' ),
 							'<a href="https://clovered.org" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Clover Educational Consulting Group', 'spcs' ) . '</a>'
 						);
 						?>
@@ -73,7 +73,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				>
 			</picture>
 			<p class="spcs-credibility__claim">
-				<?php esc_html_e( 'Approved by the Suicide Prevention Resource Center as a Best Practice in Suicide Prevention.', 'spcs' ); ?>
+				<?php esc_html_e( 'Approved by the Suicide Prevention Resource Center as a Best Practice in Suicide Prevention', 'spcs' ); ?>
 			</p>
 		</div>
 		<!-- /wp:html -->
@@ -83,6 +83,45 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 <!-- /wp:group -->
 
 <!-- wp:pattern {"slug":"spcs/three-phase-model"} /-->
+
+<!-- wp:group {"metadata":{"name":"Research support"},"className":"spcs-section","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section" id="research">
+	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
+	<div class="wp-block-group spcs-shell">
+		<!-- wp:group {"className":"spcs-grid","layout":{"type":"default"}} -->
+		<div class="wp-block-group spcs-grid">
+			<!-- wp:group {"className":"col-1-4 spcs-sticky","layout":{"type":"default"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
+			<div class="wp-block-group col-1-4 spcs-sticky" style="grid-column:1 / span 4">
+				<!-- wp:paragraph {"className":"spcs-eyebrow"} -->
+				<p class="spcs-eyebrow"><?php esc_html_e( 'Research Support for SPCS', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:heading -->
+				<h2 class="wp-block-heading"><?php esc_html_e( 'Peer-reviewed, and still being reviewed.', 'spcs' ); ?></h2>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph -->
+				<p><?php esc_html_e( 'Every claim on this site traces back to one of these.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: this isn\'t actually true yet — the homepage stats (45%, 900+, 3 grants) don\'t cite any of these four studies. Once those stats are confirmed, either source them here too or soften this line.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:group {"className":"col-6-7","layout":{"type":"default"}} -->
+			<div class="wp-block-group col-6-7">
+				<!-- wp:spcs/studies -->
+				<!-- /wp:spcs/studies -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Training in session"},"className":"spcs-section","layout":{"type":"default"}} -->
 <div class="wp-block-group spcs-section">
@@ -102,98 +141,6 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<p><?php esc_html_e( 'SPCS is the only Best Practice gatekeeper training designed specifically for colleges. Every fact, example, discussion prompt, and role-play activity is tailored to college students and campus life, making the training highly relevant, engaging, and impactful.', 'spcs' ); ?></p>
 			</div>
 		</div>
-		<!-- /wp:html -->
-	</div>
-	<!-- /wp:group -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"metadata":{"name":"Research support"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section" id="research">
-	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
-	<div class="wp-block-group spcs-shell">
-		<!-- wp:group {"className":"spcs-grid","layout":{"type":"default"}} -->
-		<div class="wp-block-group spcs-grid">
-			<!-- wp:group {"className":"col-1-4 spcs-sticky","layout":{"type":"default"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|30"}}}} -->
-			<div class="wp-block-group col-1-4 spcs-sticky" style="grid-column:1 / span 4">
-				<!-- wp:paragraph {"className":"spcs-eyebrow"} -->
-				<p class="spcs-eyebrow"><?php esc_html_e( 'Research support for SPCS', 'spcs' ); ?></p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:heading -->
-				<h2 class="wp-block-heading"><?php esc_html_e( 'Peer-reviewed, and still being reviewed.', 'spcs' ); ?></h2>
-				<!-- /wp:heading -->
-
-				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'Every claim on this site traces back to one of these.', 'spcs' ); ?></p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-
-			<!-- wp:group {"className":"col-6-7","layout":{"type":"default"}} -->
-			<div class="wp-block-group col-6-7">
-				<!-- wp:spcs/studies -->
-				<!-- /wp:spcs/studies -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:group -->
-	</div>
-	<!-- /wp:group -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"metadata":{"name":"Who built it"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section">
-	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
-	<div class="wp-block-group spcs-shell">
-		<!-- wp:group {"className":"spcs-grid","layout":{"type":"default"}} -->
-		<div class="wp-block-group spcs-grid">
-			<!-- wp:group {"className":"col-1-6","layout":{"type":"default"}} -->
-			<div class="wp-block-group col-1-6">
-				<!-- wp:paragraph {"className":"spcs-eyebrow"} -->
-				<p class="spcs-eyebrow"><?php esc_html_e( 'Who built it', 'spcs' ); ?></p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:heading -->
-				<h2 class="wp-block-heading"><?php esc_html_e( 'Psychologists who kept meeting the same gap.', 'spcs' ); ?></h2>
-				<!-- /wp:heading -->
-
-				<!-- wp:paragraph -->
-				<p>
-					<?php
-					printf(
-						/* translators: %s: link to Clover Educational Consulting Group. */
-						esc_html__( 'SPCS Gatekeepers was developed by %s, a team of licensed psychologists who work with higher education on training, evaluation and accreditation. The first version was piloted in 2017 with sixty-five students; three SAMHSA Mental Health Awareness Training grants later funded delivery in North Carolina, Texas and Minnesota.', 'spcs' ),
-						'<a href="https://clovered.org" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Clover Educational Consulting Group', 'spcs' ) . '</a>'
-					);
-					?>
-				</p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:html -->
-		<dl class="spcs-facts" style="margin-top:var(--wp--preset--spacing--40)">
-			<div>
-				<dt><?php esc_html_e( 'Program authors', 'spcs' ); ?></dt>
-				<dd><?php esc_html_e( 'Sarah Ross, PhD; Rena Pazienza, PhD; Tamara DeHay, PhD.', 'spcs' ); ?></dd>
-			</div>
-			<div>
-				<dt><?php esc_html_e( 'External review', 'spcs' ); ?></dt>
-				<dd><?php esc_html_e( 'Elyse Thulin, PhD, Addiction Center, Michigan Medicine — Michigan Institute for Data Science, University of Michigan.', 'spcs' ); ?></dd>
-			</div>
-			<div>
-				<dt><?php esc_html_e( 'Funding', 'spcs' ); ?></dt>
-				<dd><?php esc_html_e( 'Three SAMHSA Mental Health Awareness Training grants supported the research and dissemination.', 'spcs' ); ?></dd>
-			</div>
-			<div>
-				<dt><?php esc_html_e( 'Partner institutions', 'spcs' ); ?></dt>
-				<dd><?php esc_html_e( 'Piloted at High Point University; also implemented at the University of Texas Rio Grande Valley and Lake Superior College.', 'spcs' ); ?></dd>
-			</div>
-		</dl>
 		<!-- /wp:html -->
 	</div>
 	<!-- /wp:group -->

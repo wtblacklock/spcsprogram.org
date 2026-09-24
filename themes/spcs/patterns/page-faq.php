@@ -39,6 +39,10 @@
 			<!-- /wp:group -->
 		</div>
 		<!-- /wp:group -->
+
+		<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+		<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--40)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: none of this FAQ page is drawn from the site spec; it was written to fill an obvious gap. Please review every answer below for accuracy before launch, especially group-size, timing and process specifics.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
 </div>
