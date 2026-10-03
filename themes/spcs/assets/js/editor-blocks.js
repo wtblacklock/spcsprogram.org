@@ -14,7 +14,6 @@
 	var titles = {
 		'spcs/site-header': __( 'Site header (locked)', 'spcs' ),
 		'spcs/site-footer': __( 'Site footer (locked)', 'spcs' ),
-		'spcs/crisis-bar': __( 'Crisis resources bar (locked)', 'spcs' ),
 	};
 
 	( window.spcsEditorBlocks || [] ).forEach( function ( name ) {

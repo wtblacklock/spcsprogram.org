@@ -32,10 +32,14 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- wp:buttons {"className":"spcs-hero__actions"} -->
 				<div class="wp-block-buttons spcs-hero__actions">
 					<!-- wp:button -->
-					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#connect"><?php esc_html_e( 'Skip to the form', 'spcs' ); ?></a></div>
+					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#options"><?php esc_html_e( 'See certification options', 'spcs' ); ?></a></div>
 					<!-- /wp:button -->
 				</div>
 				<!-- /wp:buttons -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
+				<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: our suggestion to replace "Skip to the form." Since the form only covers scheduling a team training, this button now jumps to the three $549 certification options instead, so every visitor lands on the choice that fits them. The "Connect With Us" link under option three still goes to the form.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 
@@ -144,7 +148,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 <!-- /wp:group -->
 
 <!-- wp:group {"metadata":{"name":"Certification paths"},"className":"spcs-section spcs-section--chapter is-dark","backgroundColor":"purple","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section spcs-section--chapter is-dark has-purple-background-color has-background">
+<div class="wp-block-group spcs-section spcs-section--chapter is-dark has-purple-background-color has-background" id="options">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
 		<!-- wp:group {"className":"spcs-grid","layout":{"type":"default"}} -->

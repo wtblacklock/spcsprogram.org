@@ -1,11 +1,11 @@
 <?php
 /**
- * Navigation and crisis-resource rendering.
+ * Navigation and footer rendering.
  *
  * These are rendered by the theme rather than assembled from blocks because
  * they must be identical on every page and must not be editable into an
- * inaccessible or unsafe state. Their *content* is filterable and the crisis
- * numbers are stored as options, so they remain maintainable without code.
+ * inaccessible or unsafe state — the footer carries the crisis resources, so it
+ * appears on every page. Nav items are filterable.
  *
  * @package SPCS
  */
@@ -57,8 +57,6 @@ function spcs_render_header(): void {
 	$here  = untrailingslashit( wp_parse_url( home_url( add_query_arg( array() ) ), PHP_URL_PATH ) ?? '' );
 	?>
 	<a class="spcs-skip-link" href="#main"><?php esc_html_e( 'Skip to main content', 'spcs' ); ?></a>
-
-	<?php spcs_render_crisis_bar(); ?>
 
 	<header class="spcs-header">
 		<div class="spcs-header__inner">
@@ -124,51 +122,6 @@ function spcs_render_header(): void {
 }
 
 /**
- * Render the persistent crisis-resource bar.
- *
- * Appears above the header on every page. Styling is intentionally calm rather
- * than alarm-red: the program's own safe messaging guidance is that help
- * information should be steady and easy to find, not sensationalised.
- */
-function spcs_render_crisis_bar(): void {
-	$resources = (array) apply_filters(
-		'spcs_crisis_resources',
-		array(
-			array(
-				'label' => __( '988 Suicide &amp; Crisis Lifeline', 'spcs' ),
-				'text'  => __( 'Call or text 988', 'spcs' ),
-				'href'  => 'tel:988',
-			),
-			array(
-				'label' => __( 'The Trevor Project', 'spcs' ),
-				'text'  => __( '1-866-488-7386', 'spcs' ),
-				'href'  => 'tel:18664887386',
-			),
-		)
-	);
-	?>
-	<aside class="spcs-crisis" aria-label="<?php esc_attr_e( 'Crisis support resources', 'spcs' ); ?>">
-		<div class="spcs-crisis__inner">
-			<strong><?php esc_html_e( 'Need support right now?', 'spcs' ); ?></strong>
-			<?php foreach ( $resources as $index => $resource ) : ?>
-				<?php if ( $index > 0 ) : ?>
-					<span class="spcs-crisis__sep" aria-hidden="true">/</span>
-				<?php endif; ?>
-				<span>
-					<a href="<?php echo esc_url( $resource['href'] ); ?>">
-						<?php echo esc_html( $resource['text'] ); ?>
-					</a>
-					<span class="screen-reader-text">
-						— <?php echo esc_html( wp_strip_all_tags( $resource['label'] ) ); ?>
-					</span>
-				</span>
-			<?php endforeach; ?>
-		</div>
-	</aside>
-	<?php
-}
-
-/**
  * Render the site footer.
  */
 function spcs_render_footer(): void {
@@ -210,6 +163,7 @@ function spcs_render_footer(): void {
 						<ul>
 							<li><a href="tel:988"><?php esc_html_e( '988 Lifeline — call or text', 'spcs' ); ?></a></li>
 							<li><a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( '988lifeline.org', 'spcs' ); ?></a></li>
+							<li><a href="tel:18664887386"><?php esc_html_e( 'The Trevor Project, for LGBTQ+ young people —', 'spcs' ); ?> <span style="white-space:nowrap">1-866-488-7386</span></a></li>
 						</ul>
 					</div>
 				</div>

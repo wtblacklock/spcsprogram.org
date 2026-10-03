@@ -16,3 +16,4 @@
 <!-- wp:pattern {"slug":"spcs/what-is-a-gatekeeper"} /-->
 <!-- wp:pattern {"slug":"spcs/voices"} /-->
 <!-- wp:pattern {"slug":"spcs/cta-closing"} /-->
+<!-- wp:pattern {"slug":"spcs/crisis-band"} /-->

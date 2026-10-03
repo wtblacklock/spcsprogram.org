@@ -392,11 +392,6 @@
 			"name": "footer",
 			"title": "Footer",
 			"area": "footer"
-		},
-		{
-			"name": "crisis-bar",
-			"title": "Crisis resources bar",
-			"area": "uncategorized"
 		}
 	]
 }

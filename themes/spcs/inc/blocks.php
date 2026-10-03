@@ -2,10 +2,10 @@
 /**
  * Dynamic blocks used inside template parts.
  *
- * The header, footer and crisis bar are rendered by PHP rather than assembled
+ * The header and footer are rendered by PHP rather than assembled
  * from core blocks. They must be byte-identical on every page and must not be
  * editable into a state that breaks keyboard navigation or removes the crisis
- * resources. Their text still passes through filters and translation, so they
+ * resources in the footer. Their text still passes through filters and translation, so they
  * stay maintainable without touching layout.
  *
  * @package SPCS
@@ -26,7 +26,6 @@ function spcs_dynamic_blocks(): array {
 	return array(
 		'spcs/site-header' => 'spcs_render_header',
 		'spcs/site-footer' => 'spcs_render_footer',
-		'spcs/crisis-bar'  => 'spcs_render_crisis_bar',
 	);
 }
 
