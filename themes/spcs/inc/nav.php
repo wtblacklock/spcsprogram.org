@@ -64,7 +64,7 @@ function spcs_render_header(): void {
 		<div class="spcs-header__inner">
 			<a class="spcs-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<span class="spcs-logo__word">
-					<?php esc_html_e( 'SPCS Gatekeepers', 'spcs' ); ?>
+					<?php esc_html_e( 'SPCS', 'spcs' ); ?>
 					<span><?php esc_html_e( 'Suicide prevention for college students', 'spcs' ); ?></span>
 				</span>
 			</a>
@@ -140,11 +140,6 @@ function spcs_render_crisis_bar(): void {
 				'href'  => 'tel:988',
 			),
 			array(
-				'label' => __( 'Crisis Text Line', 'spcs' ),
-				'text'  => __( 'Text HOME to 741741', 'spcs' ),
-				'href'  => 'sms:741741',
-			),
-			array(
 				'label' => __( 'The Trevor Project', 'spcs' ),
 				'text'  => __( '1-866-488-7386', 'spcs' ),
 				'href'  => 'tel:18664887386',
@@ -207,7 +202,6 @@ function spcs_render_footer(): void {
 					<div>
 						<h3><?php esc_html_e( 'Organization', 'spcs' ); ?></h3>
 						<ul>
-							<li><a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>"><?php esc_html_e( 'FAQ', 'spcs' ); ?></a></li>
 							<li><a href="<?php echo esc_url( home_url( '/become-an-instructor/#connect' ) ); ?>"><?php esc_html_e( 'Contact', 'spcs' ); ?></a></li>
 						</ul>
 					</div>
@@ -215,7 +209,6 @@ function spcs_render_footer(): void {
 						<h3><?php esc_html_e( 'Get help', 'spcs' ); ?></h3>
 						<ul>
 							<li><a href="tel:988"><?php esc_html_e( '988 Lifeline — call or text', 'spcs' ); ?></a></li>
-							<li><a href="sms:741741"><?php esc_html_e( 'Text HOME to 741741', 'spcs' ); ?></a></li>
 							<li><a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( '988lifeline.org', 'spcs' ); ?></a></li>
 						</ul>
 					</div>
@@ -232,11 +225,6 @@ function spcs_render_footer(): void {
 						'<a href="https://clovered.org" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Clover Educational Consulting Group', 'spcs' ) . '</a>'
 					);
 					?>
-				</p>
-				<p>
-					<a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>"><?php esc_html_e( 'Privacy', 'spcs' ); ?></a>
-					&nbsp;·&nbsp;
-					<a href="<?php echo esc_url( home_url( '/accessibility/' ) ); ?>"><?php esc_html_e( 'Accessibility', 'spcs' ); ?></a>
 				</p>
 			</div>
 		</div>

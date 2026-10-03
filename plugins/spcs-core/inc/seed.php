@@ -101,7 +101,7 @@ function spcs_core_seed_data(): array {
 				'title'   => 'Strategies and resources',
 				'content' => 'I have a few friends who are struggling right now and I wasn’t sure how to help them. This gave me strategies and resources I needed to help them.',
 				'meta'    => array(
-					'spcs_attribution' => 'Student participant',
+					'spcs_attribution' => '',
 					'spcs_consent'     => true,
 				),
 			),
@@ -109,7 +109,7 @@ function spcs_core_seed_data(): array {
 				'title'   => 'Everyone should receive this training',
 				'content' => 'I think EVERYONE should receive this training.',
 				'meta'    => array(
-					'spcs_attribution' => 'Student participant',
+					'spcs_attribution' => '',
 					'spcs_consent'     => true,
 				),
 			),
@@ -117,7 +117,7 @@ function spcs_core_seed_data(): array {
 				'title'   => 'Empowered to help',
 				'content' => 'I feel empowered that I have the ability to help in a crisis.',
 				'meta'    => array(
-					'spcs_attribution' => 'Student participant',
+					'spcs_attribution' => '',
 					'spcs_consent'     => true,
 				),
 			),
@@ -125,7 +125,7 @@ function spcs_core_seed_data(): array {
 				'title'   => 'Information that could save a life',
 				'content' => 'The course provided me with information that could save a life.',
 				'meta'    => array(
-					'spcs_attribution' => 'Student participant',
+					'spcs_attribution' => '',
 					'spcs_consent'     => true,
 				),
 			),
@@ -133,7 +133,7 @@ function spcs_core_seed_data(): array {
 				'title'   => 'Better prepared',
 				'content' => 'As a college student, I have encountered many students who have shown signs that they were suicidal. I now feel more equipped to handle those situations.',
 				'meta'    => array(
-					'spcs_attribution' => 'Student participant',
+					'spcs_attribution' => '',
 					'spcs_consent'     => true,
 				),
 			),
@@ -141,7 +141,7 @@ function spcs_core_seed_data(): array {
 				'title'   => 'Peers knowing how to help',
 				'content' => 'This training is so important. In an environment where many people our age are feeling suicidal or need help, it helps to have peers know how to help or where to go.',
 				'meta'    => array(
-					'spcs_attribution' => 'Student participant',
+					'spcs_attribution' => '',
 					'spcs_consent'     => true,
 				),
 			),
@@ -149,7 +149,7 @@ function spcs_core_seed_data(): array {
 				'title'   => 'Feeling better prepared',
 				'content' => 'I already had experience with people who were suicidal, but now I feel better prepared. I wish more people understood how big of a problem this is.',
 				'meta'    => array(
-					'spcs_attribution' => 'Student participant',
+					'spcs_attribution' => '',
 					'spcs_consent'     => true,
 				),
 			),
@@ -157,7 +157,7 @@ function spcs_core_seed_data(): array {
 				'title'   => 'How to approach hard conversations',
 				'content' => 'The prevention program really resonated with me on how to properly approach uncomfortable, but sometimes necessary, conversations.',
 				'meta'    => array(
-					'spcs_attribution' => 'Student participant',
+					'spcs_attribution' => '',
 					'spcs_consent'     => true,
 				),
 			),

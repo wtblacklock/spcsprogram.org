@@ -26,12 +26,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- /wp:paragraph -->
 
 				<!-- wp:heading {"level":1,"fontSize":"headline"} -->
-				<h1 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Bring SPCS Gatekeepers to your campus yourself.', 'spcs' ); ?></h1>
+				<h1 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Bring SPCS to your campus.', 'spcs' ); ?></h1>
 				<!-- /wp:heading -->
-
-				<!-- wp:paragraph {"className":"spcs-review-note"} -->
-				<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: this headline isn\'t in the site spec, which starts this page straight from "Suicide Prevention for College Students (SPCS) is delivered on college campuses by Certified Instructors." We wrote a headline because the page needed one, and framed it around self-service — "yourself" — since that\'s the whole pitch of becoming an instructor rather than requesting a demo. Flag if you\'d rather it say something else.', 'spcs' ); ?></p>
-				<!-- /wp:paragraph -->
 
 				<!-- wp:buttons {"className":"spcs-hero__actions"} -->
 				<div class="wp-block-buttons spcs-hero__actions">
@@ -174,12 +170,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<h3 class="spcs-phase__title"><?php esc_html_e( 'Attend a live virtual training', 'spcs' ); ?></h3>
 				<p><?php esc_html_e( 'Review our schedule of live open-enrollment trainings, hosted by Clover’s expert trainers, and join other individuals from across the country in becoming certified.', 'spcs' ); ?></p>
 				<p style="margin-top:var(--wp--preset--spacing--30)">
-					<a class="spcs-textlink" href="https://clovered.org/spcs-instructor-training/" target="_blank" rel="noopener noreferrer">
-						<?php esc_html_e( 'Register Now', 'spcs' ); ?>
-						<span class="screen-reader-text"> (<?php esc_html_e( 'opens in a new tab', 'spcs' ); ?>)</span>
-					</a>
-					<!-- clovered.org has no dedicated live-cohort schedule yet — this points at the
-					     general instructor training page. Swap it for a real schedule link once one exists. -->
+					<span class="spcs-textlink spcs-textlink--pending"><?php esc_html_e( 'Register Now', 'spcs' ); ?></span>
 				</p>
 			</div>
 
@@ -285,7 +276,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- /wp:html -->
 
 				<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-				<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: this "What happens next" timeline isn\'t in the site spec. We added it because a team-training inquiry form is a bigger ask than a newsletter signup — someone filling it out wants to know what happens to their information and when they\'ll hear back, and a page that leaves that unanswered reads as riskier to fill out. Please confirm the two-working-days, twenty-to-thirty-minute-call and quote steps are actually accurate to how this works today.', 'spcs' ); ?></p>
+				<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: these three steps are placeholders until you send your changes to this list.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

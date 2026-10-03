@@ -43,7 +43,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					<!-- /wp:buttons -->
 
 					<!-- wp:paragraph -->
-					<p><a class="spcs-textlink" href="#gatekeeper"><?php esc_html_e( 'What is a “Gatekeeper”?', 'spcs' ); ?></a></p>
+					<p><a class="spcs-textlink" href="/about/"><?php esc_html_e( 'Learn more about the program', 'spcs' ); ?></a></p>
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
@@ -53,20 +53,16 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			<!-- wp:group {"className":"col-8-5","layout":{"type":"default"}} -->
 			<div class="wp-block-group col-8-5">
 				<!-- wp:html -->
-				<div class="spcs-hero__portrait">
+				<div class="spcs-hero__portrait spcs-hero__portrait--logo">
 					<picture>
-						<source
-							type="image/webp"
-							srcset="<?php echo $img; ?>/peer-support-1200.webp 1200w, <?php echo $img; ?>/peer-support-2000.webp 2000w"
-							sizes="(min-width: 64em) 30vw, 60vw"
-						>
+						<source type="image/webp" srcset="<?php echo $img; ?>/glad-youre-here-logo-480.webp 480w, <?php echo $img; ?>/glad-youre-here-logo-960.webp 960w" sizes="(min-width: 64em) 30vw, 70vw">
 						<img
-							src="<?php echo $img; ?>/peer-support-1200.jpg"
-							srcset="<?php echo $img; ?>/peer-support-1200.jpg 1200w, <?php echo $img; ?>/peer-support-2000.jpg 2000w"
-							sizes="(min-width: 64em) 30vw, 60vw"
-							width="1200"
-							height="900"
-							alt="<?php esc_attr_e( 'A student resting a hand on a friend’s shoulder outdoors, both quiet and present.', 'spcs' ); ?>"
+							src="<?php echo $img; ?>/glad-youre-here-logo-960.png"
+							srcset="<?php echo $img; ?>/glad-youre-here-logo-480.png 480w, <?php echo $img; ?>/glad-youre-here-logo-960.png 960w"
+							sizes="(min-width: 64em) 30vw, 70vw"
+							width="960"
+							height="960"
+							alt="<?php esc_attr_e( 'Glad You’re Here', 'spcs' ); ?>"
 							fetchpriority="high"
 							decoding="async"
 						>

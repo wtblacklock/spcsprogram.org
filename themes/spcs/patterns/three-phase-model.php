@@ -24,11 +24,11 @@
 				<!-- /wp:paragraph -->
 
 				<!-- wp:heading -->
-				<h2 class="wp-block-heading"><?php esc_html_e( 'Three phases. Knowledge, then skill, then practice under supervision.', 'spcs' ); ?></h2>
+				<h2 class="wp-block-heading"><?php esc_html_e( 'Three phases. Knowledge, then skill, then practice.', 'spcs' ); ?></h2>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'Students are not lectured at. Every phase carries discussion prompts, polling questions and structured practice — because knowing the warning signs and being willing to say something out loud are different skills.', 'spcs' ); ?></p>
+				<p><?php esc_html_e( 'Knowing what to look for is only the beginning. SPCS moves students through three phases to turn awareness into action.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -62,8 +62,8 @@
 				<span class="spcs-phase__number"><?php esc_html_e( 'Phase three', 'spcs' ); ?></span>
 				<h3 class="spcs-phase__title"><?php esc_html_e( 'Practice Phase', 'spcs' ); ?></h3>
 				<ul>
-					<li><?php esc_html_e( 'Practicing their skills through role play', 'spcs' ); ?></li>
-					<li><?php esc_html_e( 'Building confidence to use their new skills to support their peers', 'spcs' ); ?></li>
+					<li><?php esc_html_e( 'Practicing skills through role play', 'spcs' ); ?></li>
+					<li><?php esc_html_e( 'Building confidence to use new skills to support peers', 'spcs' ); ?></li>
 				</ul>
 			</div>
 		</div>

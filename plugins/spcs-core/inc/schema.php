@@ -27,7 +27,7 @@ function spcs_core_print_schema(): void {
 		'name'        => 'Clover Educational Consulting Group',
 		'url'         => home_url( '/' ),
 		'sameAs'      => array( 'https://clovered.org' ),
-		'description' => __( 'Developer of the Suicide Prevention for College Student (SPCS) Gatekeepers Program.', 'spcs-core' ),
+		'description' => __( 'Developer of the Suicide Prevention for College Students (SPCS) program.', 'spcs-core' ),
 	);
 
 	$graph[] = $organization;
@@ -85,7 +85,7 @@ function spcs_core_program_schema(): array {
 	return array(
 		'@type'               => 'EducationalOccupationalProgram',
 		'@id'                 => home_url( '/#program' ),
-		'name'                => 'Suicide Prevention for College Student (SPCS) Gatekeepers',
+		'name'                => 'Suicide Prevention for College Students (SPCS)',
 		'description'         => __( 'A 90-minute, evidence-based gatekeeper training designed specifically for college students, delivered in person or virtually by a trained campus facilitator.', 'spcs-core' ),
 		'url'                 => home_url( '/about/' ),
 		'provider'            => array( '@id' => home_url( '/#organization' ) ),

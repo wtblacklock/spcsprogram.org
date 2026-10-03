@@ -171,6 +171,34 @@
 	}
 }
 
+/* A logo, unlike a photo, must never be cropped or bled to the edges. */
+.spcs-hero__portrait--logo {
+	max-inline-size: 26rem;
+	margin-inline: auto;
+}
+
+.spcs-hero__portrait--logo::before {
+	content: none;
+}
+
+.spcs-hero__portrait--logo img {
+	aspect-ratio: 1 / 1;
+	object-fit: contain;
+}
+
+@media (max-width: 63.99em) {
+	.spcs-hero__portrait--logo {
+		inline-size: auto;
+		max-inline-size: 14rem;
+		margin-inline: auto;
+		padding-block-start: var(--wp--preset--spacing--40);
+	}
+
+	.spcs-hero__portrait--logo img {
+		aspect-ratio: 1 / 1;
+	}
+}
+
 /*
  * Same device as the hero portrait, tuned for the purple closing band: the
  * hero's purple-wash accent block would vanish against a purple background,
@@ -260,6 +288,16 @@
 	white-space: nowrap;
 }
 
+/* A call to action whose destination doesn't exist yet: same label, not clickable. */
+.spcs-textlink--pending {
+	border-block-end-style: dashed;
+	cursor: default;
+}
+
+.spcs-textlink--pending::after {
+	content: none;
+}
+
 /* Credibility strip ---------------------------------------------------- */
 
 .spcs-credibility {
@@ -322,6 +360,27 @@
 	.spcs-credibility {
 		grid-template-columns: minmax(0, 1fr);
 	}
+}
+
+.spcs-badge-heading {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	gap: clamp(1.25rem, 3vw, 2.25rem);
+	align-items: center;
+}
+
+.spcs-badge-heading h1 {
+	margin: 0;
+}
+
+@media (max-width: 47.99em) {
+	.spcs-badge-heading {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.spcs-credibility__source {
+	margin: 0.75rem 0 0;
 }
 
 /* A heavier variant for the badge the copy asks to be shown "prominently". */

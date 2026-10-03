@@ -11,8 +11,8 @@
  */
 
 ?>
-<!-- wp:group {"metadata":{"name":"What is a gatekeeper"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section" id="gatekeeper">
+<!-- wp:group {"metadata":{"name":"What is a gatekeeper"},"className":"spcs-section is-dark","backgroundColor":"plum","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section is-dark has-plum-background-color has-background" id="gatekeeper">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
 		<!-- wp:group {"className":"spcs-grid","layout":{"type":"default"}} -->

@@ -25,7 +25,7 @@
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph {"className":"spcs-lead"} -->
-		<p class="spcs-lead"><?php esc_html_e( 'Certified Instructors sign in through Clover Educational Consulting Group for the manual, slides, handouts, QR codes and their training outcomes report.', 'spcs' ); ?></p>
+		<p class="spcs-lead"><?php esc_html_e( 'Certified Instructors can sign in through Clover Educational Consulting Group to access the manual, slides, handouts, and other SPCS resources.', 'spcs' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:buttons -->

@@ -182,13 +182,7 @@ function spcs_core_render_demo_form(): string {
 		<button type="submit"><?php esc_html_e( 'Send request', 'spcs-core' ); ?></button>
 
 		<p class="spcs-form__privacy">
-			<?php
-			printf(
-				/* translators: %s: link to the privacy page. */
-				esc_html__( 'We use what you send here to reply to you about the program, and for nothing else. See our %s.', 'spcs-core' ),
-				'<a href="' . esc_url( home_url( '/privacy/' ) ) . '">' . esc_html__( 'privacy notice', 'spcs-core' ) . '</a>'
-			);
-			?>
+			<?php esc_html_e( 'We use what you send here to reply to you about the program, and for nothing else.', 'spcs-core' ); ?>
 		</p>
 	</form>
 	<?php

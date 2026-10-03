@@ -52,18 +52,6 @@ function spcs_core_pages(): array {
 			'title'    => __( 'Instructor Login', 'spcs-core' ),
 			'patterns' => array( 'spcs/page-instructor-login' ),
 		),
-		'faq'                  => array(
-			'title'    => __( 'FAQ', 'spcs-core' ),
-			'patterns' => array( 'spcs/page-faq' ),
-		),
-		'privacy'              => array(
-			'title'    => __( 'Privacy', 'spcs-core' ),
-			'patterns' => array( 'spcs/page-privacy' ),
-		),
-		'accessibility'        => array(
-			'title'    => __( 'Accessibility', 'spcs-core' ),
-			'patterns' => array( 'spcs/page-accessibility' ),
-		),
 	);
 }
 

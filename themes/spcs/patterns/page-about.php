@@ -25,9 +25,32 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<p class="spcs-eyebrow"><?php esc_html_e( 'About SPCS', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:heading {"level":1,"fontSize":"headline"} -->
-				<h1 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Approved by the Suicide Prevention Resource Center as a Best Practice in Suicide Prevention', 'spcs' ); ?></h1>
-				<!-- /wp:heading -->
+				<!-- wp:html -->
+				<div class="spcs-badge-heading">
+					<a href="https://sprc.org/bpr-programs/suicide-prevention-for-college-student-gatekeepers-program/" target="_blank" rel="noopener noreferrer">
+						<picture>
+							<source type="image/webp" srcset="<?php echo $img; ?>/sprc-badge-340.webp">
+							<img
+								class="spcs-credibility__badge"
+								src="<?php echo $img; ?>/sprc-badge-340.png"
+								width="340"
+								height="342"
+								decoding="async"
+								alt="<?php esc_attr_e( 'Suicide Prevention Resource Center Approved Program — Best Practices Registry (opens in a new tab)', 'spcs' ); ?>"
+							>
+						</picture>
+					</a>
+					<h1 class="wp-block-heading has-headline-font-size">
+						<?php
+						printf(
+							/* translators: %s: "Best Practice", linked to the SPRC Best Practices Registry listing. */
+							esc_html__( 'Approved by the Suicide Prevention Resource Center as a %s in Suicide Prevention', 'spcs' ),
+							'<a href="https://sprc.org/bpr-programs/suicide-prevention-for-college-student-gatekeepers-program/" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Best Practice', 'spcs' ) . '<span class="screen-reader-text"> ' . esc_html__( '(opens in a new tab)', 'spcs' ) . '</span></a>'
+						);
+						?>
+					</h1>
+				</div>
+				<!-- /wp:html -->
 			</div>
 			<!-- /wp:group -->
 
@@ -58,25 +81,6 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:html -->
-		<div class="spcs-credibility" style="margin-top:var(--wp--preset--spacing--40)" data-reveal>
-			<picture>
-				<source type="image/webp" srcset="<?php echo $img; ?>/sprc-badge-340.webp">
-				<img
-					class="spcs-credibility__badge"
-					src="<?php echo $img; ?>/sprc-badge-340.png"
-					width="340"
-					height="342"
-					loading="lazy"
-					decoding="async"
-					alt="<?php esc_attr_e( 'Suicide Prevention Resource Center Approved Program — Best Practices Registry', 'spcs' ); ?>"
-				>
-			</picture>
-			<p class="spcs-credibility__claim">
-				<?php esc_html_e( 'Approved by the Suicide Prevention Resource Center as a Best Practice in Suicide Prevention', 'spcs' ); ?>
-			</p>
-		</div>
-		<!-- /wp:html -->
 	</div>
 	<!-- /wp:group -->
 </div>
@@ -97,16 +101,9 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- /wp:paragraph -->
 
 				<!-- wp:heading -->
-				<h2 class="wp-block-heading"><?php esc_html_e( 'Peer-reviewed, and still being reviewed.', 'spcs' ); ?></h2>
+				<h2 class="wp-block-heading"><?php esc_html_e( 'Peer-reviewed, with demonstrated effectiveness.', 'spcs' ); ?></h2>
 				<!-- /wp:heading -->
 
-				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'Every claim on this site traces back to one of these.', 'spcs' ); ?></p>
-				<!-- /wp:paragraph -->
-
-				<!-- wp:paragraph {"className":"spcs-review-note"} -->
-				<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: the headline "Peer-reviewed, and still being reviewed." isn\'t in the site spec — we wrote it to introduce the citations below in one line, signalling that the evidence base is real but still growing (the GTOP study is still under review). Flag if you\'d rather this say something else.', 'spcs' ); ?></p>
-				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 
@@ -137,7 +134,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			</div>
 			<div class="spcs-panel__block is-dark">
 				<p class="spcs-eyebrow"><?php esc_html_e( 'The SPCS difference', 'spcs' ); ?></p>
-				<h2><?php esc_html_e( 'Built for college students. Nothing about it is generic.', 'spcs' ); ?></h2>
+				<h2><?php esc_html_e( 'Built for college students.', 'spcs' ); ?></h2>
 				<p><?php esc_html_e( 'SPCS is the only Best Practice gatekeeper training designed specifically for colleges. Every fact, example, discussion prompt, and role-play activity is tailored to college students and campus life, making the training highly relevant, engaging, and impactful.', 'spcs' ); ?></p>
 			</div>
 		</div>

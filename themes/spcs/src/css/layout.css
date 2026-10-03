@@ -43,15 +43,24 @@
  */
 .spcs-section {
 	padding-inline: var(--gutter);
-	padding-block: clamp(2.75rem, 5vw, 4.5rem);
+	padding-block: clamp(2.5rem, 4.5vw, 4rem);
 }
 
 .spcs-section--tight {
-	padding-block: clamp(2.375rem, 4vw, 3.25rem);
+	padding-block: clamp(2.25rem, 3.5vw, 3rem);
 }
 
 .spcs-section--chapter {
-	padding-block: clamp(3.5rem, 7vw, 6.25rem);
+	padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+/*
+ * Two plain sections in a row would otherwise stack their padding — the
+ * bottom of one plus the top of the next — giving a gap twice the size of
+ * the one around any colored band. Collapsing it keeps every gap the same.
+ */
+.spcs-section:not(.has-background) + .spcs-section:not(.has-background) {
+	padding-block-start: 0;
 }
 
 .spcs-section--flush-top {

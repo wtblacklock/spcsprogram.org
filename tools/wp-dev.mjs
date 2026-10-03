@@ -199,7 +199,7 @@ function install() {
 			'core',
 			'install',
 			`--url=${URL}`,
-			'--title=SPCS Gatekeepers',
+			'--title=SPCS',
 			'--admin_user=admin',
 			'--admin_password=admin',
 			'--admin_email=dev@spcsprogram.org',
