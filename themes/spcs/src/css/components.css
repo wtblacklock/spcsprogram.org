@@ -1021,6 +1021,6 @@
 /* The hero's colour block covered the leftmost student; on desktop it only overlaps the photo's edge. */
 @media (min-width: 64em) {
 	.spcs-hero .spcs-panel__block {
-		grid-column: 1 / span 4;
+		grid-column: 1 / span 5;
 	}
 }
