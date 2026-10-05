@@ -78,6 +78,18 @@ function spcs_preload_fonts(): void {
 add_action( 'wp_head', 'spcs_preload_fonts', 1 );
 
 /**
+ * Favicons: SVG for modern browsers, a PNG fallback, and the home-screen icon.
+ */
+function spcs_favicons(): void {
+	$dir = SPCS_THEME_URI . '/assets/img';
+
+	printf( '<link rel="icon" href="%s" type="image/svg+xml">' . "\n", esc_url( $dir . '/favicon.svg' ) );
+	printf( '<link rel="icon" href="%s" sizes="32x32" type="image/png">' . "\n", esc_url( $dir . '/favicon-32.png' ) );
+	printf( '<link rel="apple-touch-icon" href="%s">' . "\n", esc_url( $dir . '/apple-touch-icon.png' ) );
+}
+add_action( 'wp_head', 'spcs_favicons', 3 );
+
+/**
  * Mark the document as script-enabled before first paint.
  *
  * The reveal animations hide their elements via a `.js` ancestor selector. If
