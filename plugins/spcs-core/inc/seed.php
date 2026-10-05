@@ -46,7 +46,7 @@ function spcs_core_seed_data(): array {
 					'spcs_year'    => '2024',
 					'spcs_journal' => 'Journal of American College Health',
 					'spcs_locator' => '1–4.',
-					'spcs_finding' => 'Virtual delivery produced outcomes comparable to in-person delivery — so scheduling constraints do not have to cost you effectiveness.',
+					'spcs_finding' => '',
 				),
 			),
 			array(
@@ -56,7 +56,7 @@ function spcs_core_seed_data(): array {
 					'spcs_year'    => '2024',
 					'spcs_journal' => 'Crisis: The Journal of Crisis Intervention and Suicide Prevention',
 					'spcs_locator' => '45(1), 41–47.',
-					'spcs_finding' => 'Three years of data across multiple institutions show sustained gains in suicide prevention knowledge and self-efficacy, and reduced stigmatizing beliefs.',
+					'spcs_finding' => '',
 				),
 			),
 			array(
@@ -66,7 +66,7 @@ function spcs_core_seed_data(): array {
 					'spcs_year'    => '2021',
 					'spcs_journal' => 'Crisis: The Journal of Crisis Intervention and Suicide Prevention',
 					'spcs_locator' => '42(1), 48–55.',
-					'spcs_finding' => 'The original pilot (n = 65) found higher self-reported prevention competence, fewer stigmatizing beliefs, and increased knowledge about suicide.',
+					'spcs_finding' => '',
 				),
 			),
 		),

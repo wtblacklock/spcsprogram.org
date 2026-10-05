@@ -109,7 +109,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"className":"spcs-review-note"} -->
-				<p class="spcs-review-note"><?php esc_html_e( 'Note — Took out “Every claim…”, no replacement needed. The one-line summaries under three of the studies are ours, so worth a look.', 'spcs' ); ?></p>
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Took out “Every claim…”, no replacement needed.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 
 			</div>
