@@ -23,6 +23,10 @@
 		<h2 class="wp-block-heading"><?php esc_html_e( 'From students who completed it.', 'spcs' ); ?></h2>
 		<!-- /wp:heading -->
 
+		<!-- wp:paragraph {"className":"spcs-review-note"} -->
+		<p class="spcs-review-note"><?php esc_html_e( 'Note — Heading is ours. Took “Student participant” off each quote, like you asked.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
+
 		<!-- wp:spcs/testimonials {"limit":8,"layout":"carousel"} /-->
 	</div>
 	<!-- /wp:group -->

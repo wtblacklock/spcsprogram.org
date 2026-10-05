@@ -55,22 +55,9 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 		</div>
 		<!-- /wp:html -->
 
-		<!-- wp:html -->
-		<div class="spcs-glad-strip">
-			<picture>
-				<source type="image/webp" srcset="<?php echo $img; ?>/glad-youre-here-logo-480.webp">
-				<img
-					src="<?php echo $img; ?>/glad-youre-here-logo-480.png"
-					width="72"
-					height="72"
-					loading="lazy"
-					decoding="async"
-					alt="<?php esc_attr_e( 'Glad You’re Here', 'spcs' ); ?>"
-				>
-			</picture>
-			<p><?php esc_html_e( 'Wear the message. Shop our “Glad You’re Here” suicide-prevention-awareness gear.', 'spcs' ); ?> <a class="spcs-textlink" href="/store/"><?php esc_html_e( 'Visit the Store', 'spcs' ); ?></a></p>
-		</div>
-		<!-- /wp:html -->
+		<!-- wp:paragraph {"className":"spcs-review-note"} -->
+		<p class="spcs-review-note"><?php esc_html_e( 'Note — Moved “Developed by…” up under this line, like you suggested, and linked “Best Practice” and the badge to the SPRC listing.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
 
 		<!-- wp:spcs/partners /-->
 	</div>

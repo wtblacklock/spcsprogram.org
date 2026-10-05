@@ -44,6 +44,10 @@
 		<!-- wp:paragraph -->
 		<p><a class="spcs-textlink" href="/become-an-instructor/"><?php esc_html_e( 'Not certified yet? Become an Instructor', 'spcs' ); ?></a></p>
 		<!-- /wp:paragraph -->
+
+		<!-- wp:paragraph {"className":"spcs-review-note"} -->
+		<p class="spcs-review-note"><?php esc_html_e( 'Note — Heading, button and link are ours; the paragraph is your wording.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
 </div>

@@ -37,8 +37,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				</div>
 				<!-- /wp:buttons -->
 
-				<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-				<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: our suggestion to replace "Skip to the form." Since the form only covers scheduling a team training, this button now jumps to the three $549 certification options instead, so every visitor lands on the choice that fits them. The "Connect With Us" link under option three still goes to the form.', 'spcs' ); ?></p>
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Swapped “Skip to the form” for this, since the form only covers team trainings.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -111,7 +111,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"className":"spcs-review-note"} -->
-				<p class="spcs-review-note"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: the spec just labels this list "What\'s included" — the sentence heading is ours, added to give the list a point (that this is a complete kit, not a partial one) rather than just a label. Every item below it is straight from the spec.', 'spcs' ); ?></p>
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Heading is ours; the list is yours.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -162,6 +162,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<!-- wp:heading {"fontSize":"title"} -->
 				<h2 class="wp-block-heading has-title-font-size"><?php esc_html_e( 'Become a Certified Instructor for $549', 'spcs' ); ?></h2>
 				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — “Pricing” and the option labels are ours.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>
@@ -174,8 +178,9 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<h3 class="spcs-phase__title"><?php esc_html_e( 'Attend a live virtual training', 'spcs' ); ?></h3>
 				<p><?php esc_html_e( 'Review our schedule of live open-enrollment trainings, hosted by Clover’s expert trainers, and join other individuals from across the country in becoming certified.', 'spcs' ); ?></p>
 				<p style="margin-top:var(--wp--preset--spacing--30)">
-					<span class="spcs-textlink spcs-textlink--pending"><?php esc_html_e( 'Register Now', 'spcs' ); ?></span>
+					<a class="spcs-textlink" href="#options"><?php esc_html_e( 'Register Now', 'spcs' ); ?></a><span class="spcs-soon"><?php esc_html_e( 'Coming soon', 'spcs' ); ?></span>
 				</p>
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Placeholder link until your schedule page is ready. “Coming soon” is ours.', 'spcs' ); ?></p>
 			</div>
 
 			<div class="spcs-phase" data-reveal>
@@ -218,6 +223,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			<div class="spcs-panel__block is-dark">
 				<p class="spcs-eyebrow"><?php esc_html_e( 'Continuing education', 'spcs' ); ?></p>
 				<h2><?php esc_html_e( 'Eligible for 3 CE credits.', 'spcs' ); ?></h2>
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — The label and heading are ours; the paragraph is yours.', 'spcs' ); ?></p>
 				<p><?php esc_html_e( 'The SPCS Certified Instructor Course is eligible for Continuing Education (3 CE credits). APA-approved CE credits are available to licensed mental health professionals for an additional, optional fee of $90.', 'spcs' ); ?></p>
 			</div>
 		</div>
@@ -253,6 +259,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — The form and this safety line are ours.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 
@@ -279,8 +289,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				</ol>
 				<!-- /wp:html -->
 
-				<!-- wp:paragraph {"className":"spcs-review-note","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-				<p class="spcs-review-note" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'EDITORIAL NOTE — Dr. DeHay: these three steps are placeholders until you send your changes to this list.', 'spcs' ); ?></p>
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Placeholder steps. Send your changes whenever you’re ready.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

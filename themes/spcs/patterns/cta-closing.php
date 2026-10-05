@@ -47,6 +47,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — “Next step” and the “Read about the program” link are ours. The paragraph is your wording.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 

@@ -26,6 +26,10 @@
 				<!-- wp:heading -->
 				<h2 class="wp-block-heading"><?php esc_html_e( 'What is a “Gatekeeper”?', 'spcs' ); ?></h2>
 				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — The small label and the “Learn more about SPCS” link are ours.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 

@@ -157,15 +157,17 @@ p, li, dd {
  * never mistaken for real copy.
  */
 .spcs-review-note {
-	display: inline-block;
-	max-inline-size: 46ch;
-	padding: 0.75rem 1rem;
-	border: 2px dashed #b3103a;
+	display: block;
+	inline-size: fit-content;
+	max-inline-size: 42ch;
+	margin-block-start: 0.75rem;
+	padding: 0.4rem 0.65rem;
+	border: 1.5px dashed #b3103a;
 	background: rgb(179 16 58 / 0.07);
 	color: #b3103a;
-	font-size: 0.8125rem;
+	font-size: 0.75rem;
 	font-weight: 700;
-	line-height: 1.5;
+	line-height: 1.45;
 }
 
 /*
@@ -186,20 +188,6 @@ p, li, dd {
  * suits a light section; the `.is-dark` override below flips it for a purple
  * panel, where white-on-white would otherwise vanish.
  */
-.spcs-crisis-band {
-	max-inline-size: 60ch;
-	margin: 0;
-	font-size: var(--wp--preset--font-size--lead);
-	line-height: 1.5;
-	color: var(--plum);
-}
-
-.spcs-crisis-band a {
-	color: var(--purple-deep);
-	font-weight: 600;
-	text-underline-offset: 3px;
-}
-
 .spcs-crisis-callout {
 	background: transparent;
 	color: var(--plum);

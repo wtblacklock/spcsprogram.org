@@ -51,6 +51,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					</h1>
 				</div>
 				<!-- /wp:html -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Took out the repeat and paired the badge with this line, like you asked. “Best Practice” links to the SPRC listing.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 
@@ -104,6 +108,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<h2 class="wp-block-heading"><?php esc_html_e( 'Peer-reviewed, with demonstrated effectiveness.', 'spcs' ); ?></h2>
 				<!-- /wp:heading -->
 
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Took out “Every claim…”, no replacement needed. The one-line summaries under three of the studies are ours, so worth a look.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
+
 			</div>
 			<!-- /wp:group -->
 
@@ -135,6 +143,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			<div class="spcs-panel__block is-dark">
 				<p class="spcs-eyebrow"><?php esc_html_e( 'The SPCS difference', 'spcs' ); ?></p>
 				<h2><?php esc_html_e( 'Built for college students.', 'spcs' ); ?></h2>
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Heading is ours.', 'spcs' ); ?></p>
 				<p><?php esc_html_e( 'SPCS is the only Best Practice gatekeeper training designed specifically for colleges. Every fact, example, discussion prompt, and role-play activity is tailored to college students and campus life, making the training highly relevant, engaging, and impactful.', 'spcs' ); ?></p>
 			</div>
 		</div>

@@ -69,6 +69,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					</picture>
 				</div>
 				<!-- /wp:html -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Swapped your logo in here, like you suggested.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>
@@ -109,7 +113,19 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"fontSize":"lead"} -->
-			<p class="has-lead-font-size"><?php esc_html_e( 'Approved by the Suicide Prevention Resource Center as a Best Practice in Suicide Prevention', 'spcs' ); ?></p>
+			<p class="has-lead-font-size">
+				<?php
+				printf(
+					/* translators: %s: "Best Practice", linked to the SPRC Best Practices Registry listing. */
+					esc_html__( 'Approved by the Suicide Prevention Resource Center as a %s in Suicide Prevention', 'spcs' ),
+					'<a href="https://sprc.org/bpr-programs/suicide-prevention-for-college-student-gatekeepers-program/" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Best Practice', 'spcs' ) . '<span class="screen-reader-text"> ' . esc_html__( '(opens in a new tab)', 'spcs' ) . '</span></a>'
+				);
+				?>
+			</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:paragraph {"className":"spcs-review-note"} -->
+			<p class="spcs-review-note"><?php esc_html_e( 'Note — “Nationally recognized” is our label. Linked “Best Practice” to the SPRC listing.', 'spcs' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->

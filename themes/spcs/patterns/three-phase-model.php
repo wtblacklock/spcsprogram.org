@@ -30,6 +30,10 @@
 				<!-- wp:paragraph -->
 				<p><?php esc_html_e( 'Knowing what to look for is only the beginning. SPCS moves students through three phases to turn awareness into action.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
+
+				<!-- wp:paragraph {"className":"spcs-review-note"} -->
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — The small label and “Phase one/two/three” tags are ours. The bullets are your phase text, split into lists.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>

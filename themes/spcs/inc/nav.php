@@ -131,6 +131,7 @@ function spcs_render_footer(): void {
 			<div class="spcs-footer__top">
 				<div>
 					<h2><?php esc_html_e( 'Glad you’re here. Become a Certified Instructor.', 'spcs' ); ?></h2>
+					<p class="spcs-review-note"><?php esc_html_e( 'Note — This line and the footer layout are ours.', 'spcs' ); ?></p>
 					<div class="wp-block-button">
 						<a
 							class="wp-block-button__link wp-element-button"
@@ -165,6 +166,7 @@ function spcs_render_footer(): void {
 							<li><a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( '988lifeline.org', 'spcs' ); ?></a></li>
 							<li><a href="tel:18664887386"><?php esc_html_e( 'The Trevor Project, for LGBTQ+ young people —', 'spcs' ); ?> <span style="white-space:nowrap">1-866-488-7386</span></a></li>
 						</ul>
+						<p class="spcs-review-note"><?php esc_html_e( 'Note — Our call on where help info goes: it lives here on every page now. We dropped the top bar, the 988 box (that line was in your homepage content), and 741741, and labeled the Trevor Project.', 'spcs' ); ?></p>
 					</div>
 				</div>
 			</div>

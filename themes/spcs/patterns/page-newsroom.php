@@ -20,6 +20,10 @@
 		<p class="spcs-eyebrow"><?php esc_html_e( 'Newsroom', 'spcs' ); ?></p>
 		<!-- /wp:paragraph -->
 
+		<!-- wp:paragraph {"className":"spcs-review-note"} -->
+		<p class="spcs-review-note"><?php esc_html_e( 'Note — Placeholder page until the news feed is built. None of this wording is from your doc.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
+
 		<!-- wp:heading {"level":1,"fontSize":"headline"} -->
 		<h1 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'New research and news in college suicide prevention.', 'spcs' ); ?></h1>
 		<!-- /wp:heading -->

@@ -21,6 +21,10 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 		<p class="spcs-eyebrow"><?php esc_html_e( 'Store', 'spcs' ); ?></p>
 		<!-- /wp:paragraph -->
 
+		<!-- wp:paragraph {"className":"spcs-review-note"} -->
+		<p class="spcs-review-note"><?php esc_html_e( 'Note — Placeholder page until your Printify store is live. None of this wording is from your doc.', 'spcs' ); ?></p>
+		<!-- /wp:paragraph -->
+
 		<!-- wp:html -->
 		<div class="spcs-store__intro">
 			<picture class="spcs-store__mark">
