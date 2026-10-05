@@ -43,7 +43,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 		<!-- /wp:html -->
 
 		<!-- wp:paragraph {"className":"spcs-lead"} -->
-		<p class="spcs-lead"><?php esc_html_e( 'Shirts, stickers and more, carrying a message worth wearing. Our shop is being set up now — check back soon, or follow the link below once it opens.', 'spcs' ); ?></p>
+		<p class="spcs-lead"><?php esc_html_e( 'Shirts, stickers and more, carrying a message worth wearing. Our shop is being set up now. Check back soon, or follow the link below once it opens.', 'spcs' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:buttons -->
