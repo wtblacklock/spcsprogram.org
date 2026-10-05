@@ -425,41 +425,48 @@
 	color: var(--purple-deep);
 }
 
-/* The Glad You're Here swag teaser, sitting under the credibility strip. */
-.spcs-glad-strip {
-	display: flex;
-	align-items: center;
-	gap: 1rem;
-	margin-top: var(--wp--preset--spacing--30);
-	padding-top: var(--wp--preset--spacing--30);
-	border-block-start: var(--rule);
-}
-
-.spcs-glad-strip img {
-	inline-size: 3rem;
-	block-size: 3rem;
-	flex: none;
-}
-
-.spcs-glad-strip p {
-	margin: 0;
-	font-size: 0.9375rem;
-}
-
-/* A small aside for the store, kept out of the way of the main story. */
+/* The store aside: a card set to the left, sliding in as it scrolls into view. */
 .spcs-section.spcs-aside {
-	padding-block: 1.75rem;
+	padding-block: clamp(2rem, 4vw, 3rem);
 }
 
-.spcs-aside .spcs-glad-strip {
-	justify-content: center;
+.spcs-store-card {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	gap: clamp(1.25rem, 3vw, 2rem);
+	align-items: center;
+	max-inline-size: 38rem;
+	padding: clamp(1.25rem, 3vw, 2rem);
+	background: var(--purple-wash);
+	border-inline-start: 5px solid var(--coral);
+}
+
+.spcs-store-card img {
+	inline-size: clamp(5rem, 9vw, 7rem);
+	block-size: auto;
+	display: block;
+}
+
+.spcs-store-card p {
 	margin: 0;
-	padding: 0;
-	border: 0;
 }
 
-.spcs-aside .spcs-review-note {
-	margin-inline: auto;
+.spcs-store-card p + p {
+	margin-block-start: 0.5rem;
+}
+
+.spcs-store-card__title {
+	font-family: var(--wp--preset--font-family--display);
+	font-size: var(--wp--preset--font-size--title-sm);
+	font-variation-settings: "SOFT" 28;
+	line-height: 1.2;
+	color: var(--plum);
+}
+
+@media (max-width: 29.99em) {
+	.spcs-store-card {
+		grid-template-columns: minmax(0, 1fr);
+	}
 }
 
 /* Partner / funder logos ----------------------------------------------- */
@@ -1009,4 +1016,11 @@
 
 .spcs-hero .col-8-5 > .spcs-review-note {
 	margin-inline: auto;
+}
+
+/* The hero's colour block covered the leftmost student; on desktop it only overlaps the photo's edge. */
+@media (min-width: 64em) {
+	.spcs-hero .spcs-panel__block {
+		grid-column: 1 / span 4;
+	}
 }

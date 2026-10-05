@@ -17,24 +17,28 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
 		<!-- wp:html -->
-		<div class="spcs-glad-strip">
+		<div class="spcs-store-card" data-reveal="left">
 			<picture>
 				<source type="image/webp" srcset="<?php echo $img; ?>/glad-youre-here-logo-480.webp">
 				<img
 					src="<?php echo $img; ?>/glad-youre-here-logo-480.png"
-					width="72"
-					height="72"
+					width="160"
+					height="160"
 					loading="lazy"
 					decoding="async"
 					alt=""
 				>
 			</picture>
-			<p><?php esc_html_e( 'Wear the message. Shop our “Glad You’re Here” suicide-prevention-awareness gear.', 'spcs' ); ?> <a class="spcs-textlink" href="/store/"><?php esc_html_e( 'Visit the Store', 'spcs' ); ?></a></p>
+			<div>
+				<p class="spcs-store-card__title"><?php esc_html_e( 'Wear the message.', 'spcs' ); ?></p>
+				<p><?php esc_html_e( 'Shop our “Glad You’re Here” suicide-prevention-awareness gear.', 'spcs' ); ?></p>
+				<p><a class="spcs-textlink" href="/store/"><?php esc_html_e( 'Visit the Store', 'spcs' ); ?></a></p>
+			</div>
 		</div>
 		<!-- /wp:html -->
 
 		<!-- wp:paragraph {"className":"spcs-review-note"} -->
-		<p class="spcs-review-note"><?php esc_html_e( 'Note — Moved this out of the badge box into its own small spot. The wording is ours.', 'spcs' ); ?></p>
+		<p class="spcs-review-note"><?php esc_html_e( 'Note — Moved this out of the badge box into its own card. The wording is ours.', 'spcs' ); ?></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->

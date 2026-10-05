@@ -88,12 +88,13 @@ function initFaq() {
  * @param {number}  delay   Milliseconds to wait before starting.
  */
 function reveal( element, delay = 0 ) {
+	const from = element.dataset.reveal === 'left' ? 'translateX(-48px)' : 'translateY(14px)';
 	const animation = element.animate(
 		[
-			{ opacity: 0, transform: 'translateY(14px)' },
+			{ opacity: 0, transform: from },
 			{ opacity: 1, transform: 'none' },
 		],
-		{ duration: 650, delay, easing: EASE, fill: 'both' }
+		{ duration: element.dataset.reveal === 'left' ? 900 : 650, delay, easing: EASE, fill: 'both' }
 	);
 
 	animation.finished
