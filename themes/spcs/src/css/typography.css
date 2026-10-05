@@ -183,6 +183,20 @@ p, li, dd {
 	color: #fff;
 }
 
+.spcs-crisis-band {
+	max-inline-size: 60ch;
+	margin: 0;
+	font-size: var(--wp--preset--font-size--lead);
+	line-height: 1.5;
+	color: var(--plum);
+}
+
+.spcs-crisis-band a {
+	color: var(--purple-deep);
+	font-weight: 600;
+	text-underline-offset: 3px;
+}
+
 /*
  * Crisis-line callout — needs to read as help, not fine print. Default styling
  * suits a light section; the `.is-dark` override below flips it for a purple
