@@ -430,15 +430,28 @@
 	padding-block: clamp(2rem, 4vw, 3rem);
 }
 
+/*
+ * The card bleeds off the left edge of the screen: its margin reaches the
+ * viewport edge and its padding pulls the content back in line with the page.
+ * The hard offset shadow is the same translucent block the CTA photo uses.
+ */
 .spcs-store-card {
+	--bleed: calc(50vw - 50%);
 	display: grid;
 	grid-template-columns: auto minmax(0, 1fr);
 	gap: clamp(1.25rem, 3vw, 2rem);
 	align-items: center;
-	max-inline-size: 38rem;
+	max-inline-size: calc(38rem + var(--bleed));
+	margin-inline-start: calc(-1 * var(--bleed));
 	padding: clamp(1.25rem, 3vw, 2rem);
+	padding-inline-start: calc(var(--bleed) + clamp(1.25rem, 3vw, 2rem));
 	background: var(--paper);
-	border-inline-start: 5px solid var(--coral);
+	color: var(--plum);
+	box-shadow: 1.25rem 1.25rem 0 rgb(255 255 255 / 0.14);
+}
+
+.spcs-store-card .spcs-textlink {
+	color: var(--purple);
 }
 
 .spcs-store-card img {
@@ -1023,4 +1036,9 @@
 	.spcs-hero .spcs-panel__block {
 		grid-column: 1 / span 5;
 	}
+}
+
+/* The card is light inside a dark band: keep its text dark. */
+.is-dark .spcs-store-card p {
+	color: var(--plum);
 }
