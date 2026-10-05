@@ -12,8 +12,8 @@
 
 $img = esc_url( get_template_directory_uri() . '/assets/img' );
 ?>
-<!-- wp:group {"metadata":{"name":"Store aside"},"className":"spcs-section spcs-aside","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section spcs-aside">
+<!-- wp:group {"metadata":{"name":"Store aside"},"className":"spcs-section spcs-aside","backgroundColor":"purple-wash","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section spcs-aside has-purple-wash-background-color has-background">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
 		<!-- wp:html -->

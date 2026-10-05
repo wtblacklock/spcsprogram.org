@@ -437,7 +437,7 @@
 	align-items: center;
 	max-inline-size: 38rem;
 	padding: clamp(1.25rem, 3vw, 2rem);
-	background: var(--purple-wash);
+	background: var(--paper);
 	border-inline-start: 5px solid var(--coral);
 }
 
