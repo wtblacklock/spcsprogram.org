@@ -288,8 +288,13 @@
 	padding: 0;
 }
 
+/* Tight inside an item, looser between items, so a wrapped link still reads as one entry. */
+.spcs-footer li {
+	line-height: 1.35;
+}
+
 .spcs-footer li + li {
-	margin-block-start: 0.6rem;
+	margin-block-start: 0.75rem;
 }
 
 .spcs-footer a {
