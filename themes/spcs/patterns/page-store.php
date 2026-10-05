@@ -38,7 +38,7 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 					alt="<?php esc_attr_e( 'Glad You’re Here', 'spcs' ); ?>"
 				>
 			</picture>
-			<h1 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Glad You’re Here — our suicide-prevention-awareness gear.', 'spcs' ); ?></h1>
+			<h1 class="wp-block-heading has-headline-font-size"><?php esc_html_e( 'Glad You’re Here: our suicide-prevention-awareness gear.', 'spcs' ); ?></h1>
 		</div>
 		<!-- /wp:html -->
 
