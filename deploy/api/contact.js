@@ -105,6 +105,7 @@ module.exports = async (req, res) => {
 		await send(RESEND_API_KEY, {
 			from: CONTACT_FROM,
 			to: values.email,
+			reply_to: CONTACT_TO.split(',').map((s) => s.trim()),
 			subject: 'We received your SPCS team training inquiry',
 			text:
 				`Hello ${oneLine(values.first_name)},\n\n` +
