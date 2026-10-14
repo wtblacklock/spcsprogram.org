@@ -1,0 +1,28 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"trailingSlash": true,
+	"redirects": [
+		{
+			"source": "/:path*",
+			"has": [{ "type": "host", "value": "www.spcsprogram.org" }],
+			"destination": "https://spcsprogram.org/:path*",
+			"permanent": true
+		}
+	],
+	"headers": [
+		{
+			"source": "/(.*)",
+			"headers": [
+				{ "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains" },
+				{ "key": "X-Content-Type-Options", "value": "nosniff" },
+				{ "key": "X-Frame-Options", "value": "DENY" },
+				{ "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+				{ "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" }
+			]
+		},
+		{
+			"source": "/wp-content/(.*)",
+			"headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+		}
+	]
+}

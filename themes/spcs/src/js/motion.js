@@ -224,9 +224,44 @@ function revealEverything() {
 	document.documentElement.classList.remove( 'js' );
 }
 
+/* ── Form result (static site) ────────────────────────────────────────── */
+
+/*
+ * On the static site the form posts to /api/contact, which redirects back with
+ * ?form=sent or ?form=error. Show the matching message in place of the form.
+ */
+function initFormStatus() {
+	const status = new URLSearchParams( window.location.search ).get( 'form' );
+	const form = document.querySelector( '.spcs-form' );
+
+	if ( ! status || ! form ) return;
+
+	const box = document.createElement( 'div' );
+	box.tabIndex = -1;
+
+	if ( status === 'sent' ) {
+		box.className = 'spcs-form__success';
+		box.setAttribute( 'role', 'status' );
+		box.innerHTML =
+			'<h2>Thank you. That reached us.</h2>' +
+			'<p>Someone from the team will be in touch within two working days. If it is urgent, say so in a reply to the confirmation email and we will move faster.</p>';
+		form.replaceWith( box );
+	} else {
+		box.className = 'spcs-form__errors';
+		box.setAttribute( 'role', 'alert' );
+		box.innerHTML =
+			'<p><strong>That did not send.</strong></p>' +
+			'<p>Please check that your name, a valid work email and your organization are filled in, then try again.</p>';
+		form.prepend( box );
+	}
+
+	box.focus();
+}
+
 function init() {
 	initNav();
 	initFaq();
+	initFormStatus();
 
 	// The `js` class is set by an inline script in <head> so the pre-animation
 	// state applies before first paint; it is absent under reduced motion.

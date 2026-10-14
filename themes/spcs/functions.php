@@ -24,3 +24,4 @@ require_once SPCS_THEME_DIR . '/inc/patterns.php';
 require_once SPCS_THEME_DIR . '/inc/blocks.php';
 require_once SPCS_THEME_DIR . '/inc/editor-guardrails.php';
 require_once SPCS_THEME_DIR . '/inc/nav.php';
+require_once SPCS_THEME_DIR . '/inc/meta.php';

@@ -2,7 +2,7 @@
   "name": "spcsprogram-org",
   "version": "1.0.0",
   "private": true,
-  "description": "spcsprogram.org — custom WordPress block theme for the Suicide Prevention for College Student (SPCS) Gatekeepers Program",
+  "description": "spcsprogram.org \u2014 custom WordPress block theme for the Suicide Prevention for College Student (SPCS) Gatekeepers Program",
   "license": "UNLICENSED",
   "scripts": {
     "fonts": "node tools/copy-fonts.mjs",
@@ -13,7 +13,11 @@
     "watch": "node tools/watch.mjs",
     "wp:start": "node tools/wp-dev.mjs start",
     "wp:stop": "node tools/wp-dev.mjs stop",
-    "wp:reset": "node tools/wp-dev.mjs reset"
+    "wp:reset": "node tools/wp-dev.mjs reset",
+    "export": "python3 tools/export-static.py",
+    "export:review": "python3 tools/export-static.py --review",
+    "deploy": "npm run build && python3 tools/export-static.py && vercel deploy dist/live --prod --scope twinb",
+    "deploy:review": "npm run build && python3 tools/export-static.py --review && vercel deploy dist/review --prod --scope twinb"
   },
   "devDependencies": {
     "@fontsource-variable/fraunces": "^5.2.5",

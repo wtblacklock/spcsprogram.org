@@ -45,6 +45,12 @@ function spcs_clean_head(): void {
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+	// The public site is a static export, so these WordPress endpoints don't exist there.
+	remove_action( 'wp_head', 'feed_links', 2 );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'rest_output_link_wp_head' );
+	remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+	remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 }
 add_action( 'init', 'spcs_clean_head' );
 
