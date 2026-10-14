@@ -137,6 +137,12 @@ function initQuotes() {
 			if ( playing && ! held && visible ) go( 1 );
 		};
 
+		let timer = 0;
+		const restart = () => {
+			window.clearInterval( timer );
+			timer = window.setInterval( tick, QUOTE_INTERVAL );
+		};
+
 		const updateCount = () => {
 			const index = atEnd() ? slides.length - 1 : current();
 			count.textContent = `${ index + 1 } / ${ slides.length }`;
@@ -155,7 +161,14 @@ function initQuotes() {
 			} );
 		} );
 
-		pause.addEventListener( 'click', () => setPlaying( ! playing ) );
+		// Pressing Play moves on straight away, so it's obvious the carousel is running again.
+		pause.addEventListener( 'click', () => {
+			setPlaying( ! playing );
+			if ( playing ) {
+				go( 1 );
+				restart();
+			}
+		} );
 
 		// Someone swiping or dragging is reading; don't pull the quote away from them.
 		track.addEventListener( 'pointerdown', () => setPlaying( false ) );
@@ -163,17 +176,18 @@ function initQuotes() {
 			if ( Math.abs( event.deltaX ) > Math.abs( event.deltaY ) ) setPlaying( false );
 		}, { passive: true } );
 
-		root.addEventListener( 'mouseenter', () => ( held = true ) );
-		root.addEventListener( 'mouseleave', () => ( held = false ) );
-		root.addEventListener( 'focusin', () => ( held = true ) );
-		root.addEventListener( 'focusout', () => ( held = root.matches( ':focus-within' ) ) );
+		// Hold only while someone is over or focused on the quotes themselves, not the controls.
+		track.addEventListener( 'mouseenter', () => ( held = true ) );
+		track.addEventListener( 'mouseleave', () => ( held = false ) );
+		track.addEventListener( 'focusin', () => ( held = true ) );
+		track.addEventListener( 'focusout', () => ( held = false ) );
 
 		new IntersectionObserver( ( entries ) => {
 			visible = entries[ 0 ].isIntersecting;
 		}, { threshold: 0.5 } ).observe( track );
 
 		setPlaying( playing );
-		window.setInterval( tick, QUOTE_INTERVAL );
+		restart();
 		reduceMotion.addEventListener( 'change', ( event ) => {
 			if ( event.matches ) setPlaying( false );
 		} );
