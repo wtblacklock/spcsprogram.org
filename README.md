@@ -97,6 +97,27 @@ breaks keyboard navigation. Their text is filterable — see `spcs_nav_items` an
 
 ---
 
+## Deploying
+
+The public site is a static export of the local WordPress build, hosted on Vercel.
+
+```bash
+npm run wp:start        # the export reads from the local site
+npm run deploy          # live site: spcsprogram.org (Vercel project "spcsprogram"), review notes removed
+npm run deploy:review   # review copy with notes: spcsprogram-org-preview.vercel.app, not indexed
+```
+
+The first run in a fresh checkout asks you to link each `dist/` folder to its Vercel project.
+
+DNS lives at Namecheap: `A @` and `A www` both point at `76.76.21.21`, and www redirects to the
+bare domain (`deploy/vercel.json`). Namecheap email forwarding is unaffected.
+
+The inquiry form posts to `deploy/api/contact.js`, which sends through Resend. It needs these
+environment variables on the `spcsprogram` project: `RESEND_API_KEY`, `CONTACT_TO` (currently a test
+address; switch to spcs@clovered.org) and `CONTACT_FROM` (a sender on a Resend-verified domain).
+
+---
+
 ## Before launch
 
 - [ ] Replace the stock photography in `themes/spcs/assets/img/` (Pexels campus shots plus the
