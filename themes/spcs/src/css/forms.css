@@ -170,17 +170,81 @@
 
 /* Success state after submission. */
 .spcs-form__success {
-	border-inline-start: 3px solid var(--purple);
-	padding: 1.5rem 1.75rem;
-	background: var(--purple-wash);
+	padding: clamp(2rem, 5vw, 3rem);
+	background: var(--purple);
+	color: #fff;
+	box-shadow: 1.25rem 1.25rem 0 rgb(103 51 145 / 0.18);
+}
+
+.spcs-form__success:focus {
+	outline: none;
+}
+
+.spcs-form__check {
+	display: block;
+	inline-size: 3.5rem;
+	block-size: 3.5rem;
+	margin-block-end: 1.25rem;
+	fill: none;
+	stroke: #fff;
+	stroke-width: 3;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.spcs-form__check circle {
+	stroke: var(--blush);
+}
+
+.spcs-form__success-eyebrow {
+	margin: 0 0 0.35rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: rgb(255 255 255 / 0.85);
 }
 
 .spcs-form__success h2 {
-	font-size: var(--wp--preset--font-size--title-sm);
 	margin: 0 0 0.5rem;
+	color: #fff;
+	font-size: var(--wp--preset--font-size--title);
 }
 
 .spcs-form__success p {
 	margin: 0;
-	max-inline-size: 48ch;
+	max-inline-size: 40ch;
+	font-size: 1.0625rem;
+}
+
+/* The checkmark draws itself in: the ring first, then the tick. */
+@media (prefers-reduced-motion: no-preference) {
+	.spcs-form__check circle {
+		stroke-dasharray: 151;
+		stroke-dashoffset: 151;
+		animation: spcs-draw 0.7s var(--ease-out) 0.15s forwards;
+	}
+
+	.spcs-form__check path {
+		stroke-dasharray: 36;
+		stroke-dashoffset: 36;
+		animation: spcs-draw 0.45s var(--ease-out) 0.75s forwards;
+	}
+
+	.spcs-form__success {
+		animation: spcs-pop 0.5s var(--ease-out) both;
+	}
+}
+
+@keyframes spcs-draw {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes spcs-pop {
+	from {
+		opacity: 0;
+		transform: translateY(12px) scale(0.98);
+	}
 }

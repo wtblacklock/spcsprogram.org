@@ -359,8 +359,10 @@ function initFormStatus() {
 		box.className = 'spcs-form__success';
 		box.setAttribute( 'role', 'status' );
 		box.innerHTML =
-			'<h2>Thank you. That reached us.</h2>' +
-			'<p>Someone from the team will be in touch within five working days. If it is urgent, say so in a reply to the confirmation email and we will move faster.</p>';
+			'<svg class="spcs-form__check" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>' +
+			'<p class="spcs-form__success-eyebrow">Glad you\u2019re here</p>' +
+			'<h2>Thank you!</h2>' +
+			'<p>Your inquiry is on its way to the SPCS team.</p>';
 		form.replaceWith( box );
 	} else {
 		box.className = 'spcs-form__errors';

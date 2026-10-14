@@ -116,8 +116,10 @@ function spcs_core_render_demo_form(): string {
 	if ( $sent ) {
 		?>
 		<div class="spcs-form__success" role="status">
-			<h2><?php esc_html_e( 'Thank you. That reached us.', 'spcs-core' ); ?></h2>
-			<p><?php esc_html_e( 'Someone from the team will be in touch within five working days. If it is urgent, say so in a reply to the confirmation email and we will move faster.', 'spcs-core' ); ?></p>
+			<svg class="spcs-form__check" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+			<p class="spcs-form__success-eyebrow"><?php esc_html_e( 'Glad you’re here', 'spcs-core' ); ?></p>
+			<h2><?php esc_html_e( 'Thank you!', 'spcs-core' ); ?></h2>
+			<p><?php esc_html_e( 'Your inquiry is on its way to the SPCS team.', 'spcs-core' ); ?></p>
 		</div>
 		<?php
 		return (string) ob_get_clean();
