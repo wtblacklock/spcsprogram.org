@@ -210,16 +210,70 @@
 	object-fit: contain;
 }
 
+/*
+ * Phones: a small logo sits beside the eyebrow and headline instead of a
+ * full-width block above them, so the headline stays near the top. The two
+ * columns are flattened (display: contents) so their children share one grid.
+ */
 @media (max-width: 63.99em) {
-	.spcs-hero__portrait--logo {
-		inline-size: auto;
-		max-inline-size: 14rem;
-		margin-inline: auto;
+	.spcs-hero:has(.spcs-hero__grid--logo) {
 		padding-block-start: var(--wp--preset--spacing--40);
 	}
 
-	.spcs-hero__portrait--logo img {
-		aspect-ratio: 1 / 1;
+	.spcs-grid.spcs-hero__grid--logo {
+		grid-template-columns: 6.25rem minmax(0, 1fr);
+		column-gap: 1.125rem;
+		align-items: center;
+	}
+
+	.spcs-hero__grid--logo > .col-1-7,
+	.spcs-hero__grid--logo > .col-8-5 {
+		display: contents;
+	}
+
+	.spcs-hero__grid--logo > .col-8-5 > * {
+		grid-column: 1;
+		grid-row: 2;
+		margin: 0;
+	}
+
+	.spcs-hero__grid--logo .spcs-hero__portrait--logo {
+		inline-size: 100%;
+		max-inline-size: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.spcs-hero__grid--logo > .col-1-7 > * {
+		grid-column: 1 / -1;
+		margin: 0;
+	}
+
+	.spcs-hero__grid--logo .spcs-eyebrow {
+		grid-column: 1 / -1;
+		grid-row: 1;
+		margin: 0 0 1rem;
+	}
+
+	.spcs-hero__grid--logo .spcs-hero__headline {
+		grid-column: 2;
+		grid-row: 2;
+		margin: 0;
+		font-size: clamp(1.5rem, 6.6vw, 2.125rem);
+	}
+
+	.spcs-hero__grid--logo .spcs-hero__standfirst {
+		margin-block-start: 1.25rem;
+	}
+
+	.spcs-hero__grid--logo .spcs-hero__actions {
+		margin-block-start: 1.5rem;
+	}
+
+	.spcs-hero__grid--logo > .col-8-5 > .spcs-review-note {
+		grid-column: 1 / -1;
+		grid-row: auto;
+		margin-block-start: 1rem;
 	}
 }
 

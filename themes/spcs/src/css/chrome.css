@@ -161,9 +161,12 @@
 }
 
 @media (max-width: 63.99em) {
+	/* Positioned above the open panel, which would otherwise cover it and leave no way to close the menu. */
 	.spcs-nav__toggle {
 		display: inline-flex;
 		flex: none;
+		position: relative;
+		z-index: 2;
 	}
 
 	/* The strapline is the first thing to go when space runs out. */

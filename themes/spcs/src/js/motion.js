@@ -25,11 +25,22 @@ function initNav() {
 
 	if ( ! toggle || ! nav ) return;
 
+	const label = toggle.querySelector( '.spcs-nav__label' );
+	const closedText = label ? label.textContent : '';
+
 	const setOpen = ( open ) => {
 		toggle.setAttribute( 'aria-expanded', String( open ) );
 		nav.dataset.open = String( open );
 		document.body.style.overflow = open ? 'hidden' : '';
+		if ( label ) label.textContent = open ? label.dataset.openLabel : closedText;
 	};
+
+	// A tap anywhere outside the open panel closes it.
+	document.addEventListener( 'click', ( event ) => {
+		if ( toggle.getAttribute( 'aria-expanded' ) !== 'true' ) return;
+		if ( nav.contains( event.target ) || toggle.contains( event.target ) ) return;
+		setOpen( false );
+	} );
 
 	setOpen( false );
 

@@ -74,7 +74,7 @@ function spcs_render_header(): void {
 				aria-controls="spcs-primary-nav"
 			>
 				<span class="spcs-nav__bars" aria-hidden="true"></span>
-				<?php esc_html_e( 'Menu', 'spcs' ); ?>
+				<span class="spcs-nav__label" data-open-label="<?php esc_attr_e( 'Close', 'spcs' ); ?>"><?php esc_html_e( 'Menu', 'spcs' ); ?></span>
 			</button>
 
 			<nav
