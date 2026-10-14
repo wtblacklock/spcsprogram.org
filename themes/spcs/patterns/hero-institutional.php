@@ -16,8 +16,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 <div class="wp-block-group spcs-section spcs-hero">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
-		<!-- wp:group {"className":"spcs-grid spcs-hero__grid--logo","layout":{"type":"default"}} -->
-		<div class="wp-block-group spcs-grid spcs-hero__grid--logo">
+		<!-- wp:group {"className":"spcs-grid","layout":{"type":"default"}} -->
+		<div class="wp-block-group spcs-grid">
 			<!-- wp:group {"className":"col-1-7","layout":{"type":"default"}} -->
 			<div class="wp-block-group col-1-7">
 				<!-- wp:paragraph {"className":"spcs-eyebrow"} -->

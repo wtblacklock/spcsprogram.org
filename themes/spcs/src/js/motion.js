@@ -83,11 +83,102 @@ function initFaq() {
 	} );
 }
 
+/* ── Student quote carousel ───────────────────────────────────────────── */
+
+const QUOTE_INTERVAL = 8000;
+
 /*
- * The student-quote marquee (`.spcs-quote-marquee`) scrolls continuously,
- * pauses on hover/focus, and switches off under reduced motion — all in CSS
- * (see components.css). There is nothing for JS to do here.
+ * Enhances the scroll-snap quote track with arrows, a counter, a pause button
+ * and a slow auto-advance. Auto-advance pauses while the carousel is hovered,
+ * touched, focused or off screen, stops for good once someone navigates it
+ * themselves, and never starts under reduced motion.
  */
+function initQuotes() {
+	document.querySelectorAll( '[data-quotes]' ).forEach( ( root ) => {
+		const track = root.querySelector( '.spcs-quotes__track' );
+		const controls = root.querySelector( '.spcs-quotes__controls' );
+		const count = root.querySelector( '.spcs-quotes__count' );
+		const pause = root.querySelector( '.spcs-quotes__pause' );
+		const slides = Array.from( track.children );
+
+		if ( ! controls || slides.length < 2 ) return;
+
+		controls.hidden = false;
+
+		let playing = ! reduceMotion.matches;
+		let held = false;
+		let visible = false;
+
+		const current = () => {
+			const left = track.scrollLeft;
+			let best = 0;
+			slides.forEach( ( slide, index ) => {
+				if ( Math.abs( slide.offsetLeft - left ) < Math.abs( slides[ best ].offsetLeft - left ) ) best = index;
+			} );
+			return best;
+		};
+
+		const atEnd = () => track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+
+		const go = ( step ) => {
+			let target = current() + step;
+			if ( step > 0 && atEnd() ) target = 0;
+			if ( target < 0 ) target = slides.length - 1;
+			track.scrollTo( { left: slides[ target ].offsetLeft, behavior: reduceMotion.matches ? 'auto' : 'smooth' } );
+		};
+
+		const setPlaying = ( value ) => {
+			playing = value;
+			pause.setAttribute( 'aria-pressed', String( ! value ) );
+			pause.textContent = value ? pause.dataset.pauseLabel : pause.dataset.playLabel;
+		};
+
+		const tick = () => {
+			if ( playing && ! held && visible ) go( 1 );
+		};
+
+		const updateCount = () => {
+			const index = atEnd() ? slides.length - 1 : current();
+			count.textContent = `${ index + 1 } / ${ slides.length }`;
+		};
+
+		let frame = 0;
+		track.addEventListener( 'scroll', () => {
+			cancelAnimationFrame( frame );
+			frame = requestAnimationFrame( updateCount );
+		} );
+
+		controls.querySelectorAll( '[data-step]' ).forEach( ( button ) => {
+			button.addEventListener( 'click', () => {
+				setPlaying( false );
+				go( Number( button.dataset.step ) );
+			} );
+		} );
+
+		pause.addEventListener( 'click', () => setPlaying( ! playing ) );
+
+		// Someone swiping or dragging is reading; don't pull the quote away from them.
+		track.addEventListener( 'pointerdown', () => setPlaying( false ) );
+		track.addEventListener( 'wheel', ( event ) => {
+			if ( Math.abs( event.deltaX ) > Math.abs( event.deltaY ) ) setPlaying( false );
+		}, { passive: true } );
+
+		root.addEventListener( 'mouseenter', () => ( held = true ) );
+		root.addEventListener( 'mouseleave', () => ( held = false ) );
+		root.addEventListener( 'focusin', () => ( held = true ) );
+		root.addEventListener( 'focusout', () => ( held = root.matches( ':focus-within' ) ) );
+
+		new IntersectionObserver( ( entries ) => {
+			visible = entries[ 0 ].isIntersecting;
+		}, { threshold: 0.5 } ).observe( track );
+
+		setPlaying( playing );
+		window.setInterval( tick, QUOTE_INTERVAL );
+		reduceMotion.addEventListener( 'change', ( event ) => {
+			if ( event.matches ) setPlaying( false );
+		} );
+	} );
+}
 
 /* ── Reveals ──────────────────────────────────────────────────────────── */
 
@@ -273,6 +364,7 @@ function init() {
 	initNav();
 	initFaq();
 	initFormStatus();
+	initQuotes();
 
 	// The `js` class is set by an inline script in <head> so the pre-animation
 	// state applies before first paint; it is absent under reduced motion.

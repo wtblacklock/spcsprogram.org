@@ -210,70 +210,16 @@
 	object-fit: contain;
 }
 
-/*
- * Phones: a small logo sits beside the eyebrow and headline instead of a
- * full-width block above them, so the headline stays near the top. The two
- * columns are flattened (display: contents) so their children share one grid.
- */
 @media (max-width: 63.99em) {
-	.spcs-hero:has(.spcs-hero__grid--logo) {
+	.spcs-hero__portrait--logo {
+		inline-size: auto;
+		max-inline-size: 14rem;
+		margin-inline: auto;
 		padding-block-start: var(--wp--preset--spacing--40);
 	}
 
-	.spcs-grid.spcs-hero__grid--logo {
-		grid-template-columns: 6.25rem minmax(0, 1fr);
-		column-gap: 1.125rem;
-		align-items: center;
-	}
-
-	.spcs-hero__grid--logo > .col-1-7,
-	.spcs-hero__grid--logo > .col-8-5 {
-		display: contents;
-	}
-
-	.spcs-hero__grid--logo > .col-8-5 > * {
-		grid-column: 1;
-		grid-row: 2;
-		margin: 0;
-	}
-
-	.spcs-hero__grid--logo .spcs-hero__portrait--logo {
-		inline-size: 100%;
-		max-inline-size: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	.spcs-hero__grid--logo > .col-1-7 > * {
-		grid-column: 1 / -1;
-		margin: 0;
-	}
-
-	.spcs-hero__grid--logo .spcs-eyebrow {
-		grid-column: 1 / -1;
-		grid-row: 1;
-		margin: 0 0 1rem;
-	}
-
-	.spcs-hero__grid--logo .spcs-hero__headline {
-		grid-column: 2;
-		grid-row: 2;
-		margin: 0;
-		font-size: clamp(1.5rem, 6.6vw, 2.125rem);
-	}
-
-	.spcs-hero__grid--logo .spcs-hero__standfirst {
-		margin-block-start: 1.25rem;
-	}
-
-	.spcs-hero__grid--logo .spcs-hero__actions {
-		margin-block-start: 1.5rem;
-	}
-
-	.spcs-hero__grid--logo > .col-8-5 > .spcs-review-note {
-		grid-column: 1 / -1;
-		grid-row: auto;
-		margin-block-start: 1rem;
+	.spcs-hero__portrait--logo img {
+		aspect-ratio: 1 / 1;
 	}
 }
 
@@ -739,67 +685,109 @@
 }
 
 /*
- * The marquee variant used for the home page's student quotes: a continuous
- * leftward scroll rather than discrete steps. The track holds the quote set
- * twice back to back and one CSS animation slides it exactly one set-width
- * (-50%) on a loop, so the seam is invisible. Pure CSS: `:hover`/`:focus-within`
- * pause it, and reduced motion turns it off completely — nothing here depends
- * on JS running.
+ * Student quotes: one at a time on phones (with the next one peeking in),
+ * about two on desktop. A native scroll-snap track, so it swipes and works
+ * with no JS; motion.js adds the arrows, counter, pause and auto-advance.
  */
-.spcs-quote-marquee {
+.spcs-quotes {
 	margin-block-start: var(--wp--preset--spacing--40);
-	overflow: hidden;
-	/* A soft edge instead of a hard clip where cards scroll in and out. */
-	mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
 }
 
-.spcs-quote-marquee__track {
+.spcs-quotes__track {
+	position: relative;
 	display: flex;
-	align-items: stretch;
-	gap: clamp(2.5rem, 5vw, 4rem);
-	inline-size: max-content;
-	animation: spcs-marquee 48s linear infinite;
+	gap: clamp(1.5rem, 4vw, 3.5rem);
+	overflow-x: auto;
+	overscroll-behavior-x: contain;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+	padding-block-end: 0.25rem;
 }
 
-.spcs-quote-marquee:hover .spcs-quote-marquee__track,
-.spcs-quote-marquee:focus-within .spcs-quote-marquee__track {
-	animation-play-state: paused;
+.spcs-quotes__track::-webkit-scrollbar {
+	display: none;
 }
 
-.spcs-quote-marquee .spcs-quote {
-	flex: 0 0 min(26rem, 78vw);
+.spcs-quotes__track:focus-visible {
+	outline: 2px solid var(--purple);
+	outline-offset: 6px;
+}
+
+.spcs-quotes .spcs-quote {
+	flex: 0 0 min(26rem, 84%);
 	max-inline-size: none;
+	scroll-snap-align: start;
 }
 
-@keyframes spcs-marquee {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		/* Exactly one copy of the track's width, so the loop point is seamless. */
-		transform: translateX(-50%);
-	}
+.spcs-quotes__controls {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-block-start: var(--wp--preset--spacing--30);
 }
 
-/*
- * Freezing the animation mid-scroll would clip most quotes behind the fade
- * mask with no way to reach them. Under reduced motion the track instead
- * wraps as a plain static list — the repeated second copy (only ever there to
- * make the loop seamless) is dropped so nothing reads twice.
- */
+.spcs-quotes__controls[hidden] {
+	display: none;
+}
+
+.spcs-quotes__btn,
+.spcs-quotes__pause {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-block-size: 2.75rem;
+	border: 1px solid var(--field-border);
+	background: transparent;
+	color: var(--plum);
+	font: inherit;
+	cursor: pointer;
+	transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+
+.spcs-quotes__btn {
+	inline-size: 2.75rem;
+	border-radius: 50%;
+	font-size: 1.125rem;
+}
+
+.spcs-quotes__pause {
+	margin-inline-start: auto;
+	padding-inline: 1rem;
+	border-radius: 999px;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.spcs-quotes__btn:hover,
+.spcs-quotes__pause:hover {
+	border-color: var(--purple);
+	background: var(--purple-wash);
+}
+
+.spcs-quotes__btn:focus-visible,
+.spcs-quotes__pause:focus-visible {
+	outline: 2px solid var(--purple);
+	outline-offset: 2px;
+}
+
+.spcs-quotes__count {
+	min-inline-size: 3.5rem;
+	text-align: center;
+	font-size: 0.875rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	color: var(--quiet);
+}
+
 @media (prefers-reduced-motion: reduce) {
-	.spcs-quote-marquee {
-		overflow: visible;
-		mask-image: none;
+	.spcs-quotes__track {
+		scroll-behavior: auto;
 	}
 
-	.spcs-quote-marquee__track {
-		animation: none;
-		flex-wrap: wrap;
-		inline-size: auto;
-	}
-
-	.spcs-quote-marquee__track [aria-hidden="true"] {
+	.spcs-quotes__pause {
 		display: none;
 	}
 }

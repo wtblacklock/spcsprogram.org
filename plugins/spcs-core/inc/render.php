@@ -181,24 +181,28 @@ function spcs_core_render_testimonials( array $attributes ): string {
 	}
 
 	/*
-	 * A continuous leftward marquee, built as one track holding the quote set
-	 * twice back to back — a pure CSS animation slides the track exactly one
-	 * set-width (-50%) and loops, so the seam between the second copy ending
-	 * and the first beginning again is invisible. No JS: the animation pauses
-	 * on hover/focus and switches off entirely under reduced motion, both in
-	 * CSS, so there is nothing here that can fail to load or run.
+	 * A one-at-a-time slider: a native scroll-snap track (swipeable, and fully
+	 * usable with no JS) that motion.js enhances with arrows, a counter, a
+	 * pause control and a slow auto-advance.
 	 */
-	$out  = '<div class="spcs-quote-marquee">';
-	$out .= '<div class="spcs-quote-marquee__track">';
+	$count = count( $slides );
+	$out   = '<div class="spcs-quotes" data-quotes>';
+	$out  .= sprintf(
+		'<div class="spcs-quotes__track" role="region" aria-roledescription="%s" aria-label="%s" tabindex="0">',
+		esc_attr__( 'carousel', 'spcs-core' ),
+		esc_attr__( 'What students are saying', 'spcs-core' )
+	);
 
-	foreach ( $slides as $testimonial ) {
-		$out .= spcs_core_render_quote( $testimonial );
+	foreach ( $slides as $index => $testimonial ) {
+		$out .= spcs_core_render_quote( $testimonial, '', false, sprintf( '%d / %d', $index + 1, $count ) );
 	}
 
-	foreach ( $slides as $testimonial ) {
-		$out .= spcs_core_render_quote( $testimonial, '', false, true );
-	}
-
+	$out .= '</div>';
+	$out .= '<div class="spcs-quotes__controls" hidden>';
+	$out .= '<button type="button" class="spcs-quotes__btn" data-step="-1" aria-label="' . esc_attr__( 'Previous quote', 'spcs-core' ) . '"><span aria-hidden="true">&larr;</span></button>';
+	$out .= '<span class="spcs-quotes__count">1 / ' . $count . '</span>';
+	$out .= '<button type="button" class="spcs-quotes__btn" data-step="1" aria-label="' . esc_attr__( 'Next quote', 'spcs-core' ) . '"><span aria-hidden="true">&rarr;</span></button>';
+	$out .= '<button type="button" class="spcs-quotes__pause" aria-pressed="false" data-pause-label="' . esc_attr__( 'Pause', 'spcs-core' ) . '" data-play-label="' . esc_attr__( 'Play', 'spcs-core' ) . '">' . esc_html__( 'Pause', 'spcs-core' ) . '</button>';
 	$out .= '</div>';
 
 	return $out . '</div>';
@@ -210,17 +214,18 @@ function spcs_core_render_testimonials( array $attributes ): string {
  * @param WP_Post $testimonial   The testimonial post.
  * @param string  $column        Optional grid column class.
  * @param bool    $reveal        Whether to gate the figure behind the scroll-reveal animation.
- * @param bool    $duplicate     Whether this is the marquee's repeated second copy — hidden from
- *                                assistive tech so the quotes are not announced twice.
+ * @param string  $slide_label   When set, marks the figure as a carousel slide with this label.
  * @return string
  */
-function spcs_core_render_quote( WP_Post $testimonial, string $column = '', bool $reveal = false, bool $duplicate = false ): string {
+function spcs_core_render_quote( WP_Post $testimonial, string $column = '', bool $reveal = false, string $slide_label = '' ): string {
 	$attribution = spcs_core_field( $testimonial->ID, 'spcs_attribution' );
 	$campus      = spcs_core_field( $testimonial->ID, 'spcs_campus' );
 
 	$classes = trim( 'spcs-quote ' . $column );
 
-	$out  = '<figure class="' . esc_attr( $classes ) . '"' . ( $reveal ? ' data-reveal' : '' ) . ( $duplicate ? ' aria-hidden="true"' : '' ) . '>';
+	$out  = '<figure class="' . esc_attr( $classes ) . '"' . ( $reveal ? ' data-reveal' : '' );
+	$out .= $slide_label ? ' role="group" aria-roledescription="slide" aria-label="' . esc_attr( $slide_label ) . '"' : '';
+	$out .= '>';
 	$out .= '<blockquote class="spcs-quote__text">';
 	$out .= wp_kses_post( wpautop( $testimonial->post_content ) );
 	$out .= '</blockquote>';

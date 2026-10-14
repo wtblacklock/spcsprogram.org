@@ -8,6 +8,8 @@
 //   CONTACT_TO      where inquiries are delivered
 //   CONTACT_FROM    verified sender, e.g. "SPCS <hello@spcsprogram.org>"
 
+const { teamEmail, confirmationEmail } = require('./_email.js');
+
 const FIELDS = [
 	['first_name', 'First name', true],
 	['last_name', 'Last name', true],
@@ -94,6 +96,7 @@ module.exports = async (req, res) => {
 			reply_to: values.email,
 			subject: `SPCS team training inquiry: ${oneLine(values.institution)}`,
 			text: lines.join('\n'),
+			html: teamEmail(values, FIELDS),
 		});
 	} catch (err) {
 		console.error('[contact] team email failed', err);
@@ -110,8 +113,10 @@ module.exports = async (req, res) => {
 			text:
 				`Hello ${oneLine(values.first_name)},\n\n` +
 				'Thank you for your interest in bringing Suicide Prevention for College Students (SPCS) to your team. Someone from our training team will reply within two working days.\n\n' +
+				'If anything is urgent, just reply to this email and we will move faster.\n\n' +
 				'If you are looking for support right now, the 988 Suicide and Crisis Lifeline is available 24/7. Call or text 988.\n\n' +
 				'Clover Educational Consulting Group\nspcsprogram.org',
+			html: confirmationEmail(values),
 		});
 	} catch (err) {
 		// The inquiry already reached the team; a failed courtesy copy shouldn't show an error.
