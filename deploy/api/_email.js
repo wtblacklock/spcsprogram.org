@@ -27,7 +27,7 @@ function esc(s) {
 		.replace(/'/g, '&#39;');
 }
 
-function layout({ preheader, eyebrow, heading, body }) {
+function layout({ preheader, eyebrow, heading, body, footer = true }) {
 	return `<!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(heading)}</title></head>
@@ -46,15 +46,15 @@ function layout({ preheader, eyebrow, heading, body }) {
 		</tr></table>
 	</td></tr>
 	<tr><td style="height:4px;background:${C.coral};font-size:0;line-height:0;">&nbsp;</td></tr>
-	<tr><td style="background:#ffffff;padding:32px;font-family:${FONT};color:${C.plum};">
+	<tr><td style="background:#ffffff;padding:32px;font-family:${FONT};color:${C.plum};${footer ? '' : 'border-radius:0 0 12px 12px;'}">
 		${eyebrow ? `<div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:${C.purple};font-weight:bold;">${esc(eyebrow)}</div>` : ''}
 		<h1 style="margin:8px 0 20px;font-family:${SERIF};font-size:26px;line-height:1.25;color:${C.plum};font-weight:normal;">${esc(heading)}</h1>
 		${body}
 	</td></tr>
-	<tr><td style="background:${C.paper};padding:20px 32px;border-radius:0 0 12px 12px;font-family:${FONT};font-size:12px;line-height:1.6;color:${C.quiet};border-top:1px solid ${C.rule};">
+	${footer ? `<tr><td style="background:${C.paper};padding:20px 32px;border-radius:0 0 12px 12px;font-family:${FONT};font-size:12px;line-height:1.6;color:${C.quiet};border-top:1px solid ${C.rule};">
 		If you or someone you know needs support now, call or text <a href="tel:988" style="color:${C.purple};font-weight:bold;">988</a> or go to <a href="https://988lifeline.org/" style="color:${C.purple};">988Lifeline.org</a>.<br>
 		Clover Educational Consulting Group &middot; <a href="${SITE}" style="color:${C.purple};">spcsprogram.org</a>
-	</td></tr>
+	</td></tr>` : ''}
 </table>
 </td></tr>
 </table>
@@ -100,6 +100,7 @@ function confirmationEmail(values) {
 		preheader: 'Someone from our training team will reply within five working days.',
 		heading: `Hello ${values.first_name},`,
 		body,
+		footer: false,
 	});
 }
 
