@@ -113,8 +113,7 @@ DNS lives at Namecheap: `A @` and `A www` both point at `76.76.21.21`, and www r
 bare domain (`deploy/vercel.json`). Namecheap email forwarding is unaffected.
 
 The inquiry form posts to `deploy/api/contact.js`, which sends through Resend. It needs these
-environment variables on the `spcsprogram` project: `RESEND_API_KEY`, `CONTACT_TO` (currently a test
-address; switch to spcs@clovered.org) and `CONTACT_FROM` (a sender on a Resend-verified domain).
+environment variables on the `spcsprogram` project: `RESEND_API_KEY`, `CONTACT_TO` (spcs@clovered.org) and `CONTACT_FROM` (a sender on a Resend-verified domain).
 
 ---
 
