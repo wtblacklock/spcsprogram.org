@@ -16,7 +16,6 @@ const FIELDS = [
 	['email', 'Work email', true],
 	['institution', 'Organization or campus', true],
 	['role', 'Your role', false],
-	['timeline', 'When are you hoping to train your team?', false],
 	['message', 'Anything you want us to know', false],
 ];
 

@@ -84,18 +84,6 @@ function spcs_core_demo_fields(): array {
 			'required' => false,
 			'hint'     => __( 'For example: Resident Advisor, Director of Counseling Services.', 'spcs-core' ),
 		),
-		'timeline'    => array(
-			'label'    => __( 'When are you hoping to train your team?', 'spcs-core' ),
-			'type'     => 'select',
-			'required' => false,
-			'options'  => array(
-				'',
-				'This term',
-				'Next term',
-				'Next academic year',
-				'Still exploring',
-			),
-		),
 		'message'     => array(
 			'label'    => __( 'Anything you want us to know', 'spcs-core' ),
 			'type'     => 'textarea',
@@ -164,13 +152,7 @@ function spcs_core_render_demo_form(): string {
 		spcs_core_render_field( 'institution', $values, $errors );
 		?>
 
-		<?php
-		// Not paired into a row: "Your role" and the timeline question have very
-		// different label lengths, and a wrapping label pushed the shorter field's
-		// input out of alignment with the one next to it.
-		spcs_core_render_field( 'role', $values, $errors );
-		spcs_core_render_field( 'timeline', $values, $errors );
-		?>
+		<?php spcs_core_render_field( 'role', $values, $errors ); ?>
 
 		<?php spcs_core_render_field( 'message', $values, $errors ); ?>
 
@@ -519,7 +501,6 @@ function spcs_core_lead_columns(): void {
 				'title'       => __( 'Institution and contact', 'spcs-core' ),
 				'lead_email'  => __( 'Email', 'spcs-core' ),
 				'lead_role'   => __( 'Role', 'spcs-core' ),
-				'lead_timeline' => __( 'Timeline', 'spcs-core' ),
 				'date'        => __( 'Received', 'spcs-core' ),
 			);
 		}
