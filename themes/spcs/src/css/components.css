@@ -156,7 +156,7 @@
 	 * header (the section's own top padding removed) and is cropped shorter
 	 * than its desktop 4:3 so the headline lands above the fold.
 	 */
-	.spcs-hero {
+	.spcs-hero:has(.spcs-hero__portrait) {
 		padding-block-start: 0;
 	}
 
@@ -764,7 +764,7 @@
 .spcs-quotes__btn:hover,
 .spcs-quotes__pause:hover {
 	border-color: var(--purple);
-	background: var(--purple-wash);
+	background: var(--paper);
 }
 
 .spcs-quotes__btn:focus-visible,
@@ -792,62 +792,6 @@
 	}
 }
 
-
-/* Implementation timeline ---------------------------------------------- */
-
-.spcs-timeline {
-	list-style: none;
-	/* The first item's own top rule otherwise sits flush against the heading above it. */
-	margin: 1.75rem 0 0;
-	padding: 0;
-	counter-reset: step;
-}
-
-.spcs-timeline__item {
-	position: relative;
-	padding-inline-start: clamp(3rem, 6vw, 5rem);
-	padding-block: clamp(1.75rem, 3vw, 2.5rem);
-	border-block-start: var(--rule);
-	counter-increment: step;
-}
-
-.spcs-timeline__item:last-child {
-	border-block-end: var(--rule);
-}
-
-.spcs-timeline__item::before {
-	content: counter(step, decimal-leading-zero);
-	position: absolute;
-	inset-inline-start: 0;
-	inset-block-start: clamp(1.75rem, 3vw, 2.5rem);
-	font-family: var(--wp--preset--font-family--display);
-	font-size: 1.125rem;
-	font-weight: 600;
-	color: var(--purple);
-	font-variant-numeric: lining-nums tabular-nums;
-}
-
-.spcs-timeline__when {
-	display: block;
-	font-size: 0.75rem;
-	font-weight: 600;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	color: var(--coral-ink);
-	margin-block-end: 0.5rem;
-}
-
-.spcs-timeline__title {
-	font-size: var(--wp--preset--font-size--title-sm);
-	margin: 0 0 0.6rem;
-}
-
-.spcs-timeline__body {
-	max-inline-size: 58ch;
-	margin: 0;
-	color: var(--plum);
-	opacity: 0.86;
-}
 
 /* Citations ------------------------------------------------------------ */
 

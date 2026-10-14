@@ -13,8 +13,8 @@
 
 $img = esc_url( get_template_directory_uri() . '/assets/img' );
 ?>
-<!-- wp:group {"metadata":{"name":"Opener"},"className":"spcs-section spcs-hero","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section spcs-hero">
+<!-- wp:group {"metadata":{"name":"Opener"},"className":"spcs-section spcs-hero","backgroundColor":"purple-wash","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section spcs-hero has-purple-wash-background-color has-background">
 	<!-- wp:group {"className":"spcs-shell spcs-shell--narrow","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell spcs-shell--narrow">
 		<!-- wp:paragraph {"className":"spcs-eyebrow"} -->

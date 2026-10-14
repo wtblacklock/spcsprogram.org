@@ -57,8 +57,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Eligibility"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section">
+<!-- wp:group {"metadata":{"name":"Eligibility"},"className":"spcs-section","backgroundColor":"purple-wash","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section has-purple-wash-background-color has-background">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
 		<!-- wp:group {"className":"spcs-grid","layout":{"type":"default"}} -->
@@ -233,8 +233,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Connect with us"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section" id="connect">
+<!-- wp:group {"metadata":{"name":"Connect with us"},"className":"spcs-section","backgroundColor":"purple-wash","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section has-purple-wash-background-color has-background" id="connect">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
 		<!-- wp:group {"className":"spcs-grid","layout":{"type":"default"}} -->
@@ -262,35 +262,6 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 
 				<!-- wp:paragraph {"className":"spcs-review-note"} -->
 				<p class="spcs-review-note"><?php esc_html_e( 'Note — The form and this safety line are ours.', 'spcs' ); ?></p>
-				<!-- /wp:paragraph -->
-			</div>
-			<!-- /wp:group -->
-
-			<!-- wp:group {"className":"col-9-4","layout":{"type":"default"}} -->
-			<div class="wp-block-group col-9-4">
-				<!-- wp:heading {"level":2,"fontSize":"title-sm"} -->
-				<h2 class="wp-block-heading has-title-sm-font-size"><?php esc_html_e( 'What happens next', 'spcs' ); ?></h2>
-				<!-- /wp:heading -->
-
-				<!-- wp:html -->
-				<ol class="spcs-timeline">
-					<li class="spcs-timeline__item">
-						<h3 class="spcs-timeline__title"><?php esc_html_e( 'We reply within two working days', 'spcs' ); ?></h3>
-						<p class="spcs-timeline__body"><?php esc_html_e( 'From a person on the program team, not an automated sequence.', 'spcs' ); ?></p>
-					</li>
-					<li class="spcs-timeline__item">
-						<h3 class="spcs-timeline__title"><?php esc_html_e( 'A short call, if you want one', 'spcs' ); ?></h3>
-						<p class="spcs-timeline__body"><?php esc_html_e( 'Twenty to thirty minutes on your group, your facilitators and scheduling.', 'spcs' ); ?></p>
-					</li>
-					<li class="spcs-timeline__item">
-						<h3 class="spcs-timeline__title"><?php esc_html_e( 'A quote to circulate', 'spcs' ); ?></h3>
-						<p class="spcs-timeline__body"><?php esc_html_e( 'Pricing for your group size, in a form you can forward to whoever signs off.', 'spcs' ); ?></p>
-					</li>
-				</ol>
-				<!-- /wp:html -->
-
-				<!-- wp:paragraph {"className":"spcs-review-note"} -->
-				<p class="spcs-review-note"><?php esc_html_e( 'Note — Placeholder steps. Send your changes whenever you’re ready.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

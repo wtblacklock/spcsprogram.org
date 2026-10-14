@@ -346,7 +346,7 @@ function initFormStatus() {
 		box.setAttribute( 'role', 'status' );
 		box.innerHTML =
 			'<h2>Thank you. That reached us.</h2>' +
-			'<p>Someone from the team will be in touch within two working days. If it is urgent, say so in a reply to the confirmation email and we will move faster.</p>';
+			'<p>Someone from the team will be in touch within five working days. If it is urgent, say so in a reply to the confirmation email and we will move faster.</p>';
 		form.replaceWith( box );
 	} else {
 		box.className = 'spcs-form__errors';

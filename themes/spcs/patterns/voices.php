@@ -11,8 +11,8 @@
  */
 
 ?>
-<!-- wp:group {"metadata":{"name":"Student voices"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section">
+<!-- wp:group {"metadata":{"name":"Student voices"},"className":"spcs-section","backgroundColor":"purple-wash","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section has-purple-wash-background-color has-background">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
 		<!-- wp:paragraph {"className":"spcs-eyebrow"} -->

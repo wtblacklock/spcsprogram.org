@@ -112,10 +112,9 @@ module.exports = async (req, res) => {
 			subject: 'We received your SPCS team training inquiry',
 			text:
 				`Hello ${oneLine(values.first_name)},\n\n` +
-				'Thank you for your interest in bringing Suicide Prevention for College Students (SPCS) to your team. Someone from our training team will reply within two working days.\n\n' +
-				'If anything is urgent, just reply to this email and we will move faster.\n\n' +
-				'If you are looking for support right now, the 988 Suicide and Crisis Lifeline is available 24/7. Call or text 988.\n\n' +
-				'Clover Educational Consulting Group\nspcsprogram.org',
+				'Thank you for your interest in bringing Suicide Prevention for College Students (SPCS) to your campus. Someone from our training team will reply within five working days.\n\n' +
+				'Warmly,\n\n' +
+				'The SPCS Team\nspcsprogram.org',
 			html: confirmationEmail(values),
 		});
 	} catch (err) {

@@ -11,8 +11,8 @@
  */
 
 ?>
-<!-- wp:group {"metadata":{"name":"Three-phase model"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section">
+<!-- wp:group {"metadata":{"name":"Three-phase model"},"className":"spcs-section","backgroundColor":"purple-wash","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section has-purple-wash-background-color has-background">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
 		<!-- wp:group {"className":"spcs-grid","layout":{"type":"default"}} -->

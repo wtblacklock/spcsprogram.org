@@ -129,7 +129,7 @@ function spcs_core_render_demo_form(): string {
 		?>
 		<div class="spcs-form__success" role="status">
 			<h2><?php esc_html_e( 'Thank you. That reached us.', 'spcs-core' ); ?></h2>
-			<p><?php esc_html_e( 'Someone from the team will be in touch within two working days. If it is urgent, say so in a reply to the confirmation email and we will move faster.', 'spcs-core' ); ?></p>
+			<p><?php esc_html_e( 'Someone from the team will be in touch within five working days. If it is urgent, say so in a reply to the confirmation email and we will move faster.', 'spcs-core' ); ?></p>
 		</div>
 		<?php
 		return (string) ob_get_clean();
@@ -496,7 +496,7 @@ function spcs_core_notify_team( array $values ): void {
 function spcs_core_confirm_to_sender( array $values ): void {
 	$body = sprintf(
 		/* translators: %s: first name. */
-		__( "Hello %s,\n\nThank you for your interest in bringing Suicide Prevention for College Students (SPCS) to your team. Someone from our training team will reply within two working days.\n\nIf you are looking for support right now, the 988 Suicide and Crisis Lifeline is available 24/7. Call or text 988.\n\nClover Educational Consulting Group\nspcsprogram.org", 'spcs-core' ),
+		__( "Hello %s,\n\nThank you for your interest in bringing Suicide Prevention for College Students (SPCS) to your campus. Someone from our training team will reply within five working days.\n\nWarmly,\n\nThe SPCS Team\nspcsprogram.org", 'spcs-core' ),
 		$values['first_name']
 	);
 

@@ -47,7 +47,7 @@ function layout({ preheader, eyebrow, heading, body }) {
 	</td></tr>
 	<tr><td style="height:4px;background:${C.coral};font-size:0;line-height:0;">&nbsp;</td></tr>
 	<tr><td style="background:#ffffff;padding:32px;font-family:${FONT};color:${C.plum};">
-		<div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:${C.purple};font-weight:bold;">${esc(eyebrow)}</div>
+		${eyebrow ? `<div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:${C.purple};font-weight:bold;">${esc(eyebrow)}</div>` : ''}
 		<h1 style="margin:8px 0 20px;font-family:${SERIF};font-size:26px;line-height:1.25;color:${C.plum};font-weight:normal;">${esc(heading)}</h1>
 		${body}
 	</td></tr>
@@ -93,18 +93,12 @@ function teamEmail(values, fields) {
 
 function confirmationEmail(values) {
 	const body = `
-		<p style="margin:0 0 16px;font-size:16px;line-height:1.6;">Thank you for your interest in bringing Suicide Prevention for College Students (SPCS) to your team. Someone from our training team will reply within two working days.</p>
-		<p style="margin:0 0 24px;font-size:16px;line-height:1.6;">If anything is urgent, just reply to this email and we will move faster.</p>
-		<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
-			<td style="background:${C.wash};border-left:4px solid ${C.purple};padding:16px 20px;font-size:14px;line-height:1.6;color:${C.plum};">
-				If you are looking for support right now, the 988 Suicide and Crisis Lifeline is available 24/7. <strong>Call or text 988.</strong>
-			</td>
-		</tr></table>`;
+		<p style="margin:0 0 16px;font-size:16px;line-height:1.6;">Thank you for your interest in bringing Suicide Prevention for College Students (SPCS) to your campus. Someone from our training team will reply within five working days.</p>
+		<p style="margin:24px 0 0;font-size:16px;line-height:1.6;">Warmly,<br><br>The SPCS Team<br><a href="${SITE}" style="color:${C.purple};">spcsprogram.org</a></p>`;
 
 	return layout({
-		preheader: 'Someone from our training team will reply within two working days.',
-		eyebrow: 'We received your inquiry',
-		heading: `Thank you, ${values.first_name}.`,
+		preheader: 'Someone from our training team will reply within five working days.',
+		heading: `Hello ${values.first_name},`,
 		body,
 	});
 }

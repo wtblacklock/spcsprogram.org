@@ -128,8 +128,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"metadata":{"name":"Training in session"},"className":"spcs-section","layout":{"type":"default"}} -->
-<div class="wp-block-group spcs-section">
+<!-- wp:group {"metadata":{"name":"Training in session"},"className":"spcs-section","backgroundColor":"purple-wash","layout":{"type":"default"}} -->
+<div class="wp-block-group spcs-section has-purple-wash-background-color has-background">
 	<!-- wp:group {"className":"spcs-shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group spcs-shell">
 		<!-- wp:html -->
