@@ -56,6 +56,11 @@ function spcs_print_meta(): void {
 		array( 'name', 'twitter:card', 'summary_large_image' ),
 	);
 
+	if ( is_front_page() ) {
+		// Bing Webmaster Tools ownership verification.
+		$tags[] = array( 'name', 'msvalidate.01', '62980D40F87492380BD6FC68C4BB2361' );
+	}
+
 	foreach ( $tags as list( $attr, $key, $value ) ) {
 		printf( '<meta %s="%s" content="%s">' . "\n", esc_attr( $attr ), esc_attr( $key ), esc_attr( $value ) );
 	}

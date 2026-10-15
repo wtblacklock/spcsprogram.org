@@ -25,8 +25,7 @@ function spcs_core_print_schema(): void {
 		'@type'       => 'EducationalOrganization',
 		'@id'         => home_url( '/#organization' ),
 		'name'        => 'Clover Educational Consulting Group',
-		'url'         => home_url( '/' ),
-		'sameAs'      => array( 'https://clovered.org' ),
+		'url'         => 'https://clovered.org',
 		'description' => __( 'Developer of the Suicide Prevention for College Students (SPCS) program.', 'spcs-core' ),
 	);
 
@@ -36,21 +35,14 @@ function spcs_core_print_schema(): void {
 		'@type'       => 'WebSite',
 		'@id'         => home_url( '/#website' ),
 		'url'         => home_url( '/' ),
-		'name'        => get_bloginfo( 'name' ),
-		'publisher'   => array( '@id' => home_url( '/#organization' ) ),
+		'name'          => __( 'Suicide Prevention for College Students (SPCS)', 'spcs-core' ),
+		'alternateName' => 'SPCS',
+		'publisher'     => array( '@id' => home_url( '/#organization' ) ),
 		'inLanguage'  => 'en-US',
 	);
 
 	if ( is_front_page() ) {
 		$graph[] = spcs_core_program_schema();
-	}
-
-	if ( is_page( 'faq' ) ) {
-		$faq = spcs_core_faq_schema();
-
-		if ( $faq ) {
-			$graph[] = $faq;
-		}
 	}
 
 	if ( is_page( 'about' ) ) {
@@ -86,7 +78,7 @@ function spcs_core_program_schema(): array {
 		'@type'               => 'EducationalOccupationalProgram',
 		'@id'                 => home_url( '/#program' ),
 		'name'                => 'Suicide Prevention for College Students (SPCS)',
-		'description'         => __( 'A 90-minute, evidence-based gatekeeper training designed specifically for college students, delivered in person or virtually by a trained campus facilitator.', 'spcs-core' ),
+		'description'         => __( 'Live training delivered to groups of students by Certified Instructors, virtually or in-person. Equips students with the knowledge and confidence to recognize signs of suicide risk in peers and connect them with help.', 'spcs-core' ),
 		'url'                 => home_url( '/about/' ),
 		'provider'            => array( '@id' => home_url( '/#organization' ) ),
 		'educationalProgramMode' => array( 'onsite', 'online' ),
@@ -97,43 +89,14 @@ function spcs_core_program_schema(): array {
 			'audienceType'          => 'College and university students',
 		),
 		'teaches'             => array(
-			__( 'Recognizing warning signs of suicide risk in peers', 'spcs-core' ),
-			__( 'Conducting a basic suicide risk assessment', 'spcs-core' ),
-			__( 'Referring peers to campus, local and national resources', 'spcs-core' ),
-			__( 'Safe messaging about suicide', 'spcs-core' ),
+			__( 'Using safe and respectful language', 'spcs-core' ),
+			__( 'College suicide statistics', 'spcs-core' ),
+			__( 'Common myths and misconceptions', 'spcs-core' ),
+			__( 'Suicide risk factors and warning signs', 'spcs-core' ),
+			__( 'Conducting a basic suicide risk assessment with peers', 'spcs-core' ),
+			__( 'Using a decision tree to determine the best course of action', 'spcs-core' ),
+			__( 'Connecting peers to support', 'spcs-core' ),
 		),
-	);
-}
-
-/**
- * FAQ page markup built from the FAQ post type.
- *
- * @return array<string, mixed>|null
- */
-function spcs_core_faq_schema(): ?array {
-	$faqs = spcs_core_get_entries( 'spcs_faq', -1 );
-
-	if ( ! $faqs ) {
-		return null;
-	}
-
-	$entities = array();
-
-	foreach ( $faqs as $faq ) {
-		$entities[] = array(
-			'@type'          => 'Question',
-			'name'           => get_the_title( $faq ),
-			'acceptedAnswer' => array(
-				'@type' => 'Answer',
-				'text'  => wp_strip_all_tags( $faq->post_content ),
-			),
-		);
-	}
-
-	return array(
-		'@type'      => 'FAQPage',
-		'@id'        => home_url( '/faq/#faq' ),
-		'mainEntity' => $entities,
 	);
 }
 

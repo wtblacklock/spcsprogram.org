@@ -109,6 +109,11 @@ npm run deploy:review   # review copy with notes: spcsprogram-org-preview.vercel
 
 The first run in a fresh checkout asks you to link each `dist/` folder to its Vercel project.
 
+`npm run deploy` also pings IndexNow (Bing and the search tools built on it) with any pages whose
+content changed. Change detection and the sitemap's `<lastmod>` dates come from `deploy/lastmod.json`,
+which the export updates, so commit it after deploying. The site is verified in Google Search Console
+(DNS TXT record) and Bing Webmaster Tools (meta tag in `themes/spcs/inc/meta.php`); keep both in place.
+
 DNS lives at Namecheap: `A @` and `A www` both point at `76.76.21.21`, and www redirects to the
 bare domain (`deploy/vercel.json`). Namecheap email forwarding is unaffected.
 

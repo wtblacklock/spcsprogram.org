@@ -16,7 +16,7 @@
     "wp:reset": "node tools/wp-dev.mjs reset",
     "export": "python3 tools/export-static.py",
     "export:review": "python3 tools/export-static.py --review",
-    "deploy": "npm run build && python3 tools/export-static.py && vercel deploy dist/live --prod --scope twinb",
+    "deploy": "npm run build && python3 tools/export-static.py && vercel deploy dist/live --prod --scope twinb && python3 tools/indexnow.py",
     "deploy:review": "npm run build && python3 tools/export-static.py --review && vercel deploy dist/review --prod --scope twinb"
   },
   "devDependencies": {

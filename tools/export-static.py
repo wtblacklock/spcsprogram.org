@@ -7,6 +7,9 @@
 Each output folder keeps its own .vercel link between runs, so deploy with
 `vercel deploy dist/live --prod` (see `npm run deploy`).
 """
+import datetime
+import hashlib
+import json
 import os
 import re
 import shutil
@@ -82,6 +85,28 @@ def transform_page(html):
     return html
 
 
+def update_lastmod(rendered):
+    """Date each page by when its main content last changed, tracked in deploy/lastmod.json."""
+    path = os.path.join(ROOT, "deploy", "lastmod.json")
+    try:
+        manifest = json.load(open(path))
+    except FileNotFoundError:
+        manifest = {}
+    today = datetime.date.today().isoformat()
+    changed = []
+    for page, html in rendered.items():
+        main = re.search(r"<main.*?</main>", html, re.S)
+        content = re.sub(r"\?ver=[^\"' ]+", "", main.group(0) if main else html)
+        digest = hashlib.sha256(content.encode()).hexdigest()
+        if manifest.get(page, {}).get("hash") != digest:
+            manifest[page] = {"hash": digest, "date": today}
+            changed.append(page)
+    with open(path, "w") as f:
+        json.dump(manifest, f, indent=2)
+        f.write("\n")
+    return manifest, changed
+
+
 def main():
     keep = os.path.join(OUT, ".vercel")
     saved = OUT + "-vercel.bak"
@@ -101,13 +126,15 @@ def main():
             if a.startswith(("/wp-content/", "/wp-includes/")):
                 assets.add(a)
 
+    rendered = {}
     for page in PAGES:
         status, body = fetch(BASE + page)
         if status != 200:
             sys.exit(f"{page} returned {status}. Is `npm run wp:start` running?")
         text = body.decode("utf-8")
         collect(text)
-        save(page, transform_page(text).encode())
+        rendered[page] = transform_page(text)
+        save(page, rendered[page].encode())
 
     _, body = fetch(BASE + "/this-page-does-not-exist/")
     text = body.decode("utf-8")
@@ -142,7 +169,13 @@ def main():
         robots = "User-agent: *\nDisallow: /\n"
     else:
         robots = f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n"
-        urls = "".join(f"  <url><loc>{SITE}{p}</loc></url>\n" for p in PAGES)
+        lastmod, changed = update_lastmod(rendered)
+        with open(os.path.join(OUT, ".changed.json"), "w") as f:
+            json.dump([SITE + p for p in changed], f)
+        key = open(os.path.join(deploy, "indexnow-key.txt")).read().strip()
+        with open(os.path.join(OUT, f"{key}.txt"), "w") as f:
+            f.write(key)
+        urls = "".join(f"  <url><loc>{SITE}{p}</loc><lastmod>{lastmod[p]['date']}</lastmod></url>\n" for p in PAGES)
         with open(os.path.join(OUT, "sitemap.xml"), "w") as f:
             f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
                     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
