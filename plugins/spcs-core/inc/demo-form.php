@@ -97,7 +97,7 @@ function spcs_core_demo_fields(): array {
  * public; its secret lives only in the Vercel project (TURNSTILE_SECRET_KEY).
  */
 function spcs_core_turnstile_site_key(): string {
-	return (string) apply_filters( 'spcs_turnstile_site_key', '' );
+	return (string) apply_filters( 'spcs_turnstile_site_key', '0x4AAAAAAFXxgGfdGFX514wM' );
 }
 
 /**
