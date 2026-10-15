@@ -312,9 +312,16 @@
 	white-space: nowrap;
 }
 
-/* A button whose destination isn't live yet: it says so on the button itself. */
-.spcs-button--soon {
-	cursor: default;
+/* A button whose destination isn't live yet: ghosted, inert, and labelled on the button itself. */
+.wp-block-button .wp-block-button__link.spcs-button--soon,
+.wp-block-button .wp-block-button__link.spcs-button--soon:hover,
+.wp-block-button .wp-block-button__link.spcs-button--soon:focus {
+	background: transparent;
+	color: var(--quiet);
+	border: 1.5px dashed var(--field-border);
+	box-shadow: none;
+	transform: none;
+	cursor: not-allowed;
 }
 
 .spcs-button--soon .spcs-soon {
