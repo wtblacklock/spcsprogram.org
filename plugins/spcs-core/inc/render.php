@@ -72,7 +72,17 @@ function spcs_core_render_studies( array $attributes ): string {
 			$out .= '(' . esc_html( $year ) . '). ';
 		}
 
-		$out .= esc_html( get_the_title( $study ) ) . '. ';
+		// The title links to the published article; the citation's wording is left untouched.
+		if ( $url ) {
+			$out .= sprintf(
+				'<a class="spcs-citation__title" href="%s" target="_blank" rel="noopener noreferrer">%s<span class="screen-reader-text"> %s</span></a>. ',
+				esc_url( $url ),
+				esc_html( get_the_title( $study ) ),
+				esc_html__( '(opens in a new tab)', 'spcs-core' )
+			);
+		} else {
+			$out .= esc_html( get_the_title( $study ) ) . '. ';
+		}
 
 		if ( $journal ) {
 			$out .= '<span class="spcs-citation__journal">' . wp_kses_post( $journal ) . '</span>';
@@ -87,15 +97,6 @@ function spcs_core_render_studies( array $attributes ): string {
 
 		if ( $finding ) {
 			$out .= '<p class="spcs-citation__finding">' . esc_html( $finding ) . '</p>';
-		}
-
-		if ( $url ) {
-			$out .= sprintf(
-				'<a class="spcs-citation__link spcs-textlink" href="%s" target="_blank" rel="noopener noreferrer">%s<span class="screen-reader-text"> %s</span></a>',
-				esc_url( $url ),
-				esc_html__( 'Read the paper', 'spcs-core' ),
-				esc_html__( '(opens in a new tab)', 'spcs-core' )
-			);
 		}
 
 		$out .= '</li>';

@@ -312,6 +312,15 @@
 	white-space: nowrap;
 }
 
+/* A button whose destination isn't live yet: it says so on the button itself. */
+.spcs-button--soon {
+	cursor: default;
+}
+
+.spcs-button--soon .spcs-soon {
+	margin-inline-start: 0.75rem;
+}
+
 .spcs-soon {
 	display: inline-block;
 	margin-inline-start: 0.6rem;
@@ -834,18 +843,16 @@
 	max-inline-size: 54ch;
 }
 
-.spcs-citation__link {
-	display: inline-block;
-	margin-block-start: 0.75rem;
-	margin-inline-start: 1.75rem;
-	font-size: 0.8125rem;
-	font-weight: 600;
-	letter-spacing: 0.04em;
-	color: var(--plum);
+.spcs-citation__title {
+	color: var(--purple);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
 }
 
-.spcs-citation__link:hover {
-	border-block-end-color: var(--plum);
+.spcs-citation__title:hover {
+	color: var(--plum);
+	text-decoration-thickness: 2px;
 }
 
 /* FAQ ------------------------------------------------------------------ */

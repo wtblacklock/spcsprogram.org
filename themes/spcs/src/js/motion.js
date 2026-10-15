@@ -369,7 +369,9 @@ function initFormStatus() {
 		box.setAttribute( 'role', 'alert' );
 		box.innerHTML =
 			'<p><strong>That did not send.</strong></p>' +
-			'<p>Please check that your name, a valid work email and your organization are filled in, then try again.</p>';
+			( status === 'verify'
+				? '<p>We couldn’t confirm you’re a person. Please complete the verification above the Send button and try again.</p>'
+				: '<p>Please check that your name, a valid work email and your organization are filled in, then try again.</p>' );
 		form.prepend( box );
 	}
 

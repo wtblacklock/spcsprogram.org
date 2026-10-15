@@ -93,6 +93,14 @@ function spcs_core_demo_fields(): array {
 }
 
 /**
+ * Cloudflare Turnstile site key for the form's human check. The site key is
+ * public; its secret lives only in the Vercel project (TURNSTILE_SECRET_KEY).
+ */
+function spcs_core_turnstile_site_key(): string {
+	return (string) apply_filters( 'spcs_turnstile_site_key', '' );
+}
+
+/**
  * Render the form.
  *
  * @return string
@@ -162,6 +170,12 @@ function spcs_core_render_demo_form(): string {
 			<label for="spcs-website"><?php esc_html_e( 'Leave this field empty', 'spcs-core' ); ?></label>
 			<input type="text" id="spcs-website" name="spcs_website" tabindex="-1" autocomplete="off">
 		</div>
+
+		<?php $turnstile_key = spcs_core_turnstile_site_key(); ?>
+		<?php if ( $turnstile_key ) : ?>
+			<div class="cf-turnstile spcs-form__verify" data-sitekey="<?php echo esc_attr( $turnstile_key ); ?>" data-theme="light" data-size="flexible"></div>
+			<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+		<?php endif; ?>
 
 		<button type="submit"><?php esc_html_e( 'Send request', 'spcs-core' ); ?></button>
 

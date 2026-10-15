@@ -45,8 +45,9 @@ function spcs_core_seed_data(): array {
 					'spcs_authors' => 'Ross, S. G., Pazienza, R., & Rosa, J. D.',
 					'spcs_year'    => '2024',
 					'spcs_journal' => 'Journal of American College Health',
-					'spcs_locator' => '1–4.',
+					'spcs_locator' => '73(9), 3322–3325.',
 					'spcs_finding' => '',
+					'spcs_url'     => 'https://doi.org/10.1080/07448481.2024.2423237',
 				),
 			),
 			array(
@@ -57,6 +58,7 @@ function spcs_core_seed_data(): array {
 					'spcs_journal' => 'Crisis: The Journal of Crisis Intervention and Suicide Prevention',
 					'spcs_locator' => '45(1), 41–47.',
 					'spcs_finding' => '',
+					'spcs_url'     => 'https://doi.org/10.1027/0227-5910/a000914',
 				),
 			),
 			array(
@@ -67,6 +69,7 @@ function spcs_core_seed_data(): array {
 					'spcs_journal' => 'Crisis: The Journal of Crisis Intervention and Suicide Prevention',
 					'spcs_locator' => '42(1), 48–55.',
 					'spcs_finding' => '',
+					'spcs_url'     => 'https://doi.org/10.1027/0227-5910/a000686',
 				),
 			),
 		),

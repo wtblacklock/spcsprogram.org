@@ -7,6 +7,7 @@
 //   RESEND_API_KEY  Resend API key
 //   CONTACT_TO      where inquiries are delivered
 //   CONTACT_FROM    verified sender, e.g. "SPCS <hello@spcsprogram.org>"
+//   TURNSTILE_SECRET_KEY  Cloudflare Turnstile secret; when set, every submission must pass the human check
 
 const { teamEmail, confirmationEmail } = require('./_email.js');
 
@@ -43,6 +44,23 @@ async function send(apiKey, payload) {
 	}
 }
 
+async function passesTurnstile(token, secret, req) {
+	try {
+		const params = new URLSearchParams({ secret, response: token });
+		const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+		if (ip) params.set('remoteip', ip);
+		const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+			method: 'POST',
+			body: params,
+		});
+		const data = await response.json();
+		return data.success === true;
+	} catch (err) {
+		console.error('[contact] turnstile verify failed', err);
+		return false;
+	}
+}
+
 module.exports = async (req, res) => {
 	if (req.method !== 'POST') {
 		res.statusCode = 405;
@@ -72,6 +90,15 @@ module.exports = async (req, res) => {
 	if (!EMAIL_RE.test(values.email)) {
 		back(res, 'error');
 		return;
+	}
+
+	const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+	if (turnstileSecret) {
+		const token = String(body['cf-turnstile-response'] || '');
+		if (!token || !(await passesTurnstile(token, turnstileSecret, req))) {
+			back(res, 'verify');
+			return;
+		}
 	}
 
 	const { RESEND_API_KEY, CONTACT_TO, CONTACT_FROM } = process.env;

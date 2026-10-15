@@ -50,8 +50,8 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 		<div class="wp-block-buttons">
 			<!-- wp:button -->
 			<div class="wp-block-button">
-				<a class="wp-block-button__link wp-element-button" href="#" rel="nofollow"><?php esc_html_e( 'Shop Glad You’re Here', 'spcs' ); ?></a>
-				<!-- Point this at the Printify pop-up store once it is published. -->
+				<a class="wp-block-button__link wp-element-button spcs-button--soon" role="link" aria-disabled="true"><?php esc_html_e( 'Shop Glad You’re Here', 'spcs' ); ?><span class="spcs-soon"><?php esc_html_e( 'Coming soon', 'spcs' ); ?></span></a>
+				<!-- Once the Printify pop-up store is live: add its URL as href, and remove aria-disabled, the role and the "Coming soon" tag. -->
 			</div>
 			<!-- /wp:button -->
 		</div>

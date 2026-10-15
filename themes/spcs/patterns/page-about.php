@@ -108,8 +108,12 @@ $img = esc_url( get_template_directory_uri() . '/assets/img' );
 				<h2 class="wp-block-heading"><?php esc_html_e( 'Peer-reviewed, with demonstrated effectiveness.', 'spcs' ); ?></h2>
 				<!-- /wp:heading -->
 
+				<!-- wp:paragraph -->
+				<p><?php esc_html_e( 'SPCS was developed by psychologists and researchers.', 'spcs' ); ?></p>
+				<!-- /wp:paragraph -->
+
 				<!-- wp:paragraph {"className":"spcs-review-note"} -->
-				<p class="spcs-review-note"><?php esc_html_e( 'Note — Took out “Every claim…”, no replacement needed.', 'spcs' ); ?></p>
+				<p class="spcs-review-note"><?php esc_html_e( 'Note — Took out “Every claim…” and added your line about who developed SPCS.', 'spcs' ); ?></p>
 				<!-- /wp:paragraph -->
 
 			</div>

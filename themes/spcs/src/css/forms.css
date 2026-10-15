@@ -248,3 +248,9 @@
 		transform: translateY(12px) scale(0.98);
 	}
 }
+
+/* Cloudflare Turnstile human check, just above the Send button. */
+.spcs-form__verify {
+	margin-block: 0.5rem 1.25rem;
+	min-block-size: 65px;
+}
